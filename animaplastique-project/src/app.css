@@ -1,0 +1,167 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+@import '@fontsource/jetbrains-mono';
+@import '@fontsource/inter';
+
+/* Hide scrollbars */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@layer base {
+  html {
+    font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", ui-monospace,
+      SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+      monospace;
+  }
+
+  body {
+    @apply antialiased transition-colors duration-150;
+  }
+
+  html:not(.dark) body {
+    background-color: #fffafa;
+    color: #111827;
+  }
+
+  html.dark body {
+    background-color: #050505;
+    color: #f5f5f5;
+  }
+
+  .font-inter {
+    font-family: "Inter";
+  }
+
+  body:hover > #trailer {
+    opacity: 1;
+  }
+
+  html:not(.dark) #trailer {
+    background-color: rgba(18, 18, 18, 0.948) !important;
+  }
+
+  #trailer {
+    height: 20px;
+    width: 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 500ms ease;
+    display: grid;
+    place-items: center;
+  }
+}
+
+@layer components {
+  #trailer {
+    @apply opacity-0 md:opacity-100
+  }
+  .rapid-text {
+    /* Light mode */
+    @apply bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-800
+      bg-clip-text text-transparent;
+  }
+
+  .dark .rapid-text {
+    /* Dark mode */
+    @apply bg-gradient-to-r from-neutral-100 via-blue-200 to-neutral-200
+      bg-clip-text text-transparent;
+  }
+
+  .ap-shell {
+    @apply sticky top-0 z-20 border-b backdrop-blur;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-color: rgba(229, 229, 229, 0.8);
+    color: #111827;
+  }
+
+  html.dark .ap-shell {
+    background-color: rgba(10, 10, 10, 0.9);
+    border-color: rgba(38, 38, 38, 0.8);
+    color: #f5f5f5;
+  }
+
+  .ap-nav-link {
+    @apply relative pb-1 text-[0.7rem] uppercase tracking-[0.25em];
+    color: #6b7280;
+    text-decoration: none;
+  }
+
+  .ap-nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 0;
+    background-color: currentColor;
+    transition: width 0.15s ease-out;
+  }
+
+  .ap-nav-link:hover {
+    color: #111827;
+  }
+
+  .ap-nav-link:hover::after {
+    width: 100%;
+  }
+
+  .ap-nav-link--active {
+    color: #111827;
+  }
+
+  .ap-nav-link--active::after {
+    width: 100%;
+  }
+
+  html.dark .ap-nav-link {
+    color: #9ca3af;
+  }
+
+  html.dark .ap-nav-link--active {
+    color: #f9fafb;
+  }
+
+  .ap-toggle {
+    @apply relative flex h-7 w-12 items-center rounded-full border text-[0.6rem]
+      uppercase tracking-[0.12em] transition-colors;
+    border-color: #d4d4d8;
+    background-color: #f4f4f5;
+    color: #374151;
+  }
+
+  .ap-toggle-knob {
+    @apply inline-flex h-6 w-6 items-center justify-center rounded-full border
+      text-[0.55rem] transition-transform;
+    border-color: #d4d4d8;
+    background-color: #ffffff;
+    color: #111827;
+  }
+
+  html.dark .ap-toggle {
+    border-color: #4b5563;
+    background-color: #030712;
+    color: #e5e7eb;
+  }
+
+  html.dark .ap-toggle-knob {
+    border-color: #6b7280;
+    background-color: #111827;
+    color: #f9fafb;
+  }
+  
+}
