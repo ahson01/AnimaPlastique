@@ -64,7 +64,7 @@
 						class="font-inter text-balance text-3xl leading-tight -tracking-[0.06em]
 						       sm:text-4xl lg:text-5xl rapid-text reveal-line block"
 					>
-						Selected repositories from <span class="font-mono">@{username}</span>.
+						Selected repositories from <span class="font-mono rapid-text">@{username}</span>.
 					</h1>
 					<p class="max-w-2xl text-sm leading-relaxed text-neutral-400">
 						Small utilities, bots, experiments, and tools that live on GitHub. These repos are a good

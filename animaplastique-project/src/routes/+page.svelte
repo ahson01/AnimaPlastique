@@ -33,10 +33,10 @@
 					class="font-inter text-balance text-4xl leading-tight -tracking-[0.06em]
 					       sm:text-5xl lg:text-6xl xl:text-7xl rapid-text "
 				>
-					<span class="reveal-line ">Rapidly launch modern</span>
-					<span class="reveal-line ">websites without limits-</span>
-					<span class="reveal-line ">flexible, future-ready,</span> 
-					<span class="reveal-line ">and built to scale.</span>  
+					<span class="reveal-line rapid-text">Rapidly launch modern</span>
+					<span class="reveal-line rapid-text">websites without limits-</span>
+					<span class="reveal-line rapid-text">flexible, future-ready,</span> 
+					<span class="reveal-line rapid-text">and built to scale.</span>  
 				</h1>
 
 				<p class="max-w-xl text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
