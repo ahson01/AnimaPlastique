@@ -79,15 +79,17 @@
 		<header class="space-y-4 text-center lg:text-left">
 			<p
 				class="font-mono text-[0.65rem] uppercase tracking-[0.35em]
-				   bg-gradient-to-r from-emerald-500 to-rose-500 bg-clip-text text-transparent"
+				   bg-gradient-to-r from-emerald-500 to-rose-500 bg-clip-text text-transparent animate-pop-up"
 			>
 				Services
 			</p>
 
 			<h1
-				class="font-inter text-3xl sm:text-4xl lg:text-5xl leading-tight -tracking-[0.06em] text-[var(--text-strong)]"
+				class="font-inter text-3xl sm:text-4xl lg:text-5xl leading-tight -tracking-[0.06em] text-[var(--text-strong)] "
 			>
-				Web work that feels sharp,<br class="hidden sm:block" /> priced for India.
+				<span class="reveal-line block">Web work that feels sharp,</span> <br>
+				<span class="reveal-line block">priced for India.</span>
+				
 			</h1>
 
 			<p class="max-w-xl text-xs sm:text-sm text-[var(--text-soft)] mx-auto lg:mx-0">
@@ -101,59 +103,65 @@
 						uppercase tracking-[0.22em]
 						border-[var(--border)] bg-[var(--chip-bg)] text-[var(--text-strong)] shadow-sm
 						transition-all duration-200
-						hover:-translate-y-0.5 hover:shadow-md hover:bg-[var(--chip-hover)]"
+						hover:-translate-y-0.5 hover:shadow-md hover:bg-[var(--chip-hover)] animate-pop-up"
 				>
 					Start a project
 				</a>
 			</div>
 		</header>
 
-		<section
-			class="grid gap-6 md:grid-cols-2 auto-rows-[minmax(240px,auto)] md:auto-rows-[minmax(260px,auto)]"
-		>
-			{#each services as service, i}
-				<article
-					class={`group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-[var(--border)]
-						bg-gradient-to-br from-[var(--card-bg)] to-[var(--card-bg-soft)]
-						p-6 sm:p-8 shadow-sm
-						transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-[var(--border-strong)]
-						${i === 0 ? 'md:col-span-2 md:flex-row md:items-center gap-8' : ''}`}
-				>
-					<div class={`space-y-3 ${i === 0 ? 'md:max-w-md' : ''}`}>
-						<p class="text-xs font-mono uppercase tracking-[0.22em] text-[var(--text-muted)]">
-							{service.tagline}
-						</p>
-						<h2 class="text-2xl sm:text-3xl font-semibold text-[var(--text-strong)]">
-							{service.name}
-						</h2>
-						<p class="text-sm leading-relaxed text-[var(--text-soft)]">{service.description}</p>
-					</div>
+<section
+  class="grid gap-6 md:grid-cols-2 auto-rows-[minmax(240px,auto)] md:auto-rows-[minmax(260px,auto)]"
+>
+  {#each services as service, i}
+    <article
+      style={`--delay: ${i * 0.08}s`}
+      class={`animate-pop-up group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-[var(--border)]
+        bg-gradient-to-br from-[var(--card-bg)] to-[var(--card-bg-soft)]
+        p-6 sm:p-8 shadow-sm
+        transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-[var(--border-strong)]
+        ${i === 0 ? 'md:col-span-2 md:flex-row md:items-center gap-8' : ''}`}
+    >
+      <div class={`space-y-3 ${i === 0 ? 'md:max-w-md' : ''}`}>
+        <p class="text-xs font-mono uppercase tracking-[0.22em] text-[var(--text-muted)]">
+          {service.tagline}
+        </p>
+        <h2 class="text-2xl sm:text-3xl font-semibold text-[var(--text-strong)]">
+          {service.name}
+        </h2>
+        <p class="text-sm leading-relaxed text-[var(--text-soft)]">
+          {service.description}
+        </p>
+      </div>
 
-					<div
-						class={`mt-6 flex flex-col gap-3 text-sm text-[var(--text-soft)]
-							${i === 0 ? 'md:mt-0 md:text-right md:items-end' : ''}`}
-					>
-						<p class="text-[0.75rem] text-[var(--text-muted)]">Typical timeline: {service.eta}</p>
+      <div
+        class={`mt-6 flex flex-col gap-3 text-sm text-[var(--text-soft)]
+          ${i === 0 ? 'md:mt-0 md:text-right md:items-end' : ''}`}
+      >
+        <p class="text-[0.75rem] text-[var(--text-muted)]">
+          Typical timeline: {service.eta}
+        </p>
 
-						<p class="text-[0.8rem]">{service.cta}</p>
+        <p class="text-[0.8rem]">{service.cta}</p>
 
-						<a
-							href="/contact"
-							class="mt-2 inline-flex items-center gap-1 text-[0.75rem] font-mono uppercase tracking-[0.18em]
-								text-[var(--link)] hover:text-[var(--link-hover)]"
-						>
-							<span>Talk about this</span> <span class="text-xs">↗</span>
-						</a>
-					</div>
+        <a
+          href="/contact"
+          class="mt-2 inline-flex items-center gap-1 text-[0.75rem] font-mono uppercase tracking-[0.18em]
+            text-[var(--link)] hover:text-[var(--link-hover)]"
+        >
+          <span>Talk about this</span> <span class="text-xs">↗</span>
+        </a>
+      </div>
 
-					<div
-						class="pointer-events-none absolute -right-16 -bottom-16 h-40 w-40 rounded-full
-							bg-[radial-gradient(circle_at_center,var(--glow-green),transparent)]
-							opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-					></div>
-				</article>
-			{/each}
-		</section>
+      <div
+        class="pointer-events-none absolute -right-16 -bottom-16 h-40 w-40 rounded-full
+          bg-[radial-gradient(circle_at_center,var(--glow-green),transparent)]
+          opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+      ></div>
+    </article>
+  {/each}
+</section>
+
 	</div>
 </section>
 

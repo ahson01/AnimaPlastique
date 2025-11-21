@@ -25,15 +25,18 @@
 			<!-- Left -->
 			<div class="max-w-3xl space-y-7">
 				<p class="font-mono text-[0.65rem] uppercase tracking-[0.35em]
-					bg-gradient-to-r from-rose-400 to-red-500  bg-clip-text text-transparent ">
+					bg-gradient-to-r from-rose-400 to-red-500  bg-clip-text text-transparent animate-pop-up">
 					AnimaPlastique · web dev agency
 				</p>
 
 				<h1
 					class="font-inter text-balance text-4xl leading-tight -tracking-[0.06em]
-					       sm:text-5xl lg:text-6xl xl:text-7xl rapid-text"
+					       sm:text-5xl lg:text-6xl xl:text-7xl rapid-text "
 				>
-					Rapidly launch modern websites without limits- flexible, future-ready, and built to scale.
+					<span class="reveal-line block">Rapidly launch modern</span>
+					<span class="reveal-line block">websites without limits-</span>
+					<span class="reveal-line block">flexible, future-ready,</span> 
+					<span class="reveal-line block">and built to scale.</span>  
 				</h1>
 
 				<p class="max-w-xl text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
@@ -53,7 +56,7 @@
 						       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500/70 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950
 						       dark:border-neutral-50/15 dark:bg-neutral-50 dark:text-neutral-900
 						       dark:hover:bg-neutral-100 dark:hover:border-neutral-50/30
-						       dark:focus-visible:ring-rose-400/80 dark:focus-visible:ring-offset-neutral-900"
+						       dark:focus-visible:ring-rose-400/80 dark:focus-visible:ring-offset-neutral-900 animate-pop-up"
 					>
 						Start a project
 					</a>
@@ -71,7 +74,7 @@
 
 	       dark:border-neutral-50/20 dark:bg-transparent dark:text-white!
 	       dark:hover:bg-neutral-50/10 dark:hover:text-white! dark:hover:border-neutral-50/30
-	       dark:focus-visible:ring-rose-400/80 dark:focus-visible:ring-offset-neutral-900"
+	       dark:focus-visible:ring-rose-400/80 dark:focus-visible:ring-offset-neutral-900 animate-pop-up"
 >
 	View work
 	<span class="font-mono text-xs">↗</span>
@@ -83,7 +86,7 @@
 				class=" grid w-full max-w-sm gap-4 rounded-2xl p-5 text-xs sm:text-[0.7rem]
 				       border border-black/10 bg-white/40 shadow-lg backdrop-blur-md
 				       ring-1 ring-black/5
-				       dark:border-white/10 dark:bg-white/5 dark:ring-white/5"
+				       dark:border-white/10 dark:bg-white/5 dark:ring-white/5 animate-pop-up"
 			>
 				<div class="flex items-baseline justify-between border-b pb-3 border-black/10 dark:border-white/10">
 					<span class="font-mono text-[0.7rem] uppercase tracking-[0.25em]">
@@ -139,9 +142,9 @@
 
 		<!-- Bottom: info -->
 		<div
-			class="mt-4 grid gap-8 border-t border-white/10 pt-10 text-xs sm:grid-cols-3 sm:text-[0.75rem]"
+			class="mt-4 grid gap-8 border-t border-white/10 pt-10 text-xs sm:grid-cols-3 sm:text-[0.75rem] "
 		>
-			<div class="space-y-2">
+			<div class="space-y-2 animate-pop-up" style="--delay: 0.3s;">
 				<p class="font-mono text-[0.65rem] uppercase tracking-[0.25em]
 					bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent">
 					Best for
@@ -152,7 +155,7 @@
 				</p>
 			</div>
 
-			<div class="space-y-2">
+			<div class="space-y-2 animate-pop-up" style="--delay: 0.4s;">
 				<p class="font-mono text-[0.65rem] uppercase tracking-[0.25em]
 					bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent">
 					How it works
@@ -164,7 +167,7 @@
 				</ul>
 			</div>
 
-			<div class="space-y-2">
+			<div class="space-y-2 animate-pop-up" style="--delay: 0.5s;">
 				<p class="font-mono text-[0.65rem] uppercase tracking-[0.25em]
 					bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent">
 					What you get
@@ -180,7 +183,7 @@
 
 
   <!-- Credit -->
-<div class=" text-center mb-10 absolute  left-10 bottom-0 opacity-60 hover:opacity-100 transition-opacity">
+<div class=" text-center absolute  left-10 bottom-30 opacity-60 hover:opacity-100 transition-opacity">
     <a
         href="https://github.com/ahson01"
         target="_blank"

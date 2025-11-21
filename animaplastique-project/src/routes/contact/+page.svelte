@@ -107,15 +107,16 @@
     <div class="max-w-3xl space-y-6">
       <p
         class="font-mono text-[0.65rem] uppercase tracking-[0.35em]
-           bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent"
+           bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent animate-pop-up"
       >
         AnimaPlastique · contact
       </p>
       <h1
         class="rapid-text font-inter text-balance text-4xl leading-tight -tracking-[0.06em]
-               sm:text-5xl lg:text-6xl text-[var(--text-strong)]"
+               sm:text-5xl lg:text-6xl text-[var(--text-strong)] "
       >
-        Tell us about the website you want to launch.
+        <span class="reveal-line block">Tell us about the website</span>
+         <span class="reveal-line block">you want to launch.</span>
       </h1>
     </div>
 
@@ -124,7 +125,7 @@
       <!-- Contact form -->
       <div
         class="w-full max-w-xl rounded-2xl border border-[var(--border)] bg-[var(--card-bg-soft)]
-               p-6 shadow-lg backdrop-blur"
+               p-6 shadow-lg backdrop-blur animate-pop-up"
       >
         <form class="space-y-5" on:submit={handleSubmit}>
           <!-- Name -->
@@ -297,34 +298,34 @@
         <div class="space-y-2">
           <p
             class="font-mono text-[0.65rem] uppercase tracking-[0.25em]
-               bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent"
+               bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent animate-pop-up" style="--delay: 0.05s;"
           >
             What to expect
           </p>
           <ul class="space-y-1.5 text-[var(--text-soft)]">
-            <li>→ A quick email back with clarifying questions, if needed.</li>
-            <li>→ Optional short call to align on goals, scope, and timeline.</li>
-            <li>→ Clear pricing and a simple, no-surprise project outline.</li>
+            <li class="animate-pop-up" style="--delay: 0.05s;">→ A quick email back with clarifying questions, if needed.</li>
+            <li class="animate-pop-up" style="--delay: 0.07s;">→ Optional short call to align on goals, scope, and timeline.</li>
+            <li class="animate-pop-up" style="--delay: 0.08s;">→ Clear pricing and a simple, no-surprise project outline.</li>
           </ul>
         </div>
 
         <div class="space-y-2">
           <p
             class="font-mono text-[0.65rem] uppercase tracking-[0.25em]
-               bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent"
+               bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent animate-pop-up" style="--delay :0.03s;"
           >
             Good fits
           </p>
           <ul class="space-y-1.5 text-[var(--text-soft)]">
-            <li>→ You value clean, modern design and thoughtful UX.</li>
-            <li>→ You want a site that feels light, fast, and future-proof.</li>
-            <li>→ You’re okay with opinionated suggestions on structure.</li>
+            <li class="animate-pop-up" style="--delay: 0.05s;">→ You value clean, modern design and thoughtful UX.</li>
+            <li class="animate-pop-up" style="--delay: 0.06s;">→ You want a site that feels light, fast, and future-proof.</li>
+            <li class="animate-pop-up" style="--delay: 0.09s;">→ You’re okay with opinionated suggestions on structure.</li>
           </ul>
         </div>
 
         <div
           class="rounded-2xl border border-[var(--border)] bg-[var(--card-bg-soft)]
-                 p-4 text-xs shadow-md backdrop-blur"
+                 p-4 text-xs shadow-md backdrop-blur animate-pop-up"
         >
           <p
             class="font-mono text-[0.65rem] uppercase tracking-[0.25em]

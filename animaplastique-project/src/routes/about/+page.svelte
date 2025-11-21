@@ -1,6 +1,7 @@
 <svelte:head>
 	<title>About · AnimaPlastique</title>
 </svelte:head>
+<script>  import { revealOnScroll } from '$lib/actions/revealOnScroll';</script>
 
 <section
 	class="relative flex w-full justify-center overflow-hidden bg-[var(--bg)] text-[var(--text)]"
@@ -33,7 +34,7 @@
 			<div class="space-y-7">
 				<p
 					class="font-mono text-[0.65rem] uppercase tracking-[0.35em]
-					   bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent"
+					   bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent animate-pop-up"
 				>
 					AnimaPlastique · studio profile
 				</p>
@@ -42,7 +43,9 @@
 					class="font-inter text-balance text-4xl leading-tight -tracking-[0.06em]
 					       sm:text-5xl lg:text-6xl rapid-text text-[var(--text-strong)]"
 				>
-					Small, opinionated, and obsessed with web detail.
+					<span class="reveal-line block">Small, opinionated, </span>
+					<span class="reveal-line block">and obsessed </span>
+					<span class="reveal-line block">with web detail.</span>
 				</h1>
 
 				<p class="max-w-xl text-sm leading-relaxed text-[var(--text-soft)]">
@@ -84,7 +87,7 @@
 						       uppercase tracking-[0.22em]
 						       border-[var(--border-strong)] bg-[var(--text-strong)] text-[var(--bg)] shadow-sm
 						       transition-all duration-200
-						       hover:-translate-y-0.5 hover:shadow-lg hover:bg-[color-mix(in_oklab,var(--text-strong) 85%,white)]"
+						       hover:-translate-y-0.5 hover:shadow-lg hover:bg-[color-mix(in_oklab,var(--text-strong) 85%,white)] animate-pop-up"
 					>
 						Start a project
 					</a>
@@ -96,7 +99,7 @@
 						       border border-[var(--border)] bg-transparent
 						       text-[var(--text-strong)]
 						       transition-all duration-200
-						       hover:-translate-y-0.5 hover:bg-[var(--chip-bg)] hover:text-[var(--text-strong)] hover:shadow-md"
+						       hover:-translate-y-0.5 hover:bg-[var(--chip-bg)] hover:text-[var(--text-strong)] hover:shadow-md animate-pop-up"
 					>
 						View work
 						<span class="font-mono text-xs">↗</span>
@@ -122,7 +125,7 @@
 				</div>
 
 				<div class="space-y-3">
-					<div class="flex items-start gap-4">
+					<div class="flex items-start gap-4 animate-pop-up" style="--delay: 0.1s">
 						<div
 							class="mt-[2px] flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-emerald-400/70 bg-emerald-500/10 text-[0.7rem] font-mono"
 						>
@@ -136,7 +139,7 @@
 						</div>
 					</div>
 
-					<div class="flex items-start gap-4">
+					<div class="flex items-start gap-4 animate-pop-up" style="--delay: 0.2s">
 						<div
 							class="mt-[2px] flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-rose-400/70 bg-rose-500/10 text-[0.7rem] font-mono"
 						>
@@ -151,7 +154,7 @@
 						</div>
 					</div>
 
-					<div class="flex items-start gap-4">
+					<div class="flex items-start gap-4 animate-pop-up" style="--delay: 0.3s">
 						<div
 							class="mt-[2px] flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-sky-400/70 bg-sky-500/10 text-[0.7rem] font-mono"
 						>
@@ -181,7 +184,7 @@
 
 		<!-- Tech stack row -->
 		<div
-			class="mt-6 rounded-2xl border border-[var(--border)] bg-[var(--card-bg-soft)] p-5 text-xs shadow-inner backdrop-blur-md"
+			class="animate-pop-up mt-6 rounded-2xl border border-[var(--border)] bg-[var(--card-bg-soft)] p-5 text-xs shadow-inner backdrop-blur-md"
 		>
 			<div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 				<div class="space-y-1">
@@ -219,49 +222,62 @@
 		</div>
 
 		<!-- Closing text row -->
-		<div class="mt-4 grid gap-8 border-t border-[var(--border-strong)] pt-10 text-xs sm:grid-cols-3 sm:text-[0.75rem]">
-			<div class="space-y-2">
-				<p
-					class="font-mono text-[0.65rem] uppercase tracking-[0.25em]
-					   bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent"
-				>
-					Pace & scope
-				</p>
-				<p class="text-[var(--text-soft)]">
-					Most sites ship in 1–3 weeks with 3–10 pages. We keep scope narrow, avoid endless feature creep, and
-					focus on nailing the first version.
-				</p>
-			</div>
+<div
+  class="mt-4 grid gap-8 border-t border-[var(--border-strong)] pt-10 text-xs sm:grid-cols-3 sm:text-[0.75rem]"
+>
+  <div
+    use:revealOnScroll
+    class="space-y-2 reveal-on-scroll"
+    style="--delay: 0s;"
+  >
+    <p
+      class="font-mono text-[0.65rem] uppercase tracking-[0.25em]
+         bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent"
+    >
+      Pace & scope
+    </p>
+    <p class="text-[var(--text-soft)]">
+      Most sites ship in 1–3 weeks with 3–10 pages. We keep scope narrow, avoid endless feature
+      creep, and focus on nailing the first version.
+    </p>
+  </div>
 
-			<div class="space-y-2">
-				<p
-					class="font-mono text-[0.65rem] uppercase tracking-[0.25em]
-					   bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent"
-				>
-					What we care about
-				</p>
-				<ul class="space-y-1 text-[var(--text-soft)]">
-					<li>→ Clear hierarchy and thoughtful typography.</li>
-					<li>→ Snappy performance on real devices, not just lab scores.</li>
-					<li>→ Admin experiences that aren’t a nightmare to use.</li>
-				</ul>
-			</div>
+  <div
+    use:revealOnScroll
+    class="space-y-2 reveal-on-scroll"
+    style="--delay: 0.12s;"
+  >
+    <p
+      class="font-mono text-[0.65rem] uppercase tracking-[0.25em]
+         bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent"
+    >
+      What we care about
+    </p>
+    <ul class="space-y-1 text-[var(--text-soft)]">
+      <li>→ Clear hierarchy and thoughtful typography.</li>
+      <li>→ Snappy performance on real devices, not just lab scores.</li>
+      <li>→ Admin experiences that aren’t a nightmare to use.</li>
+    </ul>
+  </div>
 
-			<div class="space-y-2">
-				<p
-					class="font-mono text-[0.65rem] uppercase tracking-[0.25em]
-					   bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent"
-				>
-					If this sounds right
-				</p>
-				<ul class="space-y-1 text-[var(--text-soft)]">
-					<li>→ Send a rough brief (or just a loom).</li>
-					<li>→ We’ll reply with a simple plan & timeline.</li>
-					<li>→ If we’re aligned, we start building within days, not months.</li>
-				</ul>
-			</div>
-		</div>
-
+  <div
+    use:revealOnScroll
+    class="space-y-2 reveal-on-scroll"
+    style="--delay: 0.24s;"
+  >
+    <p
+      class="font-mono text-[0.65rem] uppercase tracking-[0.25em]
+         bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent"
+    >
+      If this sounds right
+    </p>
+    <ul class="space-y-1 text-[var(--text-soft)]">
+      <li>→ Send a rough brief (or just a loom).</li>
+      <li>→ We’ll reply with a simple plan & timeline.</li>
+      <li>→ If we’re aligned, we start building within days, not months.</li>
+    </ul>
+  </div>
+</div>
 		<!-- India-based origin strip -->
 		<div class="mt-6 border-t border-[var(--border-strong)] pt-6">
 			<div

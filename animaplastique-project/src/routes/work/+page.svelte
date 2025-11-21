@@ -3,6 +3,7 @@
 </svelte:head>
 
 <script lang="ts">
+  import { revealOnScroll } from '$lib/actions/revealOnScroll';
 	type Project = {
 		title: string;
 		image: string;
@@ -51,7 +52,7 @@
 		<header class="space-y-4">
 			<p
 				class="font-mono text-[0.65rem] uppercase tracking-[0.35em]
-				   bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent"
+				   bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent animate-pop-up"
 			>
 				AnimaPlastique · selected work
 			</p>
@@ -61,12 +62,14 @@
 
 <!-- PROJECTS: full-width cinematic cards -->
 <div class="flex flex-col gap-10">
-	{#each projects as project}
+	{#each projects as project, i}
 		<a
+			use:revealOnScroll
 			href={project.link}
 			target="_blank"
 			rel="noopener noreferrer"
-			class="group relative w-full h-[450px] overflow-hidden rounded-2xl 
+			style={`--delay: ${i * 0.08}s`}
+			class="reveal-on-scroll group relative w-full h-[450px] overflow-hidden rounded-2xl 
 			       border border-white/10 bg-neutral-950/40 backdrop-blur-md
 			       shadow-lg transition-all duration-500 hover:shadow-2xl"
 		>

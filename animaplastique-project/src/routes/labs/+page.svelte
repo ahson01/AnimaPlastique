@@ -52,7 +52,7 @@
 		<header class="space-y-4">
 			<p
 				class="font-mono text-[0.65rem] uppercase tracking-[0.35em]
-				   bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent"
+				   bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent animate-pop-up"
 			>
 				AnimaPlastique · labs
 			</p>
@@ -61,7 +61,7 @@
 				<div class="space-y-2">
 					<h1
 						class="font-inter text-balance text-3xl leading-tight -tracking-[0.06em]
-						       sm:text-4xl lg:text-5xl rapid-text"
+						       sm:text-4xl lg:text-5xl rapid-text reveal-line block"
 					>
 						Lab notes straight from the repo.
 					</h1>
