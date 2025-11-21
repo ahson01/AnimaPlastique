@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Work · AnimaPLastique</title>
+	<title>Work · AnimaPlastique</title>
 </svelte:head>
 
 <script lang="ts">

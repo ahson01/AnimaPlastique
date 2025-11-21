@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>AnimaPLastique</title>
+	<title>AnimaPlastique</title>
 </svelte:head>
 
 <section class="relative flex w-full justify-center overflow-hidden">
