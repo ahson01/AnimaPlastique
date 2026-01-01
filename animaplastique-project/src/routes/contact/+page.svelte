@@ -277,7 +277,7 @@
 
           <button
             type="submit"
-            class="inline-flex items-center justify-center rounded-full border px-4 py-2 text-xs font-medium
+            class="interactable inline-flex items-center justify-center rounded-full border px-4 py-2 text-xs font-medium
                    uppercase tracking-[0.2em]
                    border-[var(--text-strong)] bg-[var(--text-strong)] text-[var(--bg)]
                    shadow-sm transition hover:bg-[color-mix(in_oklab,var(--text-strong) 85%,white)]
