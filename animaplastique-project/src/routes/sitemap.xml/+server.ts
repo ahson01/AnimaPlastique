@@ -3,10 +3,9 @@ import type { RequestHandler } from '@sveltejs/kit';
 
 export const GET: RequestHandler = async () => {
 	return sitemap.response({
-		origin: 'https://animaplastique.xyz',
-        excludeRoutePatterns: [
-			'^/labs/\\[slug\\]$'
+		origin: 'https://www.animaplastique.xyz', // use your canonical domain
+		excludeRoutePatterns: [
+			'^/labs/.*'
 		]
-
 	});
 };
