@@ -32,14 +32,14 @@
 
 	const projects: Project[] = [
 
-		{
-			title: 'My Portfolio Site',
-			image:
-				'https://github.com/ahson01/notes/blob/main/img/portfolio.png?raw=true',
-			link: 'https://ahson01.github.io/',
-			description: 'This is a portfolio site for my github account @ahson01',
-			tags: ['react', 'ts', 'vercel']
-		}
+//		{
+//			title: 'My Portfolio Site',
+//			image:
+//				'https://github.com/ahson01/notes/blob/main/img/portfolio.png?raw=true',
+//			link: 'https://ahson01.github.io/',
+//			description: 'This is a portfolio site for my github account @ahson01',
+//			tags: ['react', 'ts', 'vercel']
+//		}
 	];
 
 </script>
@@ -62,6 +62,42 @@
 
 <!-- PROJECTS: full-width cinematic cards -->
 <div class="flex flex-col gap-10">
+
+<!-- If no projects yet, show a friendly CTA -->
+{#if projects.length === 0}
+    <div
+        use:revealOnScroll
+        class="reveal-on-scroll flex flex-col items-center text-center py-20 gap-4"
+        style="--delay: 0.1s"
+    >
+        <h2 class="text-3xl font-bold bg-gradient-to-r from-slate-100 to-slate-500 bg-clip-text text-transparent">
+            We're currently booking new work
+        </h2>
+
+        <p class="max-w-md text-neutral-300 text-sm">
+            We partner with brands, creators, and startups to build
+            digital experiences that look exceptional and feel alive.
+            Got a project in mind?
+        </p>
+<br>
+					<a
+						href="/contact"
+						class="interactable inline-flex items-center justify-center rounded-full border px-6 py-2.5 text-[0.7rem]
+						       uppercase tracking-[0.22em]
+						       border-neutral-900/20 bg-neutral-900 text-neutral-50 shadow-sm
+						       transition-all duration-200
+						       hover:-translate-y-0.5 hover:shadow-lg hover:bg-neutral-800
+						       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500/70 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950
+						       dark:border-neutral-50/15 dark:bg-neutral-50 dark:text-neutral-900
+						       dark:hover:bg-neutral-100 dark:hover:border-neutral-50/30
+						       dark:focus-visible:ring-rose-400/80 dark:focus-visible:ring-offset-neutral-900 animate-pop-up"
+					>
+						Start a project
+					</a>
+    </div>
+{/if}
+
+
 	{#each projects as project, i}
 		<a
 			use:revealOnScroll
