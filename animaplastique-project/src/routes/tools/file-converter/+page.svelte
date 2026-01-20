@@ -231,7 +231,7 @@
           WASM File Converter · Privacy-first
         </p>
         <p class="max-w-xl text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
-          WebAssembly-powered conversions that happen entirely on your device. No uploads, no servers, no tracking. Your files never leave your browser.
+          Conversions that happen entirely on your device. No uploads, no servers, no tracking. Your files never leave your browser.
         </p>
 
         <div 
