@@ -27,6 +27,12 @@
     { href: '#', label: 'Minecraft (coming soon)' }
   ];
 
+
+  // Tools section
+  const toolLinks = [
+    { href: '/tools/file-converter', label: 'File Converter' }
+  ];
+
   let theme: 'dark' | 'light' = 'dark';
   let isMenuOpen = false;
 
@@ -88,6 +94,12 @@
     if (path.startsWith('/community') || path.startsWith('/minecraft')) {
       return navEl.querySelector('a[data-nav-root="community"]') as HTMLAnchorElement | null;
     }
+
+    // Grouped: Tools routes
+    if (path.startsWith('/tools')) {
+      return navEl.querySelector('a[data-nav-root="tools"]') as HTMLAnchorElement | null;
+    }
+
 
     // Direct match for simple core links
     const el = navEl.querySelector(
@@ -261,6 +273,35 @@
               {/each}
             </div>
           </li>
+
+          <!-- Tools dropdown -->
+        <li class="group relative pb-1">
+          <a
+            href="#"
+            aria-current={currentPath.startsWith('/tools') ? 'page' : undefined}
+            class="ap-nav-link flex items-center gap-1 mt-1 text-[var(--text-soft)]"
+            data-nav-root="tools"
+            on:mouseenter={handleHover}
+            on:click={handleNavClick}
+          >
+            Tools
+            <span class="text-[0.5rem] translate-y-[0.5px]">▾</span>
+          </a>
+
+          <div
+            class="pointer-events-none absolute left-0 top-full w-48 rounded-xl border border-[var(--border)] bg-[var(--card-bg-soft)] p-2 text-[0.65rem] shadow-lg backdrop-blur-sm opacity-0 translate-y-1 transition-all duration-150 ease-out group-hover:pointer-events-auto group-hover:opacity-100 group-hover:translate-y-0"
+          >
+            {#each toolLinks as item}
+              <a
+                href={item.href}
+                class="block rounded-md px-3 py-1.5 text-[0.65rem] uppercase tracking-[0.2em] ap-nav-link text-[var(--text-soft)] hover:text-[var(--text-strong)]"
+              >
+                {item.label}
+              </a>
+            {/each}
+          </div>
+        </li>
+
         </ul>
       </nav>
 
@@ -354,6 +395,24 @@
             {/each}
           </div>
         </li>
+
+              <!-- Tools group -->
+      <li class="mt-3">
+        <div class="text-[0.6rem] uppercase tracking-[0.3em] text-[var(--text-muted)]">
+          Tools
+        </div>
+        <div class="flex flex-col gap-1">
+          {#each toolLinks as item}
+            <a
+              href={item.href}
+              class="ap-nav-link flex items-center rounded-md py-1.5 pl-3 text-[var(--text-soft)]"
+            >
+              {item.label}
+            </a>
+          {/each}
+        </div>
+      </li>
+
       </ul>
     </nav>
   {/if}

@@ -46,7 +46,7 @@
 
 <section class="relative flex w-full justify-center overflow-hidden">
 
-
+		
 	<div class="mx-auto flex w-full max-w-6xl flex-col gap-8 px-6 pt-18 pb-24 lg:pt-22">
 		<!-- Header -->
 		<header class="space-y-4">
