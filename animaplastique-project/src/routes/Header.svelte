@@ -472,3 +472,5 @@
     --glow-green: rgba(52, 211, 153, 0.22);
   }
 </style>
+
+<meta name="google-adsense-account" content="ca-pub-4761348886535927">
