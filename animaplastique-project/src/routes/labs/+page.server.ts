@@ -27,9 +27,9 @@ export const load: PageServerLoad = async ({ fetch }) => {
 	const headers: HeadersInit = {
 		Accept: 'application/vnd.github.v3+json'
 	};
-	if (GITHUB_TOKEN) {
+	if (env.GITHUB_TOKEN) {
 		// Same style as your Next example
-		headers.Authorization = `token ${GITHUB_TOKEN}`;
+		headers.Authorization = `token ${env.GITHUB_TOKEN}`;
 	}
 
 	// 1) Get full tree
@@ -65,7 +65,8 @@ export const load: PageServerLoad = async ({ fetch }) => {
 			}
 
 			const rawMarkdown = await contentRes.text();
-			const { data: frontmatter } = matter<LabFrontmatter>(rawMarkdown);
+			const { data } = matter(rawMarkdown);
+			const frontmatter = data as LabFrontmatter;
 
 			const fileName: string = file.path.split('/').pop() || '';
 			const baseName = fileName.replace(/\.mdx?$/i, '');

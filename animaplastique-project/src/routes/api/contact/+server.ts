@@ -99,7 +99,7 @@ export const POST: RequestHandler = async (event) => {
 			'```'
 		].join('\n');
 
-		const res = await fetch(env.DISCORD_WEBHOOK_URL, {
+		const res = await fetch(env.DISCORD_WEBHOOK_URL || '', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ content })
