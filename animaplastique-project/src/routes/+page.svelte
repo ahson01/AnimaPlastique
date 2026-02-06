@@ -192,6 +192,7 @@
 		</div>
 	</div>
 
+<<<<<<< HEAD
 	<!-- Credit -->
 	<div class="absolute bottom-6 left-6 opacity-60 transition-opacity hover:opacity-100">
 		<a
@@ -204,4 +205,20 @@
 			Crafted by ahson01
 		</a>
 	</div>
+=======
+
+  <!-- Credit -->
+<div class=" text-center absolute  left-10 bottom-30 opacity-60 hover:opacity-100 transition-opacity">
+    <a
+        href="https://github.com/ahson01"
+        target="_blank"
+        rel="noopener"
+        class="font-mono text-[0.65rem] tracking-[0.25em] uppercase
+               text-neutral-600 dark:text-neutral-400 hover:text-rose-500 dark:hover:text-rose-400"
+    >
+        Crafted by ahson01
+    </a>
+</div>
+	
+>>>>>>> parent of dac7d0d (fixed position of credits)
 </section>
