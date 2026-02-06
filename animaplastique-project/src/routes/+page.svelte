@@ -183,7 +183,7 @@
 
 
   <!-- Credit -->
-<div class=" text-center absolute  left-10 bottom-30 opacity-60 hover:opacity-100 transition-opacity">
+<div class="absolute left-6 bottom-6 opacity-60 hover:opacity-100 transition-opacity">
     <a
         href="https://github.com/ahson01"
         target="_blank"
