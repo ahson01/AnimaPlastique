@@ -1,6 +1,10 @@
 export const prerender = false;
-export const runtime = 'edge';
 export const ssr = true;
+
+export const config = {
+    runtime: 'edge'
+};
+
 
 import { getCountryFromRequest, getCurrencyForCountry } from '$lib/server/geolocation';
 import { getExchangeRate } from '$lib/server/currency';
