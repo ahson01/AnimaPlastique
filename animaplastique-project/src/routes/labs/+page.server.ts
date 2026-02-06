@@ -1,7 +1,7 @@
 // src/routes/labs/+page.server.ts
 import type { PageServerLoad } from './$types';
 import matter from 'gray-matter';
-import { GITHUB_TOKEN } from '$env/static/private';
+import { env } from '$env/dynamic/private';
 
 type LabFrontmatter = {
 	title?: string;

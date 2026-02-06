@@ -1,6 +1,6 @@
 // src/routes/api/contact/+server.ts
 import type { RequestHandler } from './$types';
-import { DISCORD_WEBHOOK_URL } from '$env/static/private';
+import { env } from '$env/dynamic/private';
 
 // Very simple in-memory rate limiter (per IP)
 type RateEntry = { count: number; last: number };
@@ -99,7 +99,7 @@ export const POST: RequestHandler = async (event) => {
 			'```'
 		].join('\n');
 
-		const res = await fetch(DISCORD_WEBHOOK_URL, {
+		const res = await fetch(env.DISCORD_WEBHOOK_URL, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ content })
