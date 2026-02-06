@@ -49,6 +49,8 @@
 		"@fortawesome/free-brands-svg-icons": "^7.1.0",
 		"@fortawesome/free-regular-svg-icons": "^7.1.0",
 		"@fortawesome/free-solid-svg-icons": "^7.1.0",
+		"@types/geoip-lite": "^1.4.4",
+		"geoip-lite": "^1.4.10",
 		"gray-matter": "^4.0.3",
 		"lucide-svelte": "^0.562.0",
 		"marked": "^17.0.0",
