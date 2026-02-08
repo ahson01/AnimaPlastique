@@ -37,7 +37,7 @@
 
 				<h1
 					class="font-inter rapid-text text-4xl leading-tight -tracking-[0.06em]
-					       text-balance sm:text-5xl lg:text-6xl xl:text-7xl"
+					       text-balance sm:text-5xl lg:text-6xl "
 				>
 					<span class="reveal-line" style="--delay: 0.1s">Rapidly launch modern</span><br />
 					<span class="reveal-line" style="--delay: 0.2s">websites without limits-</span><br />
