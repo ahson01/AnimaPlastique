@@ -30,7 +30,8 @@
 		{ href: '/tools/json-formatter', label: 'JSON Formatter' },
 		{ href: '/tools/color-palette', label: 'Color Palette' },
 		{ href: '/tools/meta-preview', label: 'Meta Preview' },
-		{ href: '/tools/exif-insight', label: 'Exif Insight' }
+		{ href: '/tools/exif-insight', label: 'Exif Insight' },
+		{ href: '/tools/qr-code-studio', label: 'QR Code Studio' }
 	];
 
 	let theme: 'dark' | 'light' = 'dark';

@@ -83,7 +83,7 @@
 				class="animate-pop-up bg-gradient-to-r from-emerald-500 to-rose-500
 				   bg-clip-text font-mono text-[0.65rem] tracking-[0.35em] text-transparent uppercase"
 			>
-				Services
+			AnimaPlastique · Services
 			</p>
 
 			<h1
