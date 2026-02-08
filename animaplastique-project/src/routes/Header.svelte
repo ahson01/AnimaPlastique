@@ -21,6 +21,11 @@
 			label: 'Discord',
 			external: true
 		},
+		{
+			href: 'https://instagram.com/animaplastique',
+			label: 'Instagram',
+			external: true
+		},
 		{ label: 'Minecraft (coming soon)', disabled: true }
 	];
 
