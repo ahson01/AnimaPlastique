@@ -1,14 +1,13 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import Header from './Header.svelte';
 	import '../app.css';
-	import { currency } from '$lib/stores/currency';
+	import { initializeCurrency } from '$lib/stores/currency';
 
-	let { children, data }: { children: any; data: { currency: { code: string } } } = $props();
+	let { children }: { children: any } = $props();
 
-	$effect(() => {
-		if (data.currency) {
-			currency.set(data.currency);
-		}
+	onMount(() => {
+		initializeCurrency();
 	});
 </script>
 
