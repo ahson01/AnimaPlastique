@@ -84,6 +84,10 @@
 			cornersSquareOptions: {
 				type: cornersType,
 				color: dotsColor
+			},
+			cornersDotOptions: {
+				type: 'dot',
+				color: dotsColor
 			}
 		});
 	}
