@@ -1,9 +1,11 @@
 import * as sitemap from 'super-sitemap';
 import type { RequestHandler } from '@sveltejs/kit';
 
+export const prerender = true;
+
 export const GET: RequestHandler = async () => {
-	return sitemap.response({
-		origin: 'https://www.animaplastique.xyz', // use your canonical domain
+	return await sitemap.response({
+		origin: 'https://www.animaplastique.xyz',
 		excludeRoutePatterns: [
 			'^/labs/.*'
 		]

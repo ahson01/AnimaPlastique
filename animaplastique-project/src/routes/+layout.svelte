@@ -3,7 +3,7 @@
 	import '../app.css';
 	import { currency } from '$lib/stores/currency';
 
-	let { children, data }: { children: any; data: { currency: any } } = $props();
+	let { children, data }: { children: any; data: { currency: { code: string } } } = $props();
 
 	$effect(() => {
 		if (data.currency) {

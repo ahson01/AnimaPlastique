@@ -7,26 +7,14 @@ type CurrencyState = {
     country: string;
 };
 
-export const currency: Writable<CurrencyState> = writable({
-    code: 'INR',
-    rate: 1,
-    country: 'IN'
+export const currency = writable({
+    code: 'INR'
 });
 
-export const formatPrice = (amountInINR: number, state: CurrencyState) => {
-    if (state.code === 'INR') {
-        return new Intl.NumberFormat('en-IN', {
-            style: 'currency',
-            currency: 'INR',
-            maximumFractionDigits: 0
-        }).format(amountInINR);
-    }
-
-    // Round up to nearest integer to avoid small fluctuations
-    const converted = Math.ceil(amountInINR * state.rate);
-    return new Intl.NumberFormat('en-US', {
+export const formatPrice = (amountInINR: number, _state: any) => {
+    return new Intl.NumberFormat('en-IN', {
         style: 'currency',
-        currency: state.code,
+        currency: 'INR',
         maximumFractionDigits: 0
-    }).format(converted);
+    }).format(amountInINR);
 };

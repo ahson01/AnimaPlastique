@@ -1,9 +1,5 @@
-<svelte:head>
-	<title>Work · AnimaPlastique</title>
-</svelte:head>
-
 <script lang="ts">
-  import { revealOnScroll } from '$lib/actions/revealOnScroll';
+	import { revealOnScroll } from '$lib/actions/revealOnScroll';
 	type Project = {
 		title: string;
 		image: string;
@@ -13,7 +9,6 @@
 		tags?: string[];
 	};
 
-	// Map display tag -> skillicons slug
 	const iconSlugMap: Record<string, string> = {
 		Python: 'python',
 		React: 'react',
@@ -30,157 +25,139 @@
 		Docker: 'docker'
 	};
 
-	const projects: Project[] = [
-
-//		{
-//			title: 'My Portfolio Site',
-//			image:
-//				'https://github.com/ahson01/notes/blob/main/img/portfolio.png?raw=true',
-//			link: 'https://ahson01.github.io/',
-//			description: 'This is a portfolio site for my github account @ahson01',
-//			tags: ['react', 'ts', 'vercel']
-//		}
-	];
-
+	const projects: Project[] = [];
 </script>
 
-<section class="relative flex w-full justify-center overflow-hidden">
+<svelte:head>
+	<title>Work · AnimaPlastique</title>
+</svelte:head>
 
-		
+<section class="relative flex w-full justify-center overflow-hidden">
 	<div class="mx-auto flex w-full max-w-6xl flex-col gap-8 px-6 pt-18 pb-24 lg:pt-22">
 		<!-- Header -->
 		<header class="space-y-4">
 			<p
-				class="font-mono text-[0.65rem] uppercase tracking-[0.35em]
-				   bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent animate-pop-up"
+				class="animate-pop-up bg-gradient-to-r from-rose-400 to-red-500
+				   bg-clip-text font-mono text-[0.65rem] tracking-[0.35em] text-transparent uppercase"
 			>
 				AnimaPlastique · selected work
 			</p>
-
-
 		</header>
 
-<!-- PROJECTS: full-width cinematic cards -->
-<div class="flex flex-col gap-10">
+		<div class="flex flex-col gap-10">
+			{#if projects.length === 0}
+				<div
+					use:revealOnScroll
+					class="reveal-on-scroll flex flex-col items-center gap-4 py-20 text-center"
+					style="--delay: 0.1s"
+				>
+					<h2
+						class="bg-gradient-to-r from-slate-100 to-slate-500 bg-clip-text text-3xl font-bold text-transparent"
+					>
+						We're currently booking new work
+					</h2>
 
-<!-- If no projects yet, show a friendly CTA -->
-{#if projects.length === 0}
-    <div
-        use:revealOnScroll
-        class="reveal-on-scroll flex flex-col items-center text-center py-20 gap-4"
-        style="--delay: 0.1s"
-    >
-        <h2 class="text-3xl font-bold bg-gradient-to-r from-slate-100 to-slate-500 bg-clip-text text-transparent">
-            We're currently booking new work
-        </h2>
-
-        <p class="max-w-md text-neutral-300 text-sm">
-            We partner with brands, creators, and startups to build
-            digital experiences that look exceptional and feel alive.
-            Got a project in mind?
-        </p>
-<br>
+					<p class="max-w-md text-sm text-neutral-300">
+						We partner with brands, creators, and startups to build digital experiences that look
+						exceptional and feel alive. Got a project in mind?
+					</p>
+					<br />
 					<a
 						href="/contact"
-						class="interactable inline-flex items-center justify-center rounded-full border px-6 py-2.5 text-[0.7rem]
-						       uppercase tracking-[0.22em]
-						       border-neutral-900/20 bg-neutral-900 text-neutral-50 shadow-sm
-						       transition-all duration-200
-						       hover:-translate-y-0.5 hover:shadow-lg hover:bg-neutral-800
-						       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500/70 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950
-						       dark:border-neutral-50/15 dark:bg-neutral-50 dark:text-neutral-900
-						       dark:hover:bg-neutral-100 dark:hover:border-neutral-50/30
-						       dark:focus-visible:ring-rose-400/80 dark:focus-visible:ring-offset-neutral-900 animate-pop-up"
+						class="interactable animate-pop-up inline-flex items-center justify-center rounded-full border border-neutral-900/20 bg-neutral-900
+						       px-6 py-2.5
+						       text-[0.7rem] tracking-[0.22em] text-neutral-50 uppercase
+						       shadow-sm transition-all
+						       duration-200 hover:-translate-y-0.5 hover:bg-neutral-800
+						       hover:shadow-lg focus-visible:ring-2 focus-visible:ring-rose-500/70 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950
+						       focus-visible:outline-none dark:border-neutral-50/15 dark:bg-neutral-50
+						       dark:text-neutral-900 dark:hover:border-neutral-50/30
+						       dark:hover:bg-neutral-100 dark:focus-visible:ring-rose-400/80 dark:focus-visible:ring-offset-neutral-900"
 					>
 						Start a project
 					</a>
-    </div>
-{/if}
-
-
-	{#each projects as project, i}
-		<a
-			use:revealOnScroll
-			href={project.link}
-			target="_blank"
-			rel="noopener noreferrer"
-			style={`--delay: ${i * 0.08}s`}
-			class="reveal-on-scroll group relative w-full h-[450px] overflow-hidden rounded-2xl 
-			       border border-white/10 bg-neutral-950/40 backdrop-blur-md
-			       shadow-lg transition-all duration-500 hover:shadow-2xl"
-		>
-			<!-- background image -->
-			<img
-				src={project.image}
-				alt={project.title}
-				class="absolute inset-0 w-full h-full object-cover 
-				       opacity-60 brightness-[0.65]
-				       transition-all duration-500 group-hover:opacity-100 group-hover:brightness-100 group-hover:scale-105"
-				loading="lazy"
-			/>
-
-			<!-- overlay gradient -->
-			<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-black/20"></div>
-
-			<!-- content -->
-			<div
-				class="relative z-20 flex flex-col justify-end h-full p-10 
-				       text-left transition-all duration-500 group-hover:-translate-y-2"
-			>
-				<h2 class="text-3xl font-bold text-white drop-shadow-md">
-					{project.title}
-				</h2>
-
-				<p class="mt-2 max-w-xl text-sm text-neutral-200">
-					{project.description}
-				</p>
-
-				{#if project.details}
-					<p class="mt-1 text-xs italic text-neutral-300">
-						{project.details}
-					</p>
-				{/if}
-
-				<!-- tags -->
-				{#if project.tags}
-					<div class="flex flex-wrap gap-2 mt-4">
-						{#each project.tags as tag}
-							<span
-								class="flex items-center gap-1 bg-white/10 px-3 py-1 rounded-full 
-									   text-xs text-neutral-100 backdrop-blur-sm"
-							>
-								{#if iconSlugMap[tag]}
-									<img
-										src={`https://skillicons.dev/icons?i=${iconSlugMap[tag]}`}
-										alt={tag}
-										class="h-4 w-4"
-									/>
-								{/if}
-								{tag}
-							</span>
-						{/each}
-					</div>
-				{/if}
-
-				<!-- visit button -->
-				<div class="mt-5 opacity-0 translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
-					<div
-						class="inline-flex items-center gap-2 rounded-lg bg-white text-black px-3 py-1.5 text-xs 
-						       shadow-sm hover:bg-white/90 transition"
-					>
-						Visit site
-						<svg width="15" height="15" viewBox="0 0 15 15" fill="none">
-							<path
-								d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
-								fill="currentColor"
-							/>
-						</svg>
-					</div>
 				</div>
-			</div>
-		</a>
-	{/each}
-</div>
+			{/if}
 
+			{#each projects as project, i}
+				<a
+					use:revealOnScroll
+					href={project.link}
+					target="_blank"
+					rel="noopener noreferrer"
+					style={`--delay: ${i * 0.08}s`}
+					class="reveal-on-scroll group relative h-[450px] w-full overflow-hidden rounded-2xl
+			       border border-white/10 bg-neutral-950/40 shadow-lg
+			       backdrop-blur-md transition-all duration-500 hover:shadow-2xl"
+				>
+					<img
+						src={project.image}
+						alt={project.title}
+						class="absolute inset-0 h-full w-full object-cover
+				       opacity-60 brightness-[0.65]
+				       transition-all duration-500 group-hover:scale-105 group-hover:opacity-100 group-hover:brightness-100"
+						loading="lazy"
+					/>
+
+					<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-black/20"></div>
+
+					<div
+						class="relative z-20 flex h-full flex-col justify-end p-10
+				       text-left transition-all duration-500 group-hover:-translate-y-2"
+					>
+						<h2 class="text-3xl font-bold text-white drop-shadow-md">
+							{project.title}
+						</h2>
+
+						<p class="mt-2 max-w-xl text-sm text-neutral-200">
+							{project.description}
+						</p>
+
+						{#if project.details}
+							<p class="mt-1 text-xs text-neutral-300 italic">
+								{project.details}
+							</p>
+						{/if}
+
+						{#if project.tags}
+							<div class="mt-4 flex flex-wrap gap-2">
+								{#each project.tags as tag}
+									<span
+										class="flex items-center gap-1 rounded-full bg-white/10 px-3 py-1
+									   text-xs text-neutral-100 backdrop-blur-sm"
+									>
+										{#if iconSlugMap[tag]}
+											<img
+												src={`https://skillicons.dev/icons?i=${iconSlugMap[tag]}`}
+												alt={tag}
+												class="h-4 w-4"
+											/>
+										{/if}
+										{tag}
+									</span>
+								{/each}
+							</div>
+						{/if}
+
+						<div
+							class="mt-5 translate-y-3 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+						>
+							<div
+								class="inline-flex items-center gap-2 rounded-lg bg-white px-3 py-1.5 text-xs text-black
+						       shadow-sm transition hover:bg-white/90"
+							>
+								Visit site
+								<svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+									<path
+										d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
+										fill="currentColor"
+									/>
+								</svg>
+							</div>
+						</div>
+					</div>
+				</a>
+			{/each}
+		</div>
 	</div>
 </section>

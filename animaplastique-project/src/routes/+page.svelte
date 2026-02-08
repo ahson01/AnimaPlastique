@@ -7,21 +7,17 @@
 </svelte:head>
 
 <section class="relative flex w-full justify-center overflow-hidden">
-	<!-- soft background glows to make the glass pop -->
 	<div class="pointer-events-none absolute inset-0 -z-10">
-		<!-- top-left light glow -->
 		<div
 			class="absolute -top-32 -left-24 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(255,255,255,0.6),transparent)] opacity-25
 		            blur-3xl dark:opacity-20"
 		></div>
 
-		<!-- bottom-right neutral shadow -->
 		<div
 			class="absolute -right-24 -bottom-24 h-96 w-96 rounded-full bg-[radial-gradient(closest-side,rgba(0,0,0,0.3),transparent)] opacity-20
 		            blur-3xl dark:opacity-30"
 		></div>
 
-		<!-- NEW: dark reddish accent gradient -->
 		<div
 			class="absolute right-0 bottom-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full bg-[radial-gradient(closest-side,rgba(180,30,40,0.4),transparent)]
 		            opacity-40 blur-[120px]
@@ -30,10 +26,8 @@
 	</div>
 
 	<div class="mx-auto flex w-full max-w-6xl flex-col gap-12 px-6 pt-18 pb-24 lg:pt-22">
-		<!-- Top: hero row -->
-		<div class="flex flex-col gap-12 lg:flex-row lg:items-center">
-			<!-- Left -->
-			<div class="max-w-3xl space-y-7">
+		<div class="flex flex-col gap-12 lg:flex-row lg:items-center lg:justify-between">
+			<div class="max-w-2xl space-y-7">
 				<p
 					class="animate-pop-up bg-gradient-to-r from-rose-400 to-red-500
 					bg-clip-text font-mono text-[0.65rem] tracking-[0.35em] text-transparent uppercase"
@@ -45,10 +39,10 @@
 					class="font-inter rapid-text text-4xl leading-tight -tracking-[0.06em]
 					       text-balance sm:text-5xl lg:text-6xl xl:text-7xl"
 				>
-					<span class="reveal-line rapid-text">Rapidly launch modern</span>
-					<span class="reveal-line rapid-text">websites without limits-</span>
-					<span class="reveal-line rapid-text">flexible, future-ready,</span>
-					<span class="reveal-line rapid-text">and built to scale.</span>
+					<span class="reveal-line" style="--delay: 0.1s">Rapidly launch modern</span><br />
+					<span class="reveal-line" style="--delay: 0.2s">websites without limits-</span><br />
+					<span class="reveal-line" style="--delay: 0.3s">flexible, future-ready,</span><br />
+					<span class="reveal-line" style="--delay: 0.4s">and built to scale.</span>
 				</h1>
 
 				<p class="max-w-xl text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
@@ -57,7 +51,6 @@
 				</p>
 
 				<div class="flex flex-wrap items-center gap-4">
-					<!-- Primary CTA -->
 					<a
 						href="/contact"
 						class="interactable animate-pop-up inline-flex items-center justify-center rounded-full border border-neutral-900/20 bg-neutral-900
@@ -73,7 +66,6 @@
 						Start a project
 					</a>
 
-					<!-- Secondary / Ghost CTA -->
 					<a
 						href="/work"
 						class="interactable animate-pop-up inline-flex items-center justify-center gap-2 rounded-full border border-neutral-900/20
@@ -145,7 +137,6 @@
 			</div>
 		</div>
 
-		<!-- Bottom: info -->
 		<div
 			class="mt-4 grid gap-8 border-t border-white/10 pt-10 text-xs sm:grid-cols-3 sm:text-[0.75rem]"
 		>
@@ -192,33 +183,15 @@
 		</div>
 	</div>
 
-<<<<<<< HEAD
-	<!-- Credit -->
-	<div class="absolute bottom-6 left-6 opacity-60 transition-opacity hover:opacity-100">
+	<div class="absolute bottom-6 left-6 opacity-40 transition-all hover:opacity-100">
 		<a
 			href="https://github.com/ahson01"
 			target="_blank"
 			rel="noopener"
-			class="font-mono text-[0.65rem] tracking-[0.25em] text-neutral-600
-               uppercase hover:text-rose-500 dark:text-neutral-400 dark:hover:text-rose-400"
+			class="font-mono text-[0.6rem] tracking-[0.2em] text-[var(--text-muted)]
+               uppercase transition-colors hover:text-rose-500 dark:hover:text-rose-400"
 		>
 			Crafted by ahson01
 		</a>
 	</div>
-=======
-
-  <!-- Credit -->
-<div class=" text-center absolute  left-10 bottom-30 opacity-60 hover:opacity-100 transition-opacity">
-    <a
-        href="https://github.com/ahson01"
-        target="_blank"
-        rel="noopener"
-        class="font-mono text-[0.65rem] tracking-[0.25em] uppercase
-               text-neutral-600 dark:text-neutral-400 hover:text-rose-500 dark:hover:text-rose-400"
-    >
-        Crafted by ahson01
-    </a>
-</div>
-	
->>>>>>> parent of dac7d0d (fixed position of credits)
 </section>
