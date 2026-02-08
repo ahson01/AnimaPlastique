@@ -1,7 +1,3 @@
-<svelte:head>
-	<title>Projects · AnimaPlastique</title>
-</svelte:head>
-
 <script lang="ts">
 	export type Repo = {
 		name: string;
@@ -26,25 +22,29 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Projects · AnimaPlastique</title>
+</svelte:head>
+
 <section class="relative flex w-full justify-center overflow-hidden">
 	<!-- background glows -->
 	<div class="pointer-events-none absolute inset-0 -z-10">
 		<div
-			class="absolute -top-32 -left-24 h-72 w-72 rounded-full blur-3xl opacity-25
-			       bg-[radial-gradient(closest-side,rgba(255,255,255,0.6),transparent)]
+			class="absolute -top-32 -left-24 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(255,255,255,0.6),transparent)] opacity-25
+			       blur-3xl
 			       dark:opacity-20"
 		></div>
 
 		<div
-			class="absolute -bottom-24 -right-24 h-96 w-96 rounded-full blur-3xl opacity-20
-			       bg-[radial-gradient(closest-side,rgba(0,0,0,0.3),transparent)]
+			class="absolute -right-24 -bottom-24 h-96 w-96 rounded-full bg-[radial-gradient(closest-side,rgba(0,0,0,0.3),transparent)] opacity-20
+			       blur-3xl
 			       dark:opacity-30"
 		></div>
 
 		<div
-			class="absolute bottom-0 right-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full blur-[120px]
-			       opacity-40 bg-[radial-gradient(closest-side,rgba(180,30,40,0.4),transparent)]
-			       dark:opacity-60 dark:bg-[radial-gradient(closest-side,rgba(220,50,60,0.35),transparent)]"
+			class="absolute right-0 bottom-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full bg-[radial-gradient(closest-side,rgba(180,30,40,0.4),transparent)]
+			       opacity-40 blur-[120px]
+			       dark:bg-[radial-gradient(closest-side,rgba(220,50,60,0.35),transparent)] dark:opacity-60"
 		></div>
 	</div>
 
@@ -52,8 +52,8 @@
 		<!-- Header -->
 		<header class="space-y-4">
 			<p
-				class="font-mono text-[0.65rem] uppercase tracking-[0.35em]
-				   bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent animate-pop-up"
+				class="animate-pop-up bg-gradient-to-r from-rose-400 to-red-500
+				   bg-clip-text font-mono text-[0.65rem] tracking-[0.35em] text-transparent uppercase"
 			>
 				AnimaPlastique · GitHub projects
 			</p>
@@ -61,14 +61,16 @@
 			<div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
 				<div class="space-y-2">
 					<h1
-						class="font-inter text-balance text-3xl leading-tight -tracking-[0.06em]
-						       sm:text-4xl lg:text-5xl rapid-text reveal-line block"
+						class="font-inter rapid-text reveal-line block text-3xl
+						       leading-tight -tracking-[0.06em] text-balance sm:text-4xl lg:text-5xl"
 					>
-						Selected repositories from <span class="font-mono rapid-text">@{username}</span>.
+						<span class="reveal-line block">
+							<span class="rapid-text">Selected repositories from <span class="rapid-text font-mono">@{username}</span>.</span>
+						</span>
 					</h1>
 					<p class="max-w-2xl text-sm leading-relaxed text-neutral-400">
-						Small utilities, bots, experiments, and tools that live on GitHub. These repos are a good
-						snapshot of how we write code in the wild: pragmatic, documented, and shipped.
+						Small utilities, bots, experiments, and tools that live on GitHub. These repos are a
+						good snapshot of how we write code in the wild: pragmatic, documented, and shipped.
 					</p>
 				</div>
 
@@ -76,14 +78,14 @@
 					href={`https://github.com/${username}`}
 					target="_blank"
 					rel="noopener noreferrer"
-					class="mt-2 inline-flex items-center justify-center rounded-full border p-5 py-2 text-[0.7rem]
-					       uppercase tracking-[0.22em]
-					       border-neutral-900/20 bg-neutral-900 text-neutral-50 shadow-sm
+					class="mt-2 inline-flex items-center justify-center rounded-full border border-neutral-900/20 bg-neutral-900 p-5
+					       py-2 text-[0.7rem]
+					       tracking-[0.22em] text-neutral-50 uppercase shadow-sm
 					       transition-all duration-200
-					       hover:-translate-y-0.5 hover:shadow-lg hover:bg-neutral-800
-					       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500/70 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950
+					       hover:-translate-y-0.5 hover:bg-neutral-800 hover:shadow-lg
+					       focus-visible:ring-2 focus-visible:ring-rose-500/70 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 focus-visible:outline-none
 					       dark:border-neutral-50/15 dark:bg-neutral-50 dark:text-neutral-900
-					       dark:hover:bg-neutral-100 dark:hover:border-neutral-50/30
+					       dark:hover:border-neutral-50/30 dark:hover:bg-neutral-100
 					       dark:focus-visible:ring-rose-400/80 dark:focus-visible:ring-offset-neutral-900"
 				>
 					View full GitHub profile
@@ -101,9 +103,9 @@
 			<div class="flex flex-col gap-6">
 				{#each repos as repo}
 					<article
-						class="group relative w-full overflow-hidden rounded-2xl border border-white/10 
-						       bg-neutral-950/70 backdrop-blur-md p-6 sm:p-7 
-						       shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+						class="group relative w-full overflow-hidden rounded-2xl border border-white/10
+						       bg-neutral-950/70 p-6 shadow-lg backdrop-blur-md
+						       transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl sm:p-7"
 					>
 						<div class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
 							<div class="space-y-2">
@@ -112,7 +114,7 @@
 										href={repo.html_url}
 										target="_blank"
 										rel="noopener noreferrer"
-										class="font-mono text-xs uppercase tracking-[0.22em] text-emerald-400/90"
+										class="font-mono text-xs tracking-[0.22em] text-emerald-400/90 uppercase"
 									>
 										{username}/{repo.name}
 									</a>
@@ -165,9 +167,9 @@
 									href={repo.html_url}
 									target="_blank"
 									rel="noopener noreferrer"
-									class="inline-flex items-center gap-2 rounded-full border border-white/15 px-3 py-1.5 
-									       text-xs text-neutral-100 hover:bg-white hover:text-black 
-									       transition-colors"
+									class="inline-flex items-center gap-2 rounded-full border border-white/15 px-3 py-1.5
+									       text-xs text-neutral-100 transition-colors hover:bg-white
+									       hover:text-black"
 								>
 									View on GitHub
 									<svg width="13" height="13" viewBox="0 0 15 15" fill="none">
@@ -183,8 +185,8 @@
 										href={repo.homepage}
 										target="_blank"
 										rel="noopener noreferrer"
-										class="inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1.5 
-										       text-xs text-black shadow-sm hover:bg-white transition"
+										class="inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1.5
+										       text-xs text-black shadow-sm transition hover:bg-white"
 									>
 										Live demo
 										<span class="font-mono text-[0.65rem]">↗</span>
