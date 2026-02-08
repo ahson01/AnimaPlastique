@@ -29,8 +29,8 @@
 		<div class="flex flex-col gap-12 lg:flex-row lg:items-center lg:justify-between">
 			<div class="max-w-2xl space-y-7">
 				<p
-					class="animate-pop-up bg-gradient-to-r from-rose-400 to-red-500
-					bg-clip-text font-mono text-[0.65rem] tracking-[0.35em] text-transparent uppercase"
+					class="animate-pop-up bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text
+					       font-mono text-[0.65rem] tracking-[0.35em] text-transparent uppercase"
 				>
 					AnimaPlastique · web dev agency
 				</p>
@@ -143,7 +143,7 @@
 			<div class="animate-pop-up space-y-2" style="--delay: 0.3s;">
 				<p
 					class="bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text
-					font-mono text-[0.65rem] tracking-[0.25em] text-transparent uppercase"
+					       font-mono text-[0.65rem] tracking-[0.25em] text-transparent uppercase"
 				>
 					Best for
 				</p>
@@ -156,7 +156,7 @@
 			<div class="animate-pop-up space-y-2" style="--delay: 0.4s;">
 				<p
 					class="bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text
-					font-mono text-[0.65rem] tracking-[0.25em] text-transparent uppercase"
+					       font-mono text-[0.65rem] tracking-[0.25em] text-transparent uppercase"
 				>
 					How it works
 				</p>
@@ -170,7 +170,7 @@
 			<div class="animate-pop-up space-y-2" style="--delay: 0.5s;">
 				<p
 					class="bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text
-					font-mono text-[0.65rem] tracking-[0.25em] text-transparent uppercase"
+					       font-mono text-[0.65rem] tracking-[0.25em] text-transparent uppercase"
 				>
 					What you get
 				</p>
