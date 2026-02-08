@@ -24,7 +24,14 @@
 		{ label: 'Minecraft (coming soon)', disabled: true }
 	];
 
-	const toolLinks = [{ href: '/tools/file-converter', label: 'File Converter' }];
+	const toolLinks = [
+		{ href: '/tools/file-converter', label: 'File Converter' },
+		{ href: '/tools/image-compressor', label: 'Image Compressor' },
+		{ href: '/tools/json-formatter', label: 'JSON Formatter' },
+		{ href: '/tools/color-palette', label: 'Color Palette' },
+		{ href: '/tools/meta-preview', label: 'Meta Preview' },
+		{ href: '/tools/exif-insight', label: 'Exif Insight' }
+	];
 
 	let theme: 'dark' | 'light' = 'dark';
 	let isMenuOpen = false;
