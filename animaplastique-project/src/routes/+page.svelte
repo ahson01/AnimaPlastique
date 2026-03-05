@@ -191,7 +191,7 @@
 			class="font-mono text-[0.6rem] tracking-[0.2em] text-[var(--text-muted)]
                uppercase transition-colors hover:text-rose-500 dark:hover:text-rose-400"
 		>
-			Crafted by ahson01
+			Crafted by ahson01 and hammad
 		</a>
 	</div>
 </section>
