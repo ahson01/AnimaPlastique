@@ -23,7 +23,7 @@
 			name: 'Portfolio / personal site',
 			tagline: 'Make your work look as serious as you are.',
 			description:
-				'A minimal, fast portfolio with sections for projects, about, and contact. No bloated templates — just focused pages that highlight real work.',
+				'A minimal, fast portfolio with sections for projects, about, and contact. No bloated templates, just focused pages that highlight real work.',
 			eta: '5–7 days',
 			cta: 'Great for students, developers, designers and job hunters.'
 		},
@@ -59,7 +59,6 @@
 <section
 	class="relative flex w-full justify-center overflow-hidden bg-[var(--bg)] text-[var(--text)]"
 >
-	<!-- Background glows -->
 	<div class="pointer-events-none absolute inset-0 -z-10">
 		<div
 			class="absolute -top-32 -left-24 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,var(--glow-soft),transparent)] opacity-50

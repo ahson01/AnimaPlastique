@@ -215,7 +215,6 @@
 </style>
 
 <section class="relative flex w-full justify-center overflow-hidden min-h-screen bg-neutral-50 dark:bg-neutral-950">
-  <!-- Soft background glows -->
   <div class="pointer-events-none absolute inset-0 -z-10">
     <div class="absolute -top-32 -left-24 h-72 w-72 rounded-full blur-3xl opacity-25 bg-[radial-gradient(closest-side,rgba(255,255,255,0.6),transparent)] dark:opacity-20"></div>
     <div class="absolute -bottom-24 -right-24 h-96 w-96 rounded-full blur-3xl opacity-20 bg-[radial-gradient(closest-side,rgba(0,0,0,0.3),transparent)] dark:opacity-30"></div>
@@ -223,9 +222,7 @@
   </div>
 
   <div class="mx-auto flex w-full max-w-6xl flex-col gap-12 px-6 pt-18 pb-24 lg:pt-22">
-    <!-- Hero Section -->
     <div class="flex flex-col gap-12 lg:flex-row lg:items-start">
-      <!-- Left -->
       <div class="max-w-3xl space-y-7">
         <p class="font-mono text-[0.65rem] uppercase tracking-[0.35em] bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text text-transparent animate-pop-up">
           WASM File Converter · Privacy-first
@@ -298,7 +295,6 @@
         {/if}
       </div>
 
-      <!-- Right - Info Card -->
       <div class="grid w-full max-w-sm gap-4 rounded-2xl p-5 text-xs sm:text-[0.7rem] border border-black/10 bg-white/40 shadow-lg backdrop-blur-md ring-1 ring-black/5 dark:border-white/10 dark:bg-white/5 dark:ring-white/5 animate-pop-up" style="--delay: 0.2s;">
         <div class="flex items-baseline justify-between border-b pb-3 border-black/10 dark:border-white/10">
           <span class="font-mono text-[0.7rem] uppercase tracking-[0.25em]">
@@ -346,7 +342,6 @@
       </div>
     </div>
 
-    <!-- Status Messages -->
     {#if error}
       <div class="bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800/50 rounded-xl p-4 flex items-start gap-3 animate-pop-up">
         <AlertCircle class="w-5 h-5 text-red-600 dark:text-red-400 flex-shrink-0 mt-0.5" />

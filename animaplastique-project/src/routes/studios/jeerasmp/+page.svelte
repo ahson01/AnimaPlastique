@@ -50,14 +50,13 @@
 	<title>JeeraSMP · xkinetics studios</title>
 	<meta
 		name="description"
-		content="JeeraSMP — a simple Minecraft RPG server. Challenging, harder than usual, no hand-holding. Join collection-hierarchy.gl.joinmc.link."
+		content="JeeraSMP, a simple Minecraft RPG server. Challenging, harder than usual, no hand-holding. Join collection-hierarchy.gl.joinmc.link."
 	/>
 </svelte:head>
 
 <section
 	class="relative flex w-full justify-center overflow-hidden bg-[var(--bg)] text-[var(--text)]"
 >
-	<!-- background glows -->
 	<div class="pointer-events-none absolute inset-0 -z-10">
 		<div
 			class="absolute -top-32 -left-24 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,var(--glow-soft),transparent)] opacity-25
@@ -76,7 +75,6 @@
 	</div>
 
 	<div class="mx-auto flex w-full max-w-6xl flex-col gap-12 px-6 pt-18 pb-24 lg:pt-22">
-		<!-- Back link -->
 		<a
 			href="/studios"
 			class="inline-flex items-center gap-1 text-xs text-[var(--text-muted)] transition-colors hover:text-[var(--text-soft)]"
@@ -85,18 +83,16 @@
 			<span>Back to studios</span>
 		</a>
 
-		<!-- Banner -->
 		<div
-			class="animate-pop-up overflow-hidden rounded-3xl border border-[var(--border)] shadow-lg"
+			class="animate-pop-up w-fit overflow-hidden rounded-3xl border border-[var(--border)] shadow-lg"
 		>
 			<img
 				src="/jeerasmp-banner.png"
 				alt="JeeraSMP banner"
-				class="h-48 w-full object-cover sm:h-64"
+				class="aspect-[17/10] w-full max-w-md object-cover"
 			/>
 		</div>
 
-		<!-- Header -->
 		<div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
 			<div class="max-w-2xl space-y-5">
 				<div class="flex items-center gap-4">
@@ -131,11 +127,10 @@
 					class="inline-flex items-center gap-2 rounded-full border border-emerald-400/60 bg-emerald-500/10 px-4 py-1.5 text-[0.65rem] tracking-[0.2em] text-emerald-600 uppercase dark:text-emerald-400"
 				>
 					<span>⊹</span>
-					<span>Cracked server — no premium account needed</span>
+					<span>Cracked server, no premium account needed</span>
 				</div>
 			</div>
 
-			<!-- Connect card -->
 			<div
 				class="animate-pop-up w-full max-w-md rounded-2xl border border-[var(--border)] bg-[var(--card-bg-soft)] p-5 text-xs shadow-lg backdrop-blur-md sm:text-[0.75rem]"
 				style="--delay: 0.1s"
@@ -189,12 +184,11 @@
 				</p>
 
 				<p class="mt-2 border-t border-[var(--border-strong)] pt-3 text-[0.65rem] leading-relaxed text-[var(--text-muted)]">
-					Cracked server — join with any launcher, no premium Minecraft account required.
+					Cracked server, join with any launcher, no premium Minecraft account required.
 				</p>
 			</div>
 		</div>
 
-		<!-- Wikis -->
 		<div class="flex flex-col gap-6">
 			<p
 				class="animate-pop-up bg-gradient-to-r from-emerald-400 to-green-500
@@ -240,7 +234,6 @@
 			</div>
 		</div>
 
-		<!-- Rules -->
 		<div
 			use:revealOnScroll
 			class="reveal-on-scroll flex flex-col gap-5 rounded-3xl border border-[var(--border)] bg-[var(--card-bg-soft)] p-6 shadow-lg

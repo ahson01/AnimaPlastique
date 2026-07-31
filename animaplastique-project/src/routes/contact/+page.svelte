@@ -91,28 +91,24 @@
 	<title>Contact · xkinetics.space</title>
 	<meta
 		name="description"
-		content="Start a project with xkinetics.space – a web dev studio focused on clean, modern, scalable sites."
+		content="Start a project with xkinetics.space, a web dev studio focused on clean, modern, scalable sites."
 	/>
 </svelte:head>
 
 <section
 	class="relative flex w-full justify-center overflow-hidden bg-[var(--bg)] text-[var(--text)]"
 >
-	<!-- soft background glows -->
 	<div class="pointer-events-none absolute inset-0 -z-10">
-		<!-- top-left light glow -->
 		<div
 			class="absolute -top-32 -left-24 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,var(--glow-soft),transparent)] opacity-25
              blur-3xl"
 		></div>
 
-		<!-- bottom-right neutral shadow -->
 		<div
 			class="absolute -right-24 -bottom-24 h-96 w-96 rounded-full bg-[radial-gradient(closest-side,var(--glow-muted),transparent)] opacity-30
              blur-3xl"
 		></div>
 
-		<!-- reddish accent gradient -->
 		<div
 			class="absolute right-0 bottom-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full bg-[radial-gradient(closest-side,var(--glow-accent),transparent)]
              opacity-40 blur-[120px]"
@@ -120,7 +116,6 @@
 	</div>
 
 	<div class="mx-auto flex w-full max-w-6xl flex-col gap-12 px-6 pt-18 pb-24 lg:pt-22">
-		<!-- Header row -->
 		<div class="max-w-3xl space-y-6">
 			<p
 				class="animate-pop-up bg-gradient-to-r from-emerald-400 to-green-500
@@ -137,15 +132,12 @@
 			</h1>
 		</div>
 
-		<!-- Main grid -->
 		<div class="flex flex-col gap-10 lg:flex-row">
-			<!-- Contact form -->
 			<div
 				class="animate-pop-up w-full max-w-xl rounded-2xl border border-[var(--border)]
                bg-[var(--card-bg-soft)] p-6 shadow-lg backdrop-blur"
 			>
 				<form class="space-y-5" on:submit={handleSubmit}>
-					<!-- Name -->
 					<div class="space-y-1.5">
 						<label
 							for="name"
@@ -166,7 +158,6 @@
 						/>
 					</div>
 
-					<!-- Email -->
 					<div class="space-y-1.5">
 						<label
 							for="email"
@@ -188,7 +179,6 @@
 						/>
 					</div>
 
-					<!-- Project type / timeline -->
 					<div class="grid gap-4 sm:grid-cols-2">
 						<div class="space-y-1.5">
 							<label
@@ -236,7 +226,6 @@
 						</div>
 					</div>
 
-					<!-- Budget -->
 					<div class="space-y-1.5">
 						<label
 							for="budget"
@@ -258,7 +247,6 @@
 						</select>
 					</div>
 
-					<!-- Message -->
 					<div class="space-y-1.5">
 						<label
 							for="details"
@@ -279,7 +267,6 @@
 						></textarea>
 					</div>
 
-					<!-- Status + submit -->
 					{#if errorMessage}
 						<p class="text-xs text-red-500">{errorMessage}</p>
 					{/if}
@@ -308,7 +295,6 @@
 				</form>
 			</div>
 
-			<!-- Side info panel -->
 			<div class="space-y-6 text-xs sm:text-[0.75rem]">
 				<div class="space-y-2">
 					<p
@@ -384,9 +370,6 @@
 </section>
 
 <style>
-	/* Remove this block if you already set these vars globally
-     in another route/layout. Otherwise this keeps Contact themed. */
-
 	:global(html) {
 		--bg: #ffffff;
 		--text: #111827;

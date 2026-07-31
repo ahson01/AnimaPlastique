@@ -110,7 +110,6 @@
 		</div>
 
 		<div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
-			<!-- Controls -->
 			<div class="animate-pop-up space-y-6 lg:col-span-1" style="--delay: 0.1s;">
 				<div
 					class="group cursor-pointer rounded-2xl border-2 border-dashed border-neutral-300 p-6 text-center transition-colors hover:border-emerald-400 dark:border-neutral-700 dark:hover:border-emerald-500"
@@ -149,7 +148,6 @@
 				</button>
 			</div>
 
-			<!-- Palette Display -->
 			<div class="animate-pop-up space-y-6 lg:col-span-2" style="--delay: 0.2s;">
 				{#if colors.length > 0}
 					<div class="grid grid-cols-2 gap-4 sm:grid-cols-3">

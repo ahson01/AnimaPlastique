@@ -132,7 +132,7 @@
 					WASM Image Compressor · Privacy-first
 				</p>
 				<p class="max-w-xl text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
-					Optimize your images instantly. All processing happens in your browser—no file is ever
+					Optimize your images instantly. All processing happens in your browser, so no file is ever
 					uploaded to a server.
 				</p>
 

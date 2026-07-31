@@ -1,4 +1,3 @@
-<!-- src/routes/labs/[slug]/+page.svelte -->
 <script lang="ts">
 	export let data: {
 		slug: string;
@@ -32,7 +31,6 @@
 <section
 	class="relative flex w-full justify-center overflow-hidden bg-[var(--bg)] text-[var(--text)]"
 >
-	<!-- background glows -->
 	<div class="pointer-events-none absolute inset-0 -z-10">
 		<div
 			class="absolute -top-32 -left-24 h-72 w-72 rounded-full blur-3xl opacity-25
@@ -51,7 +49,6 @@
 	</div>
 
 	<div class="mx-auto flex w-full max-w-3xl flex-col gap-6 px-6 pt-18 pb-24 lg:pt-22">
-		<!-- Back link -->
 		<a
 			href="/labs"
 			class="mb-2 inline-flex items-center gap-1 text-xs text-[var(--text-muted)] transition-colors hover:text-[var(--text-soft)]"
@@ -60,7 +57,6 @@
 			<span>Back to labs</span>
 		</a>
 
-		<!-- Header -->
 		<header class="space-y-3">
 			<p class="font-mono text-[0.65rem] uppercase tracking-[0.35em] text-[var(--text-muted)]">
 				Lab note
@@ -86,7 +82,6 @@
 			</div>
 		</header>
 
-		<!-- Markdown content -->
 		<article
 			class="mt-2 prose prose-sm max-w-none
 			       text-[var(--text-soft)]
@@ -103,9 +98,6 @@
 </section>
 
 <style>
-	/* If you already defined these vars globally (layout / other pages),
-	   you can delete this block. Otherwise this keeps Labs themed. */
-
 	:global(html.dark) {
 		--bg: #050505;
 		--text: #f5f5f5;
@@ -132,8 +124,6 @@
 	}
 
 	:global(html) {
-		/* If you prefer light-first and dark override, swap these blocks.
-		   Right now this page is designed as dark-first. */
 		--bg: #ffffff;
 		--text: #111827;
 		--text-strong: #020617;

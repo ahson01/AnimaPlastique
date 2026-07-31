@@ -79,7 +79,6 @@
 		</div>
 
 		<div class="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2">
-			<!-- Input Area -->
 			<div class="animate-pop-up flex flex-col gap-4" style="--delay: 0.1s;">
 				<div
 					class="flex items-center justify-between font-mono text-[0.65rem] tracking-[0.2em] text-neutral-500 uppercase"
@@ -114,7 +113,6 @@
 				</div>
 			</div>
 
-			<!-- Output Area -->
 			<div class="animate-pop-up flex flex-col gap-4" style="--delay: 0.2s;">
 				<div
 					class="flex items-center justify-between font-mono text-[0.65rem] tracking-[0.2em] text-neutral-500 uppercase"

@@ -3,7 +3,6 @@ import { GITHUB_TOKEN } from '$env/static/private';
 
 const username = 'ahson01';
 
-// The repos you want to show
 const selectedRepoNames = ['github-storage', 'omecord'];
 
 export const load: PageServerLoad = async ({ fetch }) => {

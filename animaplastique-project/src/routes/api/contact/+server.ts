@@ -1,8 +1,6 @@
-// src/routes/api/contact/+server.ts
 import type { RequestHandler } from './$types';
 import { env } from '$env/dynamic/private';
 
-// Very simple in-memory rate limiter (per IP)
 type RateEntry = { count: number; last: number };
 const rateMap = new Map<string, RateEntry>();
 
@@ -124,7 +122,6 @@ export const POST: RequestHandler = async (event) => {
 	}
 };
 
-// OPTIONAL: reject non-POST methods cleanly
 export const GET: RequestHandler = () =>
 	new Response(JSON.stringify({ success: false, error: 'Method not allowed.' }), {
 		status: 405

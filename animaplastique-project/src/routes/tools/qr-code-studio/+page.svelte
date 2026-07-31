@@ -18,7 +18,6 @@
 	let qrCode: QRCodeStyling;
 	let canvasContainer: HTMLDivElement;
 
-	// QR States
 	let data = 'https://xkinetics.space';
 	let dotsColor = '#059669'; // emerald-600
 	let bgColor = '#ffffff';
@@ -137,7 +136,6 @@
 <section
 	class="relative flex min-h-screen w-full justify-center overflow-hidden bg-neutral-50 dark:bg-neutral-950"
 >
-	<!-- Background Ornamentation -->
 	<div class="pointer-events-none absolute inset-0 -z-10">
 		<div
 			class="absolute -top-32 -left-24 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(255,255,255,0.6),transparent)] opacity-25 blur-3xl dark:opacity-20"
@@ -148,7 +146,6 @@
 	</div>
 
 	<div class="mx-auto flex w-full max-w-7xl flex-col gap-10 px-6 pt-18 pb-24 lg:pt-22">
-		<!-- Header Section -->
 		<div class="flex flex-col justify-between gap-6 md:flex-row md:items-end">
 			<div class="max-w-2xl space-y-5">
 				<p
@@ -189,12 +186,10 @@
 		</div>
 
 		<div class="grid grid-cols-1 gap-10 lg:grid-cols-12">
-			<!-- Editor Panel -->
 			<div class="animate-pop-up space-y-6 lg:col-span-5" style="--delay: 0.15s;">
 				<div
 					class="space-y-8 rounded-3xl border border-black/10 bg-white/40 p-8 shadow-xl backdrop-blur-md dark:border-white/10 dark:bg-white/5"
 				>
-					<!-- Content Input -->
 					<div class="space-y-4">
 						<div class="flex items-center gap-2">
 							<Type class="h-3.5 w-3.5 text-emerald-500" />
@@ -225,9 +220,7 @@
 						</div>
 					</div>
 
-					<!-- Styling Tabs -->
 					<div class="space-y-6">
-						<!-- Colors -->
 						<div class="grid grid-cols-2 gap-6">
 							<div class="space-y-3">
 								<label
@@ -271,7 +264,6 @@
 							</div>
 						</div>
 
-						<!-- Dot Styles -->
 						<div class="space-y-3">
 							<span class="block font-mono text-[0.6rem] tracking-widest text-neutral-500 uppercase"
 								>Pattern Style</span
@@ -291,7 +283,6 @@
 							</div>
 						</div>
 
-						<!-- Corner Styles -->
 						<div class="space-y-3">
 							<span class="block font-mono text-[0.6rem] tracking-widest text-neutral-500 uppercase"
 								>Corner Shape</span
@@ -311,7 +302,6 @@
 							</div>
 						</div>
 
-						<!-- Logo Integration -->
 						<div class="space-y-3 pt-2">
 							<div class="flex items-center justify-between">
 								<span class="font-mono text-[0.6rem] tracking-widest text-neutral-500 uppercase"
@@ -365,7 +355,6 @@
 						</div>
 					</div>
 
-					<!-- Secondary Actions -->
 					<div class="border-t border-black/5 pt-8 dark:border-white/5">
 						<button
 							on:click={download}
@@ -378,12 +367,10 @@
 				</div>
 			</div>
 
-			<!-- Preview Panel -->
 			<div class="animate-pop-up flex flex-col gap-8 lg:col-span-7" style="--delay: 0.2s;">
 				<div
 					class="relative flex min-h-[400px] flex-1 flex-col items-center justify-center rounded-3xl border border-black/5 bg-white/20 p-8 dark:border-white/5 dark:bg-white/[0.02]"
 				>
-					<!-- Canvas Orbit Decoration -->
 					<div class="absolute inset-0 -z-10 flex items-center justify-center opacity-30">
 						<div
 							class="h-[300px] w-[300px] animate-[spin_60s_linear_infinite] rounded-full border border-dashed border-emerald-500/20"
@@ -394,7 +381,6 @@
 					</div>
 
 					<div class="group relative">
-						<!-- Glow Effect -->
 						<div
 							class="absolute -inset-10 -z-10 rounded-full bg-emerald-500/10 blur-[100px] transition-all group-hover:bg-emerald-500/20"
 						></div>
@@ -403,7 +389,6 @@
 							bind:this={canvasContainer}
 							class="overflow-hidden rounded-2xl bg-white p-6 shadow-2xl transition-all duration-500 group-hover:scale-[1.02] dark:bg-white"
 						>
-							<!-- QR Canvas will be appended here -->
 						</div>
 					</div>
 
@@ -424,7 +409,6 @@
 					</div>
 				</div>
 
-				<!-- Educational Tip -->
 				<div
 					class="flex gap-4 rounded-3xl border border-neutral-200 bg-white/50 p-6 backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-900/50"
 				>

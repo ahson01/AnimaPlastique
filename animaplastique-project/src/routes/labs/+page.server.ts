@@ -1,4 +1,3 @@
-// src/routes/labs/+page.server.ts
 import type { PageServerLoad } from './$types';
 import matter from 'gray-matter';
 import { env } from '$env/dynamic/private';
@@ -19,7 +18,6 @@ export type LabSummary = {
 const OWNER = 'ahson01';
 const REPO = 'notes';
 
-// Same idea as your React example:
 const TREE_URL = `https://api.github.com/repos/${OWNER}/${REPO}/git/trees/main?recursive=1`;
 const RAW_BASE = `https://raw.githubusercontent.com/${OWNER}/${REPO}/main/`;
 
@@ -28,11 +26,9 @@ export const load: PageServerLoad = async ({ fetch }) => {
 		Accept: 'application/vnd.github.v3+json'
 	};
 	if (env.GITHUB_TOKEN) {
-		// Same style as your Next example
 		headers.Authorization = `token ${env.GITHUB_TOKEN}`;
 	}
 
-	// 1) Get full tree
 	const res = await fetch(TREE_URL, { headers });
 	if (!res.ok) {
 		console.error('Failed to fetch repository tree:', res.status);
@@ -44,7 +40,6 @@ export const load: PageServerLoad = async ({ fetch }) => {
 		return { labs: [] as LabSummary[] };
 	}
 
-	// 2) Filter to markdown files under labs/
 	const mdFiles = data.tree.filter(
 		(item: any) =>
 			item.type === 'blob' &&
@@ -82,7 +77,6 @@ export const load: PageServerLoad = async ({ fetch }) => {
 		}
 	}
 
-	// 3) Sort newest first by date (if present)
 	labs.sort((a, b) => {
 		if (!a.date || !b.date) return 0;
 		return a.date < b.date ? 1 : -1;

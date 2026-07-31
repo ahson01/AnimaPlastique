@@ -6,21 +6,17 @@
 <section
 	class="relative flex w-full justify-center overflow-hidden bg-[var(--bg)] text-[var(--text)]"
 >
-	<!-- soft background glows to make the glass pop -->
 	<div class="pointer-events-none absolute inset-0 -z-10">
-		<!-- top-left light glow -->
 		<div
 			class="absolute -top-32 -left-24 h-72 w-72 rounded-full blur-3xl opacity-25
 			       bg-[radial-gradient(closest-side,var(--glow-soft),transparent)]"
 		></div>
 
-		<!-- bottom-right neutral shadow -->
 		<div
 			class="absolute -bottom-24 -right-24 h-96 w-96 rounded-full blur-3xl opacity-30
 			       bg-[radial-gradient(closest-side,var(--glow-muted),transparent)]"
 		></div>
 
-		<!-- reddish accent gradient -->
 		<div
 			class="absolute bottom-0 right-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full blur-[120px]
 			       opacity-40 bg-[radial-gradient(closest-side,var(--glow-accent),transparent)]"
@@ -28,9 +24,7 @@
 	</div>
 
 	<div class="mx-auto flex w-full max-w-6xl flex-col gap-12 px-6 pt-18 pb-24 lg:pt-22">
-		<!-- Different hero: more narrative, side-by-side layout -->
 		<div class="grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] lg:items-start">
-			<!-- Left: story -->
 			<div class="space-y-7">
 				<p
 					class="font-mono text-[0.65rem] uppercase tracking-[0.35em]
@@ -107,7 +101,6 @@
 				</div>
 			</div>
 
-			<!-- Right: process card -->
 			<div
 				class="grid w-full gap-4 rounded-2xl p-5 text-xs sm:text-[0.75rem]
 				       border border-[var(--border)]
@@ -175,14 +168,13 @@
 						Best fit
 					</p>
 					<p class="text-[0.75rem] text-[var(--text-soft)]">
-						Founders, small teams, and independent creators who want a custom site with a clear narrative —
+						Founders, small teams, and independent creators who want a custom site with a clear narrative,
 						not just another theme with swapped colors.
 					</p>
 				</div>
 			</div>
 		</div>
 
-		<!-- Tech stack row -->
 		<div
 			class="animate-pop-up mt-6 rounded-2xl border border-[var(--border)] bg-[var(--card-bg-soft)] p-5 text-xs shadow-inner backdrop-blur-md"
 		>
@@ -195,7 +187,7 @@
 						Tech stack
 					</p>
 					<p class="max-w-md text-[0.75rem] text-[var(--text-soft)]">
-						Modern, boring-on-purpose tools — chosen for speed, maintainability, and the ability to grow
+						Modern, boring-on-purpose tools, chosen for speed, maintainability, and the ability to grow
 						with your product without sudden rewrites.
 					</p>
 				</div>
@@ -221,7 +213,6 @@
 			</div>
 		</div>
 
-		<!-- Closing text row -->
 <div
   class="mt-4 grid gap-8 border-t border-[var(--border-strong)] pt-10 text-xs sm:grid-cols-3 sm:text-[0.75rem]"
 >
@@ -278,7 +269,6 @@
     </ul>
   </div>
 </div>
-		<!-- India-based origin strip -->
 		<div class="mt-6 border-t border-[var(--border-strong)] pt-6">
 			<div
 				class="flex flex-col items-center justify-between gap-3 text-[0.7rem] text-[var(--text-muted)] sm:flex-row"
@@ -307,9 +297,6 @@
 </section>
 
 <style>
-	/* If you already defined these in another route, you can delete this block.
-	   Otherwise this gives About its own light/dark variable theme. */
-
 	:global(html) {
 		--bg: #ffffff;
 		--text: #111827;

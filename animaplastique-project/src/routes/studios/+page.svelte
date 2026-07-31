@@ -4,17 +4,17 @@
 	const pillars = [
 		{
 			title: 'Mods & Plugins',
-			desc: 'Custom gameplay, plugins, and mods built in-house — from Slimefun-style tech to bespoke mechanics.',
+			desc: 'Custom gameplay, plugins, and mods built in-house, from Slimefun-style tech to custom mechanics.',
 			mark: '⚙'
 		},
 		{
 			title: 'Servers',
-			desc: 'Self-hosted Minecraft servers with real communities, curated plugins, and lore that keeps players coming back.',
+			desc: 'Self-hosted Minecraft servers with real communities, hand-picked plugins, and lore that keeps players coming back.',
 			mark: '🛡'
 		},
 		{
 			title: 'Pixel Art',
-			desc: 'Hand-made textures, sprites, icons, and server branding — every pixel placed on purpose.',
+			desc: 'Hand-made textures, sprites, icons, and server branding, every pixel placed on purpose.',
 			mark: '✦'
 		}
 	];
@@ -24,14 +24,13 @@
 	<title>Studios · xkinetics.space</title>
 	<meta
 		name="description"
-		content="xkinetics studios — the games arm of xkinetics.space. Mods, Minecraft servers, and pixel art crafted in-house."
+		content="xkinetics studios, the games arm of xkinetics.space. Mods, Minecraft servers, and pixel art built in-house."
 	/>
 </svelte:head>
 
 <section
 	class="relative flex w-full justify-center overflow-hidden bg-[var(--bg)] text-[var(--text)]"
 >
-	<!-- background glows -->
 	<div class="pointer-events-none absolute inset-0 -z-10">
 		<div
 			class="absolute -top-32 -left-24 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,var(--glow-soft),transparent)] opacity-25
@@ -50,7 +49,6 @@
 	</div>
 
 	<div class="mx-auto flex w-full max-w-6xl flex-col gap-12 px-6 pt-18 pb-24 lg:pt-22">
-		<!-- Hero -->
 		<div class="max-w-3xl space-y-6">
 			<p
 				class="animate-pop-up bg-gradient-to-r from-emerald-400 to-green-500
@@ -69,13 +67,12 @@
 			</h1>
 
 			<p class="max-w-xl text-sm leading-relaxed text-[var(--text-soft)]">
-				xkinetics studios is the games arm of xkinetics.space — an extension of the site where
-				games, mods, servers, and pixel art live. Everything here is crafted in-house and shipped
+				xkinetics studios is the games arm of xkinetics.space, an extension of the site where
+				games, mods, servers, and pixel art live. Everything here is built in-house and shipped
 				to a real community.
 			</p>
 		</div>
 
-		<!-- Pillars -->
 		<div class="grid gap-6 md:grid-cols-3">
 			{#each pillars as pillar, i}
 				<article
@@ -97,53 +94,83 @@
 			{/each}
 		</div>
 
-		<!-- Featured: JeeraSMP -->
 		<div
 			use:revealOnScroll
-			class="reveal-on-scroll group relative overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--card-bg-soft)] shadow-lg
-			       backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+			class="reveal-on-scroll grid overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--card-bg-soft)] shadow-lg
+			       backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl lg:grid-cols-[340px_1fr]"
 			style="--delay: 0.2s"
 		>
-			<img
-				src="/jeerasmp-banner.png"
-				alt="JeeraSMP banner"
-				class="h-40 w-full object-cover sm:h-56"
-			/>
+			<div class="flex items-center justify-center bg-[var(--card-bg)] p-6">
+				<img
+					src="/jeerasmp-banner.png"
+					alt="JeeraSMP banner"
+					class="aspect-[17/10] w-full max-w-[320px] rounded-2xl border border-[var(--border-strong)] shadow-md"
+				/>
+			</div>
 
-			<div class="relative -mt-10 px-6 pb-8 sm:px-10 sm:pb-10">
-				<div class="flex items-end gap-4">
+			<div class="flex flex-col gap-5 p-6 sm:p-8">
+				<div class="flex items-center gap-4">
 					<img
 						src="/jeerasmp-server-icon.png"
 						alt="JeeraSMP server icon"
-						class="h-20 w-20 rounded-2xl border border-[var(--border-strong)] bg-[var(--card-bg)] shadow-lg"
+						class="h-14 w-14 rounded-2xl border border-[var(--border-strong)] bg-[var(--card-bg)] shadow-md"
 					/>
-					<div class="pb-1">
-						<p
-							class="font-mono text-[0.6rem] tracking-[0.3em] text-[var(--text-muted)] uppercase"
-						>
-							Flagship RPG server
-						</p>
+					<div>
 						<h2 class="font-inter text-2xl font-semibold text-[var(--text-strong)]">
 							JeeraSMP
 						</h2>
+						<p class="font-mono text-[0.6rem] tracking-[0.3em] text-[var(--text-muted)] uppercase">
+							Minecraft RPG server
+						</p>
 					</div>
 				</div>
 
-				<p class="mt-4 max-w-2xl text-sm leading-relaxed text-[var(--text-soft)]">
+				<p class="max-w-xl text-sm leading-relaxed text-[var(--text-soft)]">
 					A simple Minecraft RPG server. It is challenging, and harder than usual. There are no
 					shortcuts or hand-holding. Progression takes time and real effort. Only the OGs will
 					survive.
 				</p>
 
-				<a
-					href="/studios/jeerasmp"
-					class="interactable mt-6 inline-flex items-center gap-2 rounded-full border border-[var(--text-strong)] bg-[var(--text-strong)] px-6 py-2.5
-					       text-[0.7rem] tracking-[0.22em] text-[var(--bg)] uppercase shadow-sm
-					       transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
+				<div class="flex flex-wrap items-center gap-2 text-[0.65rem]">
+					<span
+						class="inline-flex items-center gap-1.5 rounded-full border border-[var(--border)] bg-[var(--chip-bg)] px-3 py-1 font-mono tracking-[0.15em] text-[var(--text-soft)] uppercase"
+					>
+						Version 26.2
+					</span>
+					<span
+						class="inline-flex items-center gap-1.5 rounded-full border border-[var(--border)] bg-[var(--chip-bg)] px-3 py-1 font-mono tracking-[0.15em] text-[var(--text-soft)] uppercase"
+					>
+						Java
+					</span>
+					<span
+						class="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/60 bg-emerald-500/10 px-3 py-1 font-mono tracking-[0.15em] text-emerald-600 uppercase dark:text-emerald-400"
+					>
+						Cracked
+					</span>
+				</div>
+
+				<div
+					class="flex items-center justify-between gap-3 rounded-xl border border-[var(--border-strong)] bg-[var(--chip-bg)] px-4 py-3"
 				>
-					Explore the server
-					<span class="font-mono text-xs">→</span>
-				</a>
+					<span class="font-mono text-[0.6rem] tracking-[0.2em] text-[var(--text-muted)] uppercase"
+						>IP</span
+					>
+					<span class="truncate font-mono text-[0.75rem] text-[var(--text-strong)]"
+						>collection-hierarchy.gl.joinmc.link</span
+					>
+				</div>
+
+				<div class="mt-1">
+					<a
+						href="/studios/jeerasmp"
+						class="interactable inline-flex items-center gap-2 rounded-full border border-[var(--text-strong)] bg-[var(--text-strong)] px-6 py-2.5
+						       text-[0.7rem] tracking-[0.22em] text-[var(--bg)] uppercase shadow-sm
+						       transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
+					>
+						Server page
+						<span class="font-mono text-xs">→</span>
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>

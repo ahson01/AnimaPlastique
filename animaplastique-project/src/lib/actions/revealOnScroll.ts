@@ -1,4 +1,3 @@
-// src/lib/actions/revealOnScroll.ts
 export function revealOnScroll(
   node: HTMLElement,
   options?: { threshold?: number; rootMargin?: string; once?: boolean }

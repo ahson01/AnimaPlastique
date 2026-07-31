@@ -1,8 +1,5 @@
-// src/routes/labs/[slug]/+page.server.ts
 import type { PageServerLoad } from './$types';
 
-// Dynamic route: content is fetched from GitHub per-slug at request time,
-// so it must not be force-prerendered by the global prerender=true layout.
 export const prerender = false;
 import { error } from '@sveltejs/kit';
 import matter from 'gray-matter';
@@ -27,10 +24,8 @@ const OWNER = 'ahson01';
 const REPO = 'notes';
 const RAW_BASE = `https://raw.githubusercontent.com/${OWNER}/${REPO}/main/`;
 
-// ---------- Marked instance (no global overrides!) ----------
-const md = new Marked(); // isolated instance
+const md = new Marked();
 
-// ---------- helpers ----------
 const apiHeaders: HeadersInit = {
 	Accept: 'application/vnd.github.v3+json',
 	...(GITHUB_TOKEN ? { Authorization: `token ${GITHUB_TOKEN}` } : {})
@@ -55,7 +50,6 @@ function formatStars(stars: number): string {
 	return String(stars);
 }
 
-// GitHub repo card HTML
 function buildRepoCard(meta: RepoMeta): string {
 	const [owner, repo] = meta.full_name.split('/');
 	const desc = meta.description ? escapeHtml(meta.description) : 'No description';
@@ -99,7 +93,6 @@ export const load: PageServerLoad = async ({ fetch, params }) => {
 
 	const headers = rawHeaders;
 
-	// Try .md then .mdx, same pattern as the React example
 	const candidatePaths = [`labs/${slug}.md`, `labs/${slug}.mdx`];
 
 	let rawMarkdown: string | null = null;
@@ -125,14 +118,12 @@ export const load: PageServerLoad = async ({ fetch, params }) => {
 		throw error(404, 'Lab note not found');
 	}
 
-	// Frontmatter + markdown body
 	const { data: frontmatter, content } = matter<LabFrontmatter>(rawMarkdown);
 
 	const title = frontmatter?.title ?? slug;
 	const description = frontmatter?.description;
 	const date = frontmatter?.date;
 
-	// --- detect GitHub repo URLs in the markdown ---
 	const repoUrlRegex = /https:\/\/github\.com\/([A-Za-z0-9_.-]+)\/([A-Za-z0-9_.-]+)/g;
 	const repoKeys = new Set<string>();
 
@@ -142,7 +133,6 @@ export const load: PageServerLoad = async ({ fetch, params }) => {
 		repoKeys.add(`${owner}/${repo}`);
 	}
 
-	// Fetch repo metadata
 	const repoMetaMap = new Map<string, RepoMeta>();
 
 	for (const key of repoKeys) {
@@ -160,10 +150,8 @@ export const load: PageServerLoad = async ({ fetch, params }) => {
 		}
 	}
 
-	// --- markdown -> HTML (no custom renderer, so no href.replace) ---
 	let html = (md.parse(content) as string) ?? '';
 
-	// --- swap <a href="https://github.com/owner/repo"> with cards ---
 	const anchorRegex =
 		/<a\s+[^>]*href="https:\/\/github\.com\/([A-Za-z0-9_.-]+)\/([A-Za-z0-9_.-]+)[^"]*"[^>]*>.*?<\/a>/g;
 

@@ -23,10 +23,7 @@
 		}
 	];
 
-	const studiosLinks = [
-		{ href: '/studios', label: 'xkinetics studios' },
-		{ href: '/studios/jeerasmp', label: 'JeeraSMP' }
-	];
+	const studiosLinks = [{ href: '/studios', label: 'xkinetics studios' }];
 
 	const toolLinks = [
 		{ href: '/tools/file-converter', label: 'File Converter' },
@@ -435,7 +432,3 @@
 </header>
 
 <meta name="google-adsense-account" content="ca-pub-4761348886535927" />
-
-<style>
-	/* Header specific styles */
-</style>

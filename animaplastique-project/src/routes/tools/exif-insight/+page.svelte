@@ -75,14 +75,7 @@
 				URL.revokeObjectURL(url);
 				processing = false;
 			};
-			// The original instruction was to add a null check for 'file' here.
-			// However, 'f' is already guaranteed to be a File object in this function.
-			// The provided snippet for the change was syntactically incorrect and seemed to
-			// introduce FileReader logic.
-			// Assuming the intent was to ensure 'f' is not null before setting img.src,
-			// which is already handled by the function signature `f: File`.
-			// If the intent was to use FileReader for a data URL, that's a different change.
-			// For now, keeping the original `img.src = url;` as `f` is a File.
+
 			img.src = url;
 		}
 	}
@@ -173,7 +166,6 @@
 		</div>
 
 		<div class="grid grid-cols-1 gap-12 lg:grid-cols-2">
-			<!-- Upload & Actions -->
 			<div class="animate-pop-up space-y-8" style="--delay: 0.1s;">
 				<div
 					class="cursor-pointer rounded-3xl border-2 border-dashed border-neutral-300 bg-white/40 p-12 text-center backdrop-blur-md transition-all hover:border-emerald-400 dark:border-neutral-700 dark:bg-white/5 dark:hover:border-emerald-500"
@@ -248,7 +240,6 @@
 				{/if}
 			</div>
 
-			<!-- Metadata Display -->
 			<div class="animate-pop-up" style="--delay: 0.2s;">
 				<div
 					class="min-h-[400px] rounded-3xl border border-black/10 bg-white/40 p-8 shadow-lg backdrop-blur-md dark:border-white/10 dark:bg-white/5"

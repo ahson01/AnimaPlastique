@@ -31,7 +31,6 @@
 	let copied = false;
 	let fileInputRef: HTMLInputElement;
 
-	// SEO Health Check Logic
 	$: titleStatus = title.length >= 50 && title.length <= 60 ? 'good' : 'warning';
 	$: descStatus = description.length >= 120 && description.length <= 160 ? 'good' : 'warning';
 
@@ -128,7 +127,6 @@
 
 		<div class="grid grid-cols-1 gap-10 lg:grid-cols-12">
 			{#if activeTab === 'editor'}
-				<!-- Editor Panel -->
 				<div class="animate-pop-up space-y-6 lg:col-span-4" style="--delay: 0.15s;">
 					<div
 						class="space-y-6 rounded-3xl border border-black/10 bg-white/40 p-7 shadow-xl backdrop-blur-md dark:border-white/10 dark:bg-white/5"
@@ -233,9 +231,7 @@
 					</div>
 				</div>
 
-				<!-- Preview Panel -->
 				<div class="animate-pop-up flex flex-col gap-8 lg:col-span-8" style="--delay: 0.2s;">
-					<!-- Simulation Tabs -->
 					<div
 						class="hide-scrollbar flex gap-1 overflow-x-auto rounded-2xl border border-black/5 bg-black/5 p-1 dark:border-white/5 dark:bg-white/5"
 					>
@@ -386,7 +382,6 @@
 					</div>
 				</div>
 			{:else}
-				<!-- Code Studio -->
 				<div class="animate-pop-up lg:col-span-12" style="--delay: 0.15s;">
 					<div
 						class="rounded-3xl border border-black/10 bg-white/40 p-1 shadow-xl backdrop-blur-md dark:border-white/10 dark:bg-white/5"

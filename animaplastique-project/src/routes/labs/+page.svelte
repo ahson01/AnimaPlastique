@@ -20,13 +20,11 @@
 	};
 </script>
 
-<!-- src/routes/labs/+page.svelte -->
 <svelte:head>
 	<title>Labs · xkinetics.space</title>
 </svelte:head>
 
 <section class="relative flex w-full justify-center overflow-hidden">
-	<!-- background glows -->
 	<div class="pointer-events-none absolute inset-0 -z-10">
 		<div
 			class="absolute -top-32 -left-24 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(255,255,255,0.6),transparent)] opacity-25
@@ -48,7 +46,6 @@
 	</div>
 
 	<div class="mx-auto flex w-full max-w-6xl flex-col gap-8 px-6 pt-18 pb-24 lg:pt-22">
-		<!-- Header -->
 		<header class="space-y-4">
 			<p
 				class="animate-pop-up bg-gradient-to-r from-emerald-400 to-green-500
@@ -70,13 +67,12 @@
 					<p class="max-w-2xl text-sm leading-relaxed text-neutral-400">
 						Every item here is a markdown file in
 						<span class="rounded bg-white/5 px-1.5 py-0.5 font-mono text-xs"> notes/labs </span>
-						on GitHub — rendered directly on this site.
+					on GitHub, rendered directly on this site.
 					</p>
 				</div>
 			</div>
 		</header>
 
-		<!-- Labs list -->
 		<div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 			{#if labs.length === 0}
 				<p class="col-span-full text-sm text-neutral-500">
