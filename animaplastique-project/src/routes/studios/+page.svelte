@@ -4,17 +4,17 @@
 	const pillars = [
 		{
 			title: 'Mods & Plugins',
-			desc: 'Custom gameplay, plugins, and mods built in-house, from Slimefun-style tech to custom mechanics.',
+			desc: 'Plugins and mods for Minecraft servers.',
 			mark: '⚙'
 		},
 		{
 			title: 'Servers',
-			desc: 'Self-hosted Minecraft servers with real communities, hand-picked plugins, and lore that keeps players coming back.',
+			desc: 'Minecraft servers with real players and rules set by the community.',
 			mark: '🛡'
 		},
 		{
 			title: 'Pixel Art',
-			desc: 'Hand-made textures, sprites, icons, and server branding, every pixel placed on purpose.',
+			desc: 'Textures, sprites, and icons for servers and games.',
 			mark: '✦'
 		}
 	];
