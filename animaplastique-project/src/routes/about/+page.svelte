@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>About · AnimaPlastique</title>
+	<title>About · xkinetics.space</title>
 </svelte:head>
 <script>  import { revealOnScroll } from '$lib/actions/revealOnScroll';</script>
 
@@ -34,9 +34,9 @@
 			<div class="space-y-7">
 				<p
 					class="font-mono text-[0.65rem] uppercase tracking-[0.35em]
-					   bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent animate-pop-up"
+					   bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text text-transparent animate-pop-up"
 				>
-					AnimaPlastique · studio profile
+					xkinetics.space · studio profile
 				</p>
 
 				<h1
@@ -49,7 +49,7 @@
 				</h1>
 
 				<p class="max-w-xl text-sm leading-relaxed text-[var(--text-soft)]">
-					AnimaPlastique is a tiny web studio that likes sharp typography, fast load times, and layouts that
+					xkinetics.space is a tiny web studio that likes sharp typography, fast load times, and layouts that
 					actually respect your content.
 				</p>
 
@@ -141,7 +141,7 @@
 
 					<div class="flex items-start gap-4 animate-pop-up" style="--delay: 0.2s">
 						<div
-							class="mt-[2px] flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-rose-400/70 bg-rose-500/10 text-[0.7rem] font-mono"
+							class="mt-[2px] flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-emerald-400/70 bg-emerald-500/10 text-[0.7rem] font-mono"
 						>
 							02
 						</div>
@@ -190,7 +190,7 @@
 				<div class="space-y-1">
 					<p
 						class="font-mono text-[0.65rem] uppercase tracking-[0.25em]
-						   bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent"
+						   bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text text-transparent"
 					>
 						Tech stack
 					</p>
@@ -232,7 +232,7 @@
   >
     <p
       class="font-mono text-[0.65rem] uppercase tracking-[0.25em]
-         bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent"
+         bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text text-transparent"
     >
       Pace & scope
     </p>
@@ -249,7 +249,7 @@
   >
     <p
       class="font-mono text-[0.65rem] uppercase tracking-[0.25em]
-         bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent"
+         bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text text-transparent"
     >
       What we care about
     </p>
@@ -267,7 +267,7 @@
   >
     <p
       class="font-mono text-[0.65rem] uppercase tracking-[0.25em]
-         bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent"
+         bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text text-transparent"
     >
       If this sounds right
     </p>
@@ -331,7 +331,7 @@
 
 		--glow-soft: rgba(255, 255, 255, 0.9);
 		--glow-muted: rgba(200, 200, 200, 0.4);
-		--glow-accent: rgba(255, 120, 120, 0.35);
+		--glow-accent: rgba(52, 211, 153, 0.35);
 		--glow-green: rgba(52, 211, 153, 0.18);
 	}
 
@@ -356,7 +356,7 @@
 
 		--glow-soft: rgba(20, 20, 20, 0.9);
 		--glow-muted: rgba(15, 23, 42, 0.7);
-		--glow-accent: rgba(220, 50, 70, 0.35);
+		--glow-accent: rgba(16, 185, 129, 0.35);
 		--glow-green: rgba(52, 211, 153, 0.22);
 	}
 </style>

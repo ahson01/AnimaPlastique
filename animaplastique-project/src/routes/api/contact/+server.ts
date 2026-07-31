@@ -32,8 +32,8 @@ function isRateLimited(ip: string): boolean {
 }
 
 const ALLOWED_ORIGINS = [
-	'https://animaplastique.xyz',
-	'https://www.animaplastique.xyz',
+	'https://xkinetics.space',
+	'https://www.xkinetics.space',
 	'http://localhost:5173',
 	'http://localhost:4173'
 ];
@@ -85,7 +85,7 @@ export const POST: RequestHandler = async (event) => {
 		}
 
 		const content = [
-			'📨 **New AnimaPlastique inquiry**',
+			'📨 **New xkinetics inquiry**',
 			`**IP:** ${ip}`,
 			`**Name:** ${name}`,
 			`**Email:** ${email}`,

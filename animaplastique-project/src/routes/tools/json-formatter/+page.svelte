@@ -51,7 +51,7 @@
 </script>
 
 <svelte:head>
-	<title>JSON Formatter - AnimaPlastique</title>
+	<title>JSON Formatter - xkinetics.space</title>
 </svelte:head>
 
 <section
@@ -62,14 +62,14 @@
 			class="absolute -top-32 -left-24 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(255,255,255,0.6),transparent)] opacity-25 blur-3xl dark:opacity-20"
 		></div>
 		<div
-			class="absolute right-0 bottom-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full bg-[radial-gradient(closest-side,rgba(180,30,40,0.4),transparent)] opacity-40 blur-[120px] dark:opacity-60"
+			class="absolute right-0 bottom-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full bg-[radial-gradient(closest-side,rgba(16,185,129,0.4),transparent)] opacity-40 blur-[120px] dark:opacity-60"
 		></div>
 	</div>
 
 	<div class="mx-auto flex w-full max-w-6xl flex-col gap-12 px-6 pt-18 pb-24 lg:pt-22">
 		<div class="max-w-3xl space-y-7">
 			<p
-				class="animate-pop-up bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text font-mono text-[0.65rem] tracking-[0.35em] text-transparent uppercase"
+				class="animate-pop-up bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text font-mono text-[0.65rem] tracking-[0.35em] text-transparent uppercase"
 			>
 				Privacy-first · JSON Formatter
 			</p>
@@ -87,7 +87,7 @@
 					<span>Input JSON</span>
 					<button
 						on:click={clearAll}
-						class="flex items-center gap-1 transition-colors hover:text-rose-500"
+						class="flex items-center gap-1 transition-colors hover:text-emerald-500"
 					>
 						<Trash2 class="h-3 w-3" /> Clear
 					</button>
@@ -95,7 +95,7 @@
 				<textarea
 					bind:value={input}
 					placeholder="Paste your JSON here..."
-					class="min-h-[400px] flex-1 resize-none rounded-2xl border border-black/10 bg-white/40 p-6 font-mono text-sm shadow-inner backdrop-blur-md transition-all outline-none focus:ring-2 focus:ring-rose-500/20 dark:border-white/10 dark:bg-white/5"
+					class="min-h-[400px] flex-1 resize-none rounded-2xl border border-black/10 bg-white/40 p-6 font-mono text-sm shadow-inner backdrop-blur-md transition-all outline-none focus:ring-2 focus:ring-emerald-500/20 dark:border-white/10 dark:bg-white/5"
 				></textarea>
 
 				<div class="flex gap-3">
@@ -141,16 +141,16 @@
 						value={output}
 						placeholder="Result will appear here..."
 						class="h-full w-full resize-none bg-transparent p-6 font-mono text-sm outline-none {error
-							? 'text-rose-500'
-							: 'text-neutral-900 dark:text-neutral-50'}"
+						? 'text-red-500'
+						: 'text-neutral-900 dark:text-neutral-50'}"
 					></textarea>
 
 					{#if error}
 						<div
-							class="absolute right-6 bottom-6 left-6 flex items-start gap-3 rounded-xl border border-rose-200 bg-rose-50 p-4 dark:border-rose-800/50 dark:bg-rose-950/30"
+							class="absolute right-6 bottom-6 left-6 flex items-start gap-3 rounded-xl border border-red-200 bg-red-50 p-4 dark:border-red-800/50 dark:bg-red-950/30"
 						>
-							<AlertCircle class="mt-0.5 h-4 w-4 flex-shrink-0 text-rose-600" />
-							<p class="font-mono text-xs leading-relaxed text-rose-600 dark:text-rose-400">
+							<AlertCircle class="mt-0.5 h-4 w-4 flex-shrink-0 text-red-600" />
+							<p class="font-mono text-xs leading-relaxed text-red-600 dark:text-red-400">
 								{error}
 							</p>
 						</div>

@@ -49,7 +49,7 @@
 </script>
 
 <svelte:head>
-	<title>Services · AnimaPlastique</title>
+	<title>Services · xkinetics.space</title>
 	<meta
 		name="description"
 		content="Modern, fast websites and small products built with care, priced for Indian founders, students, and small teams."
@@ -80,10 +80,10 @@
 	<div class="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 pt-18 pb-24 lg:pt-22">
 		<header class="space-y-4 text-center lg:text-left">
 			<p
-				class="animate-pop-up bg-gradient-to-r from-emerald-500 to-rose-500
-				   bg-clip-text font-mono text-[0.65rem] tracking-[0.35em] text-transparent uppercase"
+				class="animate-pop-up bg-gradient-to-r from-emerald-500 to-green-500
+			   bg-clip-text font-mono text-[0.65rem] tracking-[0.35em] text-transparent uppercase"
 			>
-			AnimaPlastique · Services
+			xkinetics.space · Services
 			</p>
 
 			<h1
@@ -188,7 +188,7 @@
 
 		--glow-soft: rgba(255, 255, 255, 0.9);
 		--glow-muted: rgba(200, 200, 200, 0.4);
-		--glow-accent: rgba(255, 120, 120, 0.35);
+		--glow-accent: rgba(52, 211, 153, 0.35);
 		--glow-green: rgba(52, 211, 153, 0.18);
 	}
 
@@ -214,7 +214,7 @@
 
 		--glow-soft: rgba(20, 20, 20, 0.9);
 		--glow-muted: rgba(15, 23, 42, 0.7);
-		--glow-accent: rgba(220, 50, 70, 0.35);
+		--glow-accent: rgba(16, 185, 129, 0.35);
 		--glow-green: rgba(52, 211, 153, 0.22);
 	}
 </style>

@@ -219,7 +219,7 @@
   <div class="pointer-events-none absolute inset-0 -z-10">
     <div class="absolute -top-32 -left-24 h-72 w-72 rounded-full blur-3xl opacity-25 bg-[radial-gradient(closest-side,rgba(255,255,255,0.6),transparent)] dark:opacity-20"></div>
     <div class="absolute -bottom-24 -right-24 h-96 w-96 rounded-full blur-3xl opacity-20 bg-[radial-gradient(closest-side,rgba(0,0,0,0.3),transparent)] dark:opacity-30"></div>
-    <div class="absolute bottom-0 right-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full blur-[120px] opacity-40 bg-[radial-gradient(closest-side,rgba(180,30,40,0.4),transparent)] dark:opacity-60 dark:bg-[radial-gradient(closest-side,rgba(220,50,60,0.35),transparent)]"></div>
+    <div class="absolute bottom-0 right-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full blur-[120px] opacity-40 bg-[radial-gradient(closest-side,rgba(16,185,129,0.4),transparent)] dark:opacity-60 dark:bg-[radial-gradient(closest-side,rgba(16,185,129,0.35),transparent)]"></div>
   </div>
 
   <div class="mx-auto flex w-full max-w-6xl flex-col gap-12 px-6 pt-18 pb-24 lg:pt-22">
@@ -227,7 +227,7 @@
     <div class="flex flex-col gap-12 lg:flex-row lg:items-start">
       <!-- Left -->
       <div class="max-w-3xl space-y-7">
-        <p class="font-mono text-[0.65rem] uppercase tracking-[0.35em] bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent animate-pop-up">
+        <p class="font-mono text-[0.65rem] uppercase tracking-[0.35em] bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text text-transparent animate-pop-up">
           WASM File Converter · Privacy-first
         </p>
         <p class="max-w-xl text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
@@ -235,7 +235,7 @@
         </p>
 
         <div 
-          class="border-2 border-dashed border-neutral-300 dark:border-neutral-700 rounded-xl p-8 text-center hover:border-rose-400 dark:hover:border-rose-500 transition-colors cursor-pointer animate-pop-up"
+          class="border-2 border-dashed border-neutral-300 dark:border-neutral-700 rounded-xl p-8 text-center hover:border-emerald-400 dark:hover:border-emerald-500 transition-colors cursor-pointer animate-pop-up"
           style="--delay: 0.3s;"
           on:click={() => fileInputRef?.click()}
           on:keydown={(e) => e.key === 'Enter' && fileInputRef?.click()}
@@ -284,7 +284,7 @@
           <button
             on:click={handleConvert}
             disabled={converting}
-            class="inline-flex items-center justify-center gap-2 rounded-full border px-6 py-2.5 text-[0.7rem] uppercase tracking-[0.22em] border-neutral-900/20 bg-neutral-900 text-neutral-50 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:bg-neutral-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500/70 focus-visible:ring-offset-2 dark:border-neutral-50/15 dark:bg-neutral-50 dark:text-neutral-900 dark:hover:bg-neutral-100 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:transform-none animate-pop-up"
+            class="inline-flex items-center justify-center gap-2 rounded-full border px-6 py-2.5 text-[0.7rem] uppercase tracking-[0.22em] border-neutral-900/20 bg-neutral-900 text-neutral-50 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:bg-neutral-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/70 focus-visible:ring-offset-2 dark:border-neutral-50/15 dark:bg-neutral-50 dark:text-neutral-900 dark:hover:bg-neutral-100 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:transform-none animate-pop-up"
             style="--delay: 0.5s;"
           >
             {#if converting}

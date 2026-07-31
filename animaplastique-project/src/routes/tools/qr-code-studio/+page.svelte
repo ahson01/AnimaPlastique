@@ -19,8 +19,8 @@
 	let canvasContainer: HTMLDivElement;
 
 	// QR States
-	let data = 'https://animaplastique.xyz';
-	let dotsColor = '#e11d48'; // rose-600
+	let data = 'https://xkinetics.space';
+	let dotsColor = '#059669'; // emerald-600
 	let bgColor = '#ffffff';
 	let dotsType: any = 'rounded'; // 'rounded' | 'dots' | 'classy' | 'classy-rounded' | 'square' | 'extra-rounded'
 	let cornersType: any = 'extra-rounded'; // 'square' | 'dot' | 'rounded' | 'extra-rounded'
@@ -131,7 +131,7 @@
 </script>
 
 <svelte:head>
-	<title>QR Code Studio · Pro Tools - AnimaPlastique</title>
+	<title>QR Code Studio · Pro Tools - xkinetics.space</title>
 </svelte:head>
 
 <section
@@ -143,7 +143,7 @@
 			class="absolute -top-32 -left-24 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(255,255,255,0.6),transparent)] opacity-25 blur-3xl dark:opacity-20"
 		></div>
 		<div
-			class="absolute right-0 bottom-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full bg-[radial-gradient(closest-side,rgba(180,30,40,0.4),transparent)] opacity-40 blur-[120px] dark:opacity-60"
+			class="absolute right-0 bottom-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full bg-[radial-gradient(closest-side,rgba(16,185,129,0.4),transparent)] opacity-40 blur-[120px] dark:opacity-60"
 		></div>
 	</div>
 
@@ -152,7 +152,7 @@
 		<div class="flex flex-col justify-between gap-6 md:flex-row md:items-end">
 			<div class="max-w-2xl space-y-5">
 				<p
-					class="animate-pop-up bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text font-mono text-[0.65rem] tracking-[0.35em] text-transparent uppercase"
+					class="animate-pop-up bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text font-mono text-[0.65rem] tracking-[0.35em] text-transparent uppercase"
 				>
 					Privacy-first · QR Code Studio
 				</p>
@@ -197,7 +197,7 @@
 					<!-- Content Input -->
 					<div class="space-y-4">
 						<div class="flex items-center gap-2">
-							<Type class="h-3.5 w-3.5 text-rose-500" />
+							<Type class="h-3.5 w-3.5 text-emerald-500" />
 							<label
 								for="qr-data"
 								class="font-mono text-[0.65rem] tracking-widest text-neutral-500 uppercase"
@@ -210,7 +210,7 @@
 								bind:value={data}
 								rows="3"
 								placeholder="Paste link or text here..."
-								class="w-full resize-none rounded-2xl border border-black/5 bg-white/50 px-5 py-4 text-sm outline-none focus:ring-2 focus:ring-rose-500/20 dark:border-white/5 dark:bg-black/20"
+								class="w-full resize-none rounded-2xl border border-black/5 bg-white/50 px-5 py-4 text-sm outline-none focus:ring-2 focus:ring-emerald-500/20 dark:border-white/5 dark:bg-black/20"
 							></textarea>
 							<button
 								on:click={copyUrl}
@@ -282,8 +282,8 @@
 										on:click={() => (dotsType = style.id)}
 										class="rounded-xl border px-4 py-2 text-[0.65rem] transition-all {dotsType ===
 										style.id
-											? 'border-rose-500 bg-rose-500/10 text-rose-600'
-											: 'border-black/5 bg-white/20 text-neutral-500 hover:bg-white/50 dark:border-white/5 dark:bg-white/5'}"
+										? 'border-emerald-500 bg-emerald-500/10 text-emerald-600'
+										: 'border-black/5 bg-white/20 text-neutral-500 hover:bg-white/50 dark:border-white/5 dark:bg-white/5'}"
 									>
 										{style.label}
 									</button>
@@ -302,8 +302,8 @@
 										on:click={() => (cornersType = style.id)}
 										class="rounded-xl border px-4 py-2 text-[0.65rem] transition-all {cornersType ===
 										style.id
-											? 'border-rose-500 bg-rose-500/10 text-rose-600'
-											: 'border-black/5 bg-white/20 text-neutral-500 hover:bg-white/50 dark:border-white/5 dark:bg-white/5'}"
+										? 'border-emerald-500 bg-emerald-500/10 text-emerald-600'
+										: 'border-black/5 bg-white/20 text-neutral-500 hover:bg-white/50 dark:border-white/5 dark:bg-white/5'}"
 									>
 										{style.label}
 									</button>
@@ -320,14 +320,14 @@
 								{#if logoFile}
 									<button
 										on:click={() => (logoFile = null)}
-										class="text-[0.6rem] text-rose-500 uppercase underline">Remove</button
+										class="text-[0.6rem] text-emerald-500 uppercase underline">Remove</button
 									>
 								{/if}
 							</div>
 							<div class="flex gap-4">
 								<button
 									on:click={() => document.getElementById('logo-upload')?.click()}
-									class="flex aspect-square w-16 items-center justify-center rounded-2xl border border-black/5 bg-white/50 text-neutral-400 transition-all hover:border-rose-500/50 hover:text-rose-500 dark:border-white/5 dark:bg-black/20"
+									class="flex aspect-square w-16 items-center justify-center rounded-2xl border border-black/5 bg-white/50 text-neutral-400 transition-all hover:border-emerald-500/50 hover:text-emerald-500 dark:border-white/5 dark:bg-black/20"
 								>
 									{#if logoFile}
 										<img src={logoFile} alt="Logo" class="h-10 w-10 object-contain" />
@@ -357,7 +357,7 @@
 											max="0.5"
 											step="0.05"
 											bind:value={logoSize}
-											class="w-full accent-rose-500"
+											class="w-full accent-emerald-500"
 										/>
 									</label>
 								</div>
@@ -386,7 +386,7 @@
 					<!-- Canvas Orbit Decoration -->
 					<div class="absolute inset-0 -z-10 flex items-center justify-center opacity-30">
 						<div
-							class="h-[300px] w-[300px] animate-[spin_60s_linear_infinite] rounded-full border border-dashed border-rose-500/20"
+							class="h-[300px] w-[300px] animate-[spin_60s_linear_infinite] rounded-full border border-dashed border-emerald-500/20"
 						></div>
 						<div
 							class="absolute h-[400px] w-[400px] animate-[spin_90s_linear_infinite_reverse] rounded-full border border-dashed border-neutral-500/10"
@@ -396,7 +396,7 @@
 					<div class="group relative">
 						<!-- Glow Effect -->
 						<div
-							class="absolute -inset-10 -z-10 rounded-full bg-rose-500/10 blur-[100px] transition-all group-hover:bg-rose-500/20"
+							class="absolute -inset-10 -z-10 rounded-full bg-emerald-500/10 blur-[100px] transition-all group-hover:bg-emerald-500/20"
 						></div>
 
 						<div
@@ -409,14 +409,14 @@
 
 					<div class="mt-12 flex items-center gap-6">
 						<div class="flex items-center gap-2">
-							<Sparkles class="h-3 w-3 text-rose-500" />
+							<Sparkles class="h-3 w-3 text-emerald-500" />
 							<span class="font-mono text-[0.6rem] tracking-widest text-neutral-500 uppercase"
 								>Vector Quality</span
 							>
 						</div>
 						<div class="h-1 w-1 rounded-full bg-neutral-300 dark:bg-neutral-700"></div>
 						<div class="flex items-center gap-2">
-							<Settings2 class="h-3 w-3 text-rose-500" />
+							<Settings2 class="h-3 w-3 text-emerald-500" />
 							<span class="font-mono text-[0.6rem] tracking-widest text-neutral-500 uppercase"
 								>Real-time Update</span
 							>
@@ -486,7 +486,7 @@
 		height: 16px;
 		width: 16px;
 		border-radius: 50%;
-		background: #e11d48;
+		background: #059669;
 		cursor: pointer;
 		margin-top: -6px;
 		border: 2px solid white;

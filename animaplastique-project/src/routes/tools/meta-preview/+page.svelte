@@ -20,11 +20,11 @@
 		Image as ImageIcon
 	} from 'lucide-svelte';
 
-	let title = 'AnimaPlastique - Rapid Web Development';
+	let title = 'xkinetics.space - Rapid Web Development';
 	let description =
 		'High-performance websites built with precision and speed. Privacy-first tools and premium design for the modern web.';
-	let url = 'https://animaplastique.xyz';
-	let image = 'https://animaplastique.xyz/og-image.png';
+	let url = 'https://xkinetics.space';
+	let image = 'https://xkinetics.space/og-image.png';
 
 	let activePreview = 'google';
 	let activeTab = 'editor'; // 'editor' | 'code'
@@ -76,7 +76,7 @@
 </script>
 
 <svelte:head>
-	<title>Meta Preview · Pro Studio - AnimaPlastique</title>
+	<title>Meta Preview · Pro Studio - xkinetics.space</title>
 </svelte:head>
 
 <section
@@ -87,7 +87,7 @@
 			class="absolute -top-32 -left-24 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(255,255,255,0.6),transparent)] opacity-25 blur-3xl dark:opacity-20"
 		></div>
 		<div
-			class="absolute right-0 bottom-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full bg-[radial-gradient(closest-side,rgba(180,30,40,0.4),transparent)] opacity-40 blur-[120px] dark:opacity-60"
+			class="absolute right-0 bottom-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full bg-[radial-gradient(closest-side,rgba(16,185,129,0.4),transparent)] opacity-40 blur-[120px] dark:opacity-60"
 		></div>
 	</div>
 
@@ -95,7 +95,7 @@
 		<div class="flex flex-col justify-between gap-6 md:flex-row md:items-end">
 			<div class="max-w-2xl space-y-5">
 				<p
-					class="animate-pop-up bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text font-mono text-[0.65rem] tracking-[0.35em] text-transparent uppercase"
+					class="animate-pop-up bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text font-mono text-[0.65rem] tracking-[0.35em] text-transparent uppercase"
 				>
 					Meta Preview · Pro Studio
 				</p>
@@ -151,7 +151,7 @@
 							<input
 								id="meta-title"
 								bind:value={title}
-								class="w-full rounded-xl border border-black/5 bg-white/50 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-rose-500/20 dark:border-white/5 dark:bg-black/20"
+								class="w-full rounded-xl border border-black/5 bg-white/50 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-emerald-500/20 dark:border-white/5 dark:bg-black/20"
 							/>
 							{#if titleStatus === 'warning' && title.length > 0}
 								<div class="flex items-center gap-2 text-[0.65rem] text-amber-500 italic">
@@ -180,7 +180,7 @@
 								id="meta-desc"
 								bind:value={description}
 								rows="4"
-								class="w-full resize-none rounded-xl border border-black/5 bg-white/50 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-rose-500/20 dark:border-white/5 dark:bg-black/20"
+								class="w-full resize-none rounded-xl border border-black/5 bg-white/50 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-emerald-500/20 dark:border-white/5 dark:bg-black/20"
 							></textarea>
 							{#if descStatus === 'warning' && description.length > 0}
 								<div class="flex items-center gap-2 text-[0.65rem] text-amber-500 italic">
@@ -199,7 +199,7 @@
 							<input
 								id="meta-url"
 								bind:value={url}
-								class="w-full rounded-xl border border-black/5 bg-white/50 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-rose-500/20 dark:border-white/5 dark:bg-black/20"
+								class="w-full rounded-xl border border-black/5 bg-white/50 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-emerald-500/20 dark:border-white/5 dark:bg-black/20"
 							/>
 						</div>
 
@@ -213,7 +213,7 @@
 								<input
 									id="meta-image"
 									bind:value={image}
-									class="flex-1 rounded-xl border border-black/5 bg-white/50 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-rose-500/20 dark:border-white/5 dark:bg-black/20"
+									class="flex-1 rounded-xl border border-black/5 bg-white/50 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-emerald-500/20 dark:border-white/5 dark:bg-black/20"
 								/>
 								<button
 									on:click={() => fileInputRef.click()}
@@ -266,7 +266,7 @@
 									</div>
 									<div class="flex flex-col">
 										<span class="text-[0.7rem] font-medium text-neutral-900 dark:text-neutral-100"
-											>AnimaPlastique</span
+											>xkinetics.space</span
 										>
 										<span class="text-[0.65rem] text-neutral-400">{url}</span>
 									</div>
@@ -284,10 +284,10 @@
 							</div>
 						{:else if activePreview === 'discord'}
 							<div
-								class="max-w-[432px] rounded-md border-l-4 border-rose-500 bg-[#2f3136] p-4 text-left"
+								class="max-w-[432px] rounded-md border-l-4 border-emerald-500 bg-[#2f3136] p-4 text-left"
 							>
 								<div class="mb-1 text-[0.75rem] font-bold tracking-wider text-[#b9bbbe] uppercase">
-									AnimaPlastique
+									xkinetics.space
 								</div>
 								<div
 									class="mb-2 cursor-pointer text-[1rem] font-semibold text-[#00b0f4] hover:underline"
@@ -346,7 +346,7 @@
 								<div class="flex-1 space-y-2">
 									<div class="flex items-center gap-2">
 										<div class="h-4 w-4 rounded bg-neutral-200 dark:bg-neutral-700"></div>
-										<span class="text-sm font-bold">AnimaPlastique</span>
+										<span class="text-sm font-bold">xkinetics.space</span>
 									</div>
 									<div class="cursor-pointer text-sm font-bold text-[#1264a3] hover:underline">
 										{title}
@@ -378,7 +378,7 @@
 								<div
 									class="flex min-h-[160px] flex-col items-center justify-center bg-white p-6 text-center dark:bg-neutral-950"
 								>
-									<Sparkles class="mb-4 h-10 w-10 text-rose-500 opacity-50" />
+									<Sparkles class="mb-4 h-10 w-10 text-emerald-500 opacity-50" />
 									<p class="text-xs text-neutral-400">Main Content Area</p>
 								</div>
 							</div>

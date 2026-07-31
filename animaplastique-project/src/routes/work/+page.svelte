@@ -29,7 +29,7 @@
 </script>
 
 <svelte:head>
-	<title>Work · AnimaPlastique</title>
+	<title>Work · xkinetics.space</title>
 </svelte:head>
 
 <section class="relative flex w-full justify-center overflow-hidden">
@@ -37,10 +37,10 @@
 		<!-- Header -->
 		<header class="space-y-4">
 			<p
-				class="animate-pop-up bg-gradient-to-r from-rose-400 to-red-500
-				   bg-clip-text font-mono text-[0.65rem] tracking-[0.35em] text-transparent uppercase"
+				class="animate-pop-up bg-gradient-to-r from-emerald-400 to-green-500
+			   bg-clip-text font-mono text-[0.65rem] tracking-[0.35em] text-transparent uppercase"
 			>
-				AnimaPlastique · selected work
+				xkinetics.space · selected work
 			</p>
 		</header>
 
@@ -69,10 +69,10 @@
 						       text-[0.7rem] tracking-[0.22em] text-neutral-50 uppercase
 						       shadow-sm transition-all
 						       duration-200 hover:-translate-y-0.5 hover:bg-neutral-800
-						       hover:shadow-lg focus-visible:ring-2 focus-visible:ring-rose-500/70 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950
+						       hover:shadow-lg focus-visible:ring-2 focus-visible:ring-emerald-500/70 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950
 						       focus-visible:outline-none dark:border-neutral-50/15 dark:bg-neutral-50
 						       dark:text-neutral-900 dark:hover:border-neutral-50/30
-						       dark:hover:bg-neutral-100 dark:focus-visible:ring-rose-400/80 dark:focus-visible:ring-offset-neutral-900"
+						       dark:hover:bg-neutral-100 dark:focus-visible:ring-emerald-400/80 dark:focus-visible:ring-offset-neutral-900"
 					>
 						Start a project
 					</a>

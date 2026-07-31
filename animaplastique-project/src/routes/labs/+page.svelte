@@ -22,7 +22,7 @@
 
 <!-- src/routes/labs/+page.svelte -->
 <svelte:head>
-	<title>Labs · AnimaPlastique</title>
+	<title>Labs · xkinetics.space</title>
 </svelte:head>
 
 <section class="relative flex w-full justify-center overflow-hidden">
@@ -41,9 +41,9 @@
 		></div>
 
 		<div
-			class="absolute right-0 bottom-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full bg-[radial-gradient(closest-side,rgba(180,30,40,0.4),transparent)]
+			class="absolute right-0 bottom-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full bg-[radial-gradient(closest-side,rgba(16,185,129,0.4),transparent)]
 			       opacity-40 blur-[120px]
-			       dark:bg-[radial-gradient(closest-side,rgba(220,50,60,0.35),transparent)] dark:opacity-60"
+			       dark:bg-[radial-gradient(closest-side,rgba(16,185,129,0.35),transparent)] dark:opacity-60"
 		></div>
 	</div>
 
@@ -51,10 +51,10 @@
 		<!-- Header -->
 		<header class="space-y-4">
 			<p
-				class="animate-pop-up bg-gradient-to-r from-rose-400 to-red-500
+				class="animate-pop-up bg-gradient-to-r from-emerald-400 to-green-500
 				   bg-clip-text font-mono text-[0.65rem] tracking-[0.35em] text-transparent uppercase"
 			>
-				AnimaPlastique · labs
+				xkinetics.space · labs
 			</p>
 
 			<div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">

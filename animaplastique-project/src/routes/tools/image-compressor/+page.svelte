@@ -108,7 +108,7 @@
 </script>
 
 <svelte:head>
-	<title>Image Compressor - AnimaPlastique</title>
+	<title>Image Compressor - xkinetics.space</title>
 </svelte:head>
 
 <section
@@ -119,7 +119,7 @@
 			class="absolute -top-32 -left-24 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(255,255,255,0.6),transparent)] opacity-25 blur-3xl dark:opacity-20"
 		></div>
 		<div
-			class="absolute right-0 bottom-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full bg-[radial-gradient(closest-side,rgba(180,30,40,0.4),transparent)] opacity-40 blur-[120px] dark:opacity-60"
+			class="absolute right-0 bottom-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full bg-[radial-gradient(closest-side,rgba(16,185,129,0.4),transparent)] opacity-40 blur-[120px] dark:opacity-60"
 		></div>
 	</div>
 
@@ -127,7 +127,7 @@
 		<div class="flex flex-col gap-12 lg:flex-row lg:items-start">
 			<div class="max-w-3xl flex-1 space-y-7">
 				<p
-					class="animate-pop-up bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text font-mono text-[0.65rem] tracking-[0.35em] text-transparent uppercase"
+					class="animate-pop-up bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text font-mono text-[0.65rem] tracking-[0.35em] text-transparent uppercase"
 				>
 					WASM Image Compressor · Privacy-first
 				</p>
@@ -137,7 +137,7 @@
 				</p>
 
 				<div
-					class="animate-pop-up cursor-pointer rounded-xl border-2 border-dashed border-neutral-300 p-8 text-center transition-colors hover:border-rose-400 dark:border-neutral-700 dark:hover:border-rose-500"
+					class="animate-pop-up cursor-pointer rounded-xl border-2 border-dashed border-neutral-300 p-8 text-center transition-colors hover:border-emerald-400 dark:border-neutral-700 dark:hover:border-emerald-500"
 					style="--delay: 0.1s;"
 					on:click={() => fileInputRef?.click()}
 					on:keydown={(e) => e.key === 'Enter' && fileInputRef?.click()}
@@ -178,7 +178,7 @@
 							max="1"
 							step="0.05"
 							bind:value={quality}
-							class="h-2 w-full cursor-pointer appearance-none rounded-lg bg-neutral-200 accent-rose-500 dark:bg-neutral-800"
+							class="h-2 w-full cursor-pointer appearance-none rounded-lg bg-neutral-200 accent-emerald-500 dark:bg-neutral-800"
 						/>
 
 						<button
@@ -219,7 +219,7 @@
 						<span class="font-mono">{(compressedFile.size / 1024).toFixed(2)} KB</span>
 					</div>
 					{#if file}
-						<div class="flex items-baseline justify-between text-rose-500">
+						<div class="flex items-baseline justify-between text-emerald-500">
 							<span class="font-mono tracking-wider uppercase">Reduction</span>
 							<span class="font-mono"
 								>{Math.round((1 - compressedFile.size / file.size) * 100)}%</span

@@ -127,7 +127,7 @@
 
 		--glow-soft: rgba(20, 20, 20, 0.9);
 		--glow-muted: rgba(15, 23, 42, 0.7);
-		--glow-accent: rgba(220, 50, 70, 0.35);
+		--glow-accent: rgba(16, 185, 129, 0.35);
 		--glow-green: rgba(52, 211, 153, 0.22);
 	}
 
@@ -154,7 +154,7 @@
 
 		--glow-soft: rgba(255, 255, 255, 0.9);
 		--glow-muted: rgba(200, 200, 200, 0.4);
-		--glow-accent: rgba(255, 120, 120, 0.35);
+		--glow-accent: rgba(52, 211, 153, 0.35);
 		--glow-green: rgba(52, 211, 153, 0.18);
 	}
 </style>

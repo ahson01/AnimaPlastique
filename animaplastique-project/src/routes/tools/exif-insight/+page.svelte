@@ -144,7 +144,7 @@
 </script>
 
 <svelte:head>
-	<title>Exif Insight - AnimaPlastique</title>
+	<title>Exif Insight - xkinetics.space</title>
 </svelte:head>
 
 <section
@@ -155,14 +155,14 @@
 			class="absolute -top-32 -left-24 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(255,255,255,0.6),transparent)] opacity-25 blur-3xl dark:opacity-20"
 		></div>
 		<div
-			class="absolute right-0 bottom-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full bg-[radial-gradient(closest-side,rgba(180,30,40,0.4),transparent)] opacity-40 blur-[120px] dark:opacity-60"
+			class="absolute right-0 bottom-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full bg-[radial-gradient(closest-side,rgba(16,185,129,0.4),transparent)] opacity-40 blur-[120px] dark:opacity-60"
 		></div>
 	</div>
 
 	<div class="mx-auto flex w-full max-w-6xl flex-col gap-12 px-6 pt-18 pb-24 lg:pt-22">
 		<div class="max-w-3xl space-y-7">
 			<p
-				class="animate-pop-up bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text font-mono text-[0.65rem] tracking-[0.35em] text-transparent uppercase"
+				class="animate-pop-up bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text font-mono text-[0.65rem] tracking-[0.35em] text-transparent uppercase"
 			>
 				Privacy-first · Exif Insight
 			</p>
@@ -176,7 +176,7 @@
 			<!-- Upload & Actions -->
 			<div class="animate-pop-up space-y-8" style="--delay: 0.1s;">
 				<div
-					class="cursor-pointer rounded-3xl border-2 border-dashed border-neutral-300 bg-white/40 p-12 text-center backdrop-blur-md transition-all hover:border-rose-400 dark:border-neutral-700 dark:bg-white/5 dark:hover:border-rose-500"
+					class="cursor-pointer rounded-3xl border-2 border-dashed border-neutral-300 bg-white/40 p-12 text-center backdrop-blur-md transition-all hover:border-emerald-400 dark:border-neutral-700 dark:bg-white/5 dark:hover:border-emerald-500"
 					on:click={() => fileInputRef.click()}
 					on:keydown={(e) => e.key === 'Enter' && fileInputRef.click()}
 					role="button"
@@ -190,9 +190,9 @@
 						accept="image/*,video/*"
 					/>
 					{#if isVideo}
-						<Video class="mx-auto mb-6 h-16 w-16 text-rose-500" />
+						<Video class="mx-auto mb-6 h-16 w-16 text-emerald-500" />
 					{:else if file}
-						<ImageIcon class="mx-auto mb-6 h-16 w-16 text-rose-500" />
+						<ImageIcon class="mx-auto mb-6 h-16 w-16 text-emerald-500" />
 					{:else}
 						<FileSearch class="mx-auto mb-6 h-16 w-16 text-neutral-400" />
 					{/if}
@@ -285,7 +285,7 @@
 					{:else if processing}
 						<div class="flex flex-col items-center justify-center gap-4 py-20 text-neutral-400">
 							<div
-								class="h-8 w-8 animate-spin rounded-full border-2 border-rose-500/30 border-t-rose-500"
+								class="h-8 w-8 animate-spin rounded-full border-2 border-emerald-500/30 border-t-emerald-500"
 							></div>
 							<span class="font-mono text-[0.6rem] tracking-widest uppercase"
 								>Analyzing Media...</span

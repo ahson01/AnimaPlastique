@@ -5,7 +5,7 @@ export const prerender = true;
 
 export const GET: RequestHandler = async () => {
 	return await sitemap.response({
-		origin: 'https://www.animaplastique.xyz',
+		origin: 'https://www.xkinetics.space',
 		excludeRoutePatterns: [
 			'^/labs/.*'
 		]

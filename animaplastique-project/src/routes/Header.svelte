@@ -20,13 +20,12 @@
 			href: 'https://discord.gg/9kNaxhtHXM',
 			label: 'Discord',
 			external: true
-		},
-		{
-			href: 'https://instagram.com/animaplastique',
-			label: 'Instagram',
-			external: true
-		},
-		{ label: 'Minecraft (coming soon)', disabled: true }
+		}
+	];
+
+	const studiosLinks = [
+		{ href: '/studios', label: 'xkinetics studios' },
+		{ href: '/studios/jeerasmp', label: 'JeeraSMP' }
 	];
 
 	const toolLinks = [
@@ -89,7 +88,11 @@
 			return navEl.querySelector('a[data-nav-root="projects"]') as HTMLAnchorElement | null;
 		}
 
-		if (path.startsWith('/community') || path.startsWith('/minecraft')) {
+		if (path.startsWith('/studios')) {
+			return navEl.querySelector('a[data-nav-root="studios"]') as HTMLAnchorElement | null;
+		}
+
+		if (path.startsWith('/community')) {
 			return navEl.querySelector('a[data-nav-root="community"]') as HTMLAnchorElement | null;
 		}
 
@@ -150,7 +153,7 @@
 			<span
 				class="font-mono text-xs font-semibold tracking-[0.25em] text-[var(--text-strong)] uppercase"
 			>
-				AnimaPlastique
+				xkinetics.space
 			</span>
 			<span class="font-mono text-[0.6rem] tracking-[0.3em] text-[var(--text-muted)] uppercase">
 				web dev & community
@@ -218,10 +221,7 @@
 					<li class="group relative pb-1">
 						<button
 							type="button"
-							aria-current={currentPath.startsWith('/community') ||
-							currentPath.startsWith('/minecraft')
-								? 'page'
-								: undefined}
+							aria-current={currentPath.startsWith('/community') ? 'page' : undefined}
 							class="ap-nav-link mt-1 flex cursor-pointer appearance-none items-center gap-1 border-none bg-transparent text-[var(--text-soft)]"
 							data-nav-root="community"
 							on:mouseenter={handleHover}
@@ -252,6 +252,33 @@
 										{item.label}
 									</a>
 								{/if}
+							{/each}
+						</div>
+					</li>
+
+					<li class="group relative pb-1">
+						<button
+							type="button"
+							aria-current={currentPath.startsWith('/studios') ? 'page' : undefined}
+							class="ap-nav-link mt-1 flex cursor-pointer appearance-none items-center gap-1 border-none bg-transparent text-[var(--text-soft)]"
+							data-nav-root="studios"
+							on:mouseenter={handleHover}
+							on:click={handleNavClick}
+						>
+							Studios
+							<span class="translate-y-[0.5px] text-[0.5rem]">▾</span>
+						</button>
+
+						<div
+							class="pointer-events-none absolute top-full left-0 w-56 translate-y-1 rounded-xl border border-[var(--border)] bg-[var(--card-bg-soft)] p-2 text-[0.65rem] opacity-0 shadow-lg backdrop-blur-sm transition-all duration-150 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100"
+						>
+							{#each studiosLinks as item}
+								<a
+									href={item.href}
+									class="ap-nav-link block rounded-md px-3 py-1.5 text-[0.65rem] tracking-[0.2em] text-[var(--text-soft)] uppercase hover:text-[var(--text-strong)]"
+								>
+									{item.label}
+								</a>
 							{/each}
 						</div>
 					</li>
@@ -369,6 +396,22 @@
 									{item.label}
 								</a>
 							{/if}
+						{/each}
+					</div>
+				</li>
+
+				<li class="mt-3">
+					<div class="text-[0.6rem] tracking-[0.3em] text-[var(--text-muted)] uppercase">
+						Studios
+					</div>
+					<div class="flex flex-col gap-1">
+						{#each studiosLinks as item}
+							<a
+								href={item.href}
+								class="ap-nav-link flex items-center rounded-md py-1.5 pl-3 text-[var(--text-soft)]"
+							>
+								{item.label}
+							</a>
 						{/each}
 					</div>
 				</li>

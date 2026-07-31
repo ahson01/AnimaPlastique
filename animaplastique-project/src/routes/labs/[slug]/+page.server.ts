@@ -1,5 +1,9 @@
 // src/routes/labs/[slug]/+page.server.ts
 import type { PageServerLoad } from './$types';
+
+// Dynamic route: content is fetched from GitHub per-slug at request time,
+// so it must not be force-prerendered by the global prerender=true layout.
+export const prerender = false;
 import { error } from '@sveltejs/kit';
 import matter from 'gray-matter';
 import { Marked } from 'marked';

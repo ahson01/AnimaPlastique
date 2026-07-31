@@ -88,10 +88,10 @@
 </script>
 
 <svelte:head>
-	<title>Contact · AnimaPlastique</title>
+	<title>Contact · xkinetics.space</title>
 	<meta
 		name="description"
-		content="Start a project with AnimaPlastique – a web dev studio focused on clean, modern, scalable sites."
+		content="Start a project with xkinetics.space – a web dev studio focused on clean, modern, scalable sites."
 	/>
 </svelte:head>
 
@@ -123,10 +123,10 @@
 		<!-- Header row -->
 		<div class="max-w-3xl space-y-6">
 			<p
-				class="animate-pop-up bg-gradient-to-r from-rose-400 to-red-500
+				class="animate-pop-up bg-gradient-to-r from-emerald-400 to-green-500
            bg-clip-text font-mono text-[0.65rem] tracking-[0.35em] text-transparent uppercase"
 			>
-				AnimaPlastique · contact
+				xkinetics.space · contact
 			</p>
 			<h1
 				class="rapid-text font-inter text-4xl leading-tight -tracking-[0.06em] text-balance
@@ -281,7 +281,7 @@
 
 					<!-- Status + submit -->
 					{#if errorMessage}
-						<p class="text-xs text-rose-500">{errorMessage}</p>
+						<p class="text-xs text-red-500">{errorMessage}</p>
 					{/if}
 
 					{#if status === 'success'}
@@ -312,11 +312,11 @@
 			<div class="space-y-6 text-xs sm:text-[0.75rem]">
 				<div class="space-y-2">
 					<p
-						class="animate-pop-up bg-gradient-to-r from-rose-400 to-red-500
+						class="animate-pop-up bg-gradient-to-r from-emerald-400 to-green-500
                bg-clip-text font-mono text-[0.65rem] tracking-[0.25em] text-transparent uppercase"
-						style="--delay: 0.05s;"
-					>
-						What to expect
+					style="--delay: 0.05s;"
+				>
+					What to expect
 					</p>
 					<ul class="space-y-1.5 text-[var(--text-soft)]">
 						<li class="animate-pop-up" style="--delay: 0.05s;">
@@ -333,11 +333,11 @@
 
 				<div class="space-y-2">
 					<p
-						class="animate-pop-up bg-gradient-to-r from-rose-400 to-red-500
+						class="animate-pop-up bg-gradient-to-r from-emerald-400 to-green-500
                bg-clip-text font-mono text-[0.65rem] tracking-[0.25em] text-transparent uppercase"
-						style="--delay :0.03s;"
-					>
-						Good fits
+					style="--delay :0.03s;"
+				>
+					Good fits
 					</p>
 					<ul class="space-y-1.5 text-[var(--text-soft)]">
 						<li class="animate-pop-up" style="--delay: 0.05s;">
@@ -365,7 +365,7 @@
 					<div class="mt-3 space-y-1.5 text-[var(--text-soft)]">
 						<p>
 							Email:
-							<span class="font-mono">hello@animaplastique.xyz</span>
+							<span class="font-mono">hello@xkinetics.space</span>
 						</p>
 						<p>
 							Preferred: a couple of links (if any), your rough timeline, and what “success” looks
@@ -408,7 +408,7 @@
 
 		--glow-soft: rgba(255, 255, 255, 0.9);
 		--glow-muted: rgba(200, 200, 200, 0.4);
-		--glow-accent: rgba(255, 120, 120, 0.35);
+		--glow-accent: rgba(52, 211, 153, 0.35);
 		--glow-green: rgba(52, 211, 153, 0.18);
 	}
 
@@ -433,7 +433,7 @@
 
 		--glow-soft: rgba(20, 20, 20, 0.9);
 		--glow-muted: rgba(15, 23, 42, 0.7);
-		--glow-accent: rgba(220, 50, 70, 0.35);
+		--glow-accent: rgba(16, 185, 129, 0.35);
 		--glow-green: rgba(52, 211, 153, 0.22);
 	}
 </style>

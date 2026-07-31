@@ -82,7 +82,7 @@
 </script>
 
 <svelte:head>
-	<title>Color Palette - AnimaPlastique</title>
+	<title>Color Palette - xkinetics.space</title>
 </svelte:head>
 
 <section
@@ -93,14 +93,14 @@
 			class="absolute -top-32 -left-24 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(255,255,255,0.6),transparent)] opacity-25 blur-3xl dark:opacity-20"
 		></div>
 		<div
-			class="absolute right-0 bottom-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full bg-[radial-gradient(closest-side,rgba(180,30,40,0.4),transparent)] opacity-40 blur-[120px] dark:opacity-60"
+			class="absolute right-0 bottom-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full bg-[radial-gradient(closest-side,rgba(16,185,129,0.4),transparent)] opacity-40 blur-[120px] dark:opacity-60"
 		></div>
 	</div>
 
 	<div class="mx-auto flex w-full max-w-6xl flex-col gap-12 px-6 pt-18 pb-24 lg:pt-22">
 		<div class="max-w-3xl space-y-7">
 			<p
-				class="animate-pop-up bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text font-mono text-[0.65rem] tracking-[0.35em] text-transparent uppercase"
+				class="animate-pop-up bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text font-mono text-[0.65rem] tracking-[0.35em] text-transparent uppercase"
 			>
 				Privacy-first · Color Palette
 			</p>
@@ -113,7 +113,7 @@
 			<!-- Controls -->
 			<div class="animate-pop-up space-y-6 lg:col-span-1" style="--delay: 0.1s;">
 				<div
-					class="group cursor-pointer rounded-2xl border-2 border-dashed border-neutral-300 p-6 text-center transition-colors hover:border-rose-400 dark:border-neutral-700 dark:hover:border-rose-500"
+					class="group cursor-pointer rounded-2xl border-2 border-dashed border-neutral-300 p-6 text-center transition-colors hover:border-emerald-400 dark:border-neutral-700 dark:hover:border-emerald-500"
 					on:click={() => fileInputRef?.click()}
 					on:keydown={(e) => e.key === 'Enter' && fileInputRef?.click()}
 					role="button"
@@ -127,7 +127,7 @@
 						accept="image/*"
 					/>
 					<Upload
-						class="mx-auto mb-4 h-8 w-8 text-neutral-400 transition-colors group-hover:text-rose-500"
+						class="mx-auto mb-4 h-8 w-8 text-neutral-400 transition-colors group-hover:text-emerald-500"
 					/>
 					<p class="font-mono text-xs tracking-[0.2em] text-neutral-500 uppercase">
 						Extract from Image
@@ -143,7 +143,7 @@
 
 				<button
 					on:click={clearColors}
-					class="flex w-full items-center justify-center gap-3 rounded-2xl border border-black/10 py-4 font-mono text-[0.7rem] tracking-[0.2em] text-neutral-500 uppercase transition-all hover:bg-rose-500/5 hover:text-rose-500 dark:border-white/10"
+					class="flex w-full items-center justify-center gap-3 rounded-2xl border border-black/10 py-4 font-mono text-[0.7rem] tracking-[0.2em] text-neutral-500 uppercase transition-all hover:bg-emerald-500/5 hover:text-emerald-500 dark:border-white/10"
 				>
 					<Trash2 class="h-4 w-4" /> Reset
 				</button>
