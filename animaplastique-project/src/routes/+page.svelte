@@ -1,5 +1,44 @@
 <script lang="ts">
+	import { onMount, onDestroy } from 'svelte';
 	import { currency, formatPrice } from '$lib/stores/currency';
+
+	const featuredProjects = [
+		{
+			title: 'Grocery Mart',
+			link: 'https://grocery-mart-snowy.vercel.app/',
+			image: '/grocery_mart_demo.png',
+			desc: 'A premium instant grocery delivery app built entirely on Flutter showcasing high-performance animations and interaction.'
+		},
+		{
+			title: 'Natural Eggs',
+			link: 'https://natural-eggs-website-ahson.vercel.app/',
+			image: '/natural_egg_landing_page_demo.png',
+			desc: 'A direct-order landing page for a local natural egg business so buyers can skip the middleman and order farm-straight.'
+		}
+	];
+
+	let activeIndex = 0;
+	let intervalId: any;
+
+	onMount(() => {
+		startAutoPlay();
+	});
+
+	onDestroy(() => {
+		stopAutoPlay();
+	});
+
+	function startAutoPlay() {
+		intervalId = setInterval(() => {
+			activeIndex = (activeIndex + 1) % featuredProjects.length;
+		}, 4000);
+	}
+
+	function stopAutoPlay() {
+		if (intervalId) {
+			clearInterval(intervalId);
+		}
+	}
 </script>
 
 <svelte:head>
@@ -173,36 +212,57 @@
 					Featured Work
 				</p>
 
-				<div
-					class="group overflow-hidden rounded-xl border border-black/10
-					       bg-[#f5f5f0] shadow-sm transition-all duration-300 hover:-translate-y-0.5
-					       hover:border-emerald-500/40 hover:shadow-xl
-					       dark:border-white/10 dark:bg-neutral-950/30"
+				<!-- Autoplay slider container -->
+				<div 
+					class="relative overflow-hidden rounded-xl border border-black/10 bg-[#f5f5f0] dark:border-white/10 dark:bg-neutral-950/30 h-[280px] group"
+					role="region"
+					aria-label="Featured projects carousel"
+					on:mouseenter={stopAutoPlay}
+					on:mouseleave={startAutoPlay}
 				>
-					<img
-						src="/natural_egg_landing_page_demo.png"
-						alt="Natural Eggs landing page demo"
-						class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-					/>
+					<!-- Slides Wrapper -->
+					<div class="flex transition-transform duration-700 ease-in-out h-full" style="transform: translateX(-{activeIndex * 100}%)">
+						{#each featuredProjects as project}
+							<div class="w-full flex-shrink-0 flex flex-col h-full">
+								<img
+									src={project.image}
+									alt={project.title}
+									class="h-36 w-full object-cover"
+								/>
 
-					<div class="p-5 space-y-2">
-						<div class="flex items-center justify-between">
-							<h3 class="font-mono text-sm tracking-[0.15em] uppercase">Natural Eggs</h3>
-							<span class="font-mono text-xs text-neutral-500 group-hover:text-emerald-400 transition-colors">↗</span>
-						</div>
-						<p class="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed">
-							A direct-order landing page for a local natural egg business so buyers can skip
-							the middleman and order straight from the farm.
-						</p>
-						<a
-							href="https://natural-eggs-website-ahson.vercel.app/"
-							target="_blank"
-							rel="noopener noreferrer"
-							class="inline-block font-mono text-[0.65rem] tracking-[0.2em] uppercase
-							       text-emerald-500 hover:text-emerald-400 transition-colors"
-						>
-							View live →
-						</a>
+								<div class="p-4 flex-grow flex flex-col justify-between space-y-1">
+									<div class="space-y-1">
+										<div class="flex items-center justify-between">
+											<h3 class="font-mono text-xs font-semibold tracking-[0.15em] uppercase">{project.title}</h3>
+											<span class="font-mono text-xs text-neutral-500 group-hover:text-emerald-400 transition-colors">↗</span>
+										</div>
+										<p class="text-[0.7rem] leading-relaxed text-neutral-500 dark:text-neutral-400">
+											{project.desc}
+										</p>
+									</div>
+									<a
+										href={project.link}
+										target="_blank"
+										rel="noopener noreferrer"
+										class="inline-block font-mono text-[0.6rem] tracking-[0.2em] uppercase
+										       text-emerald-500 hover:text-emerald-400 transition-colors pt-2"
+									>
+										View live →
+									</a>
+								</div>
+							</div>
+						{/each}
+					</div>
+
+					<!-- Navigation Dots -->
+					<div class="absolute bottom-3 right-4 flex gap-1.5 z-10">
+						{#each featuredProjects as _, idx}
+							<button
+								class="h-1.5 rounded-full transition-all duration-300 {idx === activeIndex ? 'w-4 bg-emerald-500' : 'w-1.5 bg-neutral-300 dark:bg-neutral-700 hover:bg-neutral-400'}"
+								on:click={() => activeIndex = idx}
+								aria-label="Go to slide {idx + 1}"
+							></button>
+						{/each}
 					</div>
 				</div>
 			</div>
