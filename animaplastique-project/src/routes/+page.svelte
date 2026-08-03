@@ -3,17 +3,18 @@
 	import { currency, formatPrice } from '$lib/stores/currency';
 
 	const featuredProjects = [
-		{
-			title: 'Grocery Mart',
-			link: 'https://grocery-mart-snowy.vercel.app/',
-			image: '/grocery_mart_demo.png',
-			desc: 'A premium instant grocery delivery app built entirely on Flutter showcasing high-performance animations and interaction.'
-		},
+
 		{
 			title: 'Natural Eggs',
 			link: 'https://natural-eggs-website-ahson.vercel.app/',
 			image: '/natural_egg_landing_page_demo.png',
 			desc: 'A direct-order landing page for a local natural egg business so buyers can skip the middleman and order farm-straight.'
+		},
+				{
+			title: 'Grocery Mart',
+			link: 'https://grocery-mart-snowy.vercel.app/',
+			image: '/grocery_mart_demo.png',
+			desc: 'A premium instant grocery delivery app built entirely on Flutter showcasing high-performance animations and interaction.'
 		}
 	];
 

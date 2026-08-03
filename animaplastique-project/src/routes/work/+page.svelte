@@ -2,19 +2,7 @@
 	import { revealOnScroll } from '$lib/actions/revealOnScroll';
 
 	const projects = [
-		{
-			title: 'Grocery Mart',
-			subtitle: 'Demo grocery app',
-			link: 'https://grocery-mart-snowy.vercel.app/',
-			image: '/grocery_mart_demo.png',
-			description: 'A lightning-fast grocery delivery app demo (similar to Blinkit, Instamart, or Swiggy) showcasing smooth performance, quick search, intuitive cart management, and seamless category browsing.',
-			stack: ['Flutter', 'Dart', 'Tailwind CSS', 'Vercel'],
-			year: '2025',
-			status: 'Demo -- live and publicly accessible',
-			problem: 'Instant grocery delivery web & mobile apps need to load instantly, handle thousands of products with complex categorization, and provide zero-latency animations to match native app experiences on budget devices.',
-			approach: 'Built entirely on Flutter, taking advantage of its powerful rendering engine for buttery-smooth animations and instant interactions. Designed with an Instamart/Blinkit-style interface featuring a quick-add cart, search filtering, and categorized grocery shelves.',
-			result: 'An incredibly responsive web application that runs flawlessly on mobile and desktop browsers alike. Demonstrates that Flutter can deliver a unified, premium native-feeling e-commerce experience from a single codebase.'
-		},
+
 		{
 			title: 'Natural Eggs',
 			subtitle: 'Landing page demo',
@@ -27,6 +15,19 @@
 			problem: 'Local egg businesses in India typically have no web presence. Sales happen through WhatsApp forwards, word of mouth, or physical stalls. There\'s no way for someone who finds them online to understand what\'s available, what makes the eggs different, or how to place an order without calling first.',
 			approach: 'Built as a single scrolling page: hero with a strong product photo, a short "why natural" section, a simple product listing, and a direct order/contact CTA. Kept the site minimal as the audience is largely on mobile data, so load time matters more than animation. Design is warm and honest rather than corporate.',
 			result: 'The demo is live and does what it says: gives a local egg business a real page to point people to. It\'s not a client project yet, it was built to show this exact use case is possible at the Starter tier.'
+		},
+				{
+			title: 'Grocery Mart',
+			subtitle: 'Demo grocery app',
+			link: 'https://grocery-mart-snowy.vercel.app/',
+			image: '/grocery_mart_demo.png',
+			description: 'A lightning-fast grocery delivery app demo (similar to Blinkit, Instamart, or Swiggy) showcasing smooth performance, quick search, intuitive cart management, and seamless category browsing.',
+			stack: ['Flutter', 'Dart', 'Tailwind CSS', 'Vercel'],
+			year: '2026',
+			status: 'Demo -- live and publicly accessible',
+			problem: 'Instant grocery delivery web & mobile apps need to load instantly, handle thousands of products with complex categorization, and provide zero-latency animations to match native app experiences on budget devices.',
+			approach: 'Built entirely on Flutter, taking advantage of its powerful rendering engine for buttery-smooth animations and instant interactions. Designed with an Instamart/Blinkit-style interface featuring a quick-add cart, search filtering, and categorized grocery shelves.',
+			result: 'An incredibly responsive web application that runs flawlessly on mobile and desktop browsers alike. Demonstrates that Flutter can deliver a unified, premium native-feeling e-commerce experience from a single codebase.'
 		}
 	];
 </script>
