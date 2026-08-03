@@ -84,7 +84,7 @@
 		</a>
 
 		<div
-			class="animate-pop-up w-fit overflow-hidden rounded-3xl border border-[var(--border)] shadow-lg"
+			class="animate-pop-up w-1/2 overflow-hidden rounded-3xl border border-[var(--border)] shadow-lg"
 		>
 			<img
 				src="/jeerasmp-banner.png"

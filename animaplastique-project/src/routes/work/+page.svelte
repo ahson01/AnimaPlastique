@@ -25,7 +25,7 @@
 		Docker: 'docker'
 	};
 
-	const projects: Project[] = [];
+	const projects: Project[] = [{ title: 'Natural Eggs Demo', image: '/natural_egg_landing_page_demo.png', link: 'https://natural-eggs-website-ahson.vercel.app/', description: 'Demo landing page for Natural Eggs client.', tags: ['Demo', 'Landing'] }];
 </script>
 
 <svelte:head>
