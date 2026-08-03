@@ -9,13 +9,17 @@
 <section class="relative flex w-full justify-center overflow-hidden">
 	<div class="pointer-events-none absolute inset-0 -z-10">
 		<div
-			class="absolute -top-32 -left-24 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(255,255,255,0.6),transparent)] opacity-25
-		            blur-3xl dark:opacity-20"
+			class="absolute -top-32 -left-24 h-72 w-72 rounded-full
+			        opacity-30 blur-3xl
+			        bg-[radial-gradient(closest-side,rgba(16,185,129,0.15),transparent)]
+			        dark:bg-[radial-gradient(closest-side,rgba(255,255,255,0.6),transparent)] dark:opacity-20"
 		></div>
 
 		<div
-			class="absolute -right-24 -bottom-24 h-96 w-96 rounded-full bg-[radial-gradient(closest-side,rgba(0,0,0,0.3),transparent)] opacity-20
-		            blur-3xl dark:opacity-30"
+			class="absolute -right-24 -bottom-24 h-96 w-96 rounded-full
+			        opacity-20 blur-3xl
+			        bg-[radial-gradient(closest-side,rgba(0,0,0,0.08),transparent)]
+			        dark:bg-[radial-gradient(closest-side,rgba(0,0,0,0.3),transparent)] dark:opacity-30"
 		></div>
 
 		<div
@@ -35,19 +39,23 @@
 					xkinetics.space · web dev agency
 				</p>
 
+				<!--
+					📌 HEADLINE OPTION CHOSEN: Option A
+					Option B: "Templates won't cut it. / Freelancers ghost you. / We build real sites for / founders and small businesses."
+					Option C: "The site your / business actually deserves. / Custom-built for founders, / creators, and small teams."
+				-->
 				<h1
 					class="font-inter rapid-text text-4xl leading-tight -tracking-[0.06em]
-					       text-balance sm:text-5xl lg:text-6xl "
+					       text-balance sm:text-5xl lg:text-6xl"
 				>
-					<span class="reveal-line" style="--delay: 0.1s">Rapidly launch modern</span><br />
-					<span class="reveal-line" style="--delay: 0.2s">websites without limits-</span><br />
-					<span class="reveal-line" style="--delay: 0.3s">flexible, future-ready,</span><br />
-					<span class="reveal-line" style="--delay: 0.4s">and built to scale.</span>
+					<span class="reveal-line" style="--delay: 0.1s">Your site should be</span><br />
+					<span class="reveal-line" style="--delay: 0.2s">live by next week.</span><br />
+					<span class="reveal-line" style="--delay: 0.3s">Not next quarter.</span>
 				</h1>
 
 				<p class="max-w-xl text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
-					Design-driven builds, clean code, and infrastructure that won’t box you in later. From
-					landing pages to full product sites, we handle the stack so you can focus on the work.
+					Built for small businesses, solo founders, and creators who need a real site fast.
+					No template wrestling. No waiting on a freelancer to reply. Clean code, shipped on time.
 				</p>
 
 				<div class="flex flex-wrap items-center gap-4">
@@ -85,60 +93,160 @@
 					</a>
 				</div>
 			</div>
+
+			<!-- ─── PRICING PACKAGES CARD ──────────────────────────────── -->
 			<div
-				class=" animate-pop-up grid w-full max-w-sm gap-4 rounded-2xl border border-black/10
-				       bg-white/40 p-5 text-xs shadow-lg ring-1
+				class="animate-pop-up grid w-full max-w-sm gap-4 rounded-2xl border border-black/10
+				       bg-[#f5f5f0]/70 p-5 text-xs shadow-lg ring-1
 				       ring-black/5 backdrop-blur-md
 				       sm:text-[0.7rem] dark:border-white/10 dark:bg-white/5 dark:ring-white/5"
 			>
-				<div
-					class="flex items-baseline justify-between border-b border-black/10 pb-3 dark:border-white/10"
+				<div class="flex items-baseline justify-between border-b border-black/10 pb-3 dark:border-white/10">
+					<span class="font-mono text-[0.7rem] tracking-[0.25em] uppercase">Packages</span>
+				</div>
+
+				<!-- Starter -->
+				<div class="space-y-0.5">
+					<div class="flex items-baseline justify-between">
+						<span class="font-mono tracking-[0.2em] uppercase">Starter</span>
+						<!--
+							📌 PRICING: ₹550 × 3 pages = ₹1,650 starting.
+							Adjust the number below if you want a different entry price.
+						-->
+						<span class="font-mono text-[0.75rem]">from {formatPrice(1650, $currency)}</span>
+					</div>
+					<p class="font-mono text-[0.62rem] tracking-[0.1em] text-neutral-500 dark:text-neutral-500">
+						1–3 pages · responsive · fast delivery
+					</p>
+				</div>
+
+				<!-- Business -->
+				<div class="space-y-0.5">
+					<div class="flex items-baseline justify-between">
+						<span class="font-mono tracking-[0.2em] uppercase">Business</span>
+						<!--
+							📌 PRICING: ₹550 × 5 pages = ₹2,750 starting.
+							Adjust below if needed.
+						-->
+						<span class="font-mono text-[0.75rem]">from {formatPrice(2750, $currency)}</span>
+					</div>
+					<p class="font-mono text-[0.62rem] tracking-[0.1em] text-neutral-500 dark:text-neutral-500">
+						up to 6 pages · SEO + analytics setup
+					</p>
+				</div>
+
+				<!-- Custom -->
+				<div class="space-y-0.5">
+					<div class="flex items-baseline justify-between">
+						<span class="font-mono tracking-[0.2em] uppercase">Custom</span>
+						<span class="font-mono text-[0.75rem] text-emerald-600 dark:text-emerald-400">let's talk</span>
+					</div>
+					<p class="font-mono text-[0.62rem] tracking-[0.1em] text-neutral-500 dark:text-neutral-500">
+						7–10 pages · product sites · full scope
+					</p>
+				</div>
+
+				<div class="border-t border-black/10 pt-3 dark:border-white/10 space-y-2">
+					<div class="flex items-baseline justify-between">
+						<span class="font-mono tracking-[0.25em] uppercase">Typical launch</span>
+						<span class="font-mono text-[0.75rem]">1–2 weeks</span>
+					</div>
+					<div class="flex items-baseline justify-between">
+						<span class="font-mono tracking-[0.25em] uppercase">Availability</span>
+						<span class="font-mono text-[0.75rem] text-emerald-600 dark:text-emerald-400">Now booking</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ─── PROOF / CREDIBILITY SECTION ───────────────────────────── -->
+		<div
+			class="animate-pop-up grid gap-8 border-t border-black/10 pt-10 lg:grid-cols-2 dark:border-white/10"
+			style="--delay: 0.2s"
+		>
+			<!-- Featured Work callout -->
+			<div class="space-y-4">
+				<p
+					class="bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text
+				       font-mono text-[0.65rem] tracking-[0.25em] text-transparent uppercase"
 				>
-					<span class="font-mono text-[0.7rem] tracking-[0.25em] uppercase"> Details </span>
+					Featured Work
+				</p>
+
+				<div
+					class="group overflow-hidden rounded-xl border border-black/10
+					       bg-[#f5f5f0] shadow-sm transition-all duration-300 hover:-translate-y-0.5
+					       hover:border-emerald-500/40 hover:shadow-xl
+					       dark:border-white/10 dark:bg-neutral-950/30"
+				>
+					<img
+						src="/natural_egg_landing_page_demo.png"
+						alt="Natural Eggs landing page demo"
+						class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+					/>
+
+					<div class="p-5 space-y-2">
+						<div class="flex items-center justify-between">
+							<h3 class="font-mono text-sm tracking-[0.15em] uppercase">Natural Eggs</h3>
+							<span class="font-mono text-xs text-neutral-500 group-hover:text-emerald-400 transition-colors">↗</span>
+						</div>
+						<p class="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed">
+							A direct-order landing page for a local natural egg business so buyers can skip
+							the middleman and order straight from the farm.
+						</p>
+						<a
+							href="https://natural-eggs-website-ahson.vercel.app/"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-block font-mono text-[0.65rem] tracking-[0.2em] uppercase
+							       text-emerald-500 hover:text-emerald-400 transition-colors"
+						>
+							View live →
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Founder blurb + availability -->
+			<div class="space-y-6">
+				<div class="space-y-3">
+					<p
+						class="bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text
+					       font-mono text-[0.65rem] tracking-[0.25em] text-transparent uppercase"
+					>
+						Who's building this
+					</p>
+					<!--
+						📌 FOUNDER BIO PLACEHOLDER:
+						Replace the paragraph below with 2–3 honest, personal sentences.
+						Not corporate-speak. Something like:
+						"I'm [Name], a [city]-based developer who started xkinetics.space because
+						[honest reason]. I believe [something you actually care about]."
+					-->
+					<p class="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+						Founders @ xkinetics. We believe your business deserves better than a copy-paste website. As a two-person team, we handcraft custom, lightning-fast web experiences from the ground up. Websites that are built with care.
+						<br>
+						<br>
+						- Ahson01 & Hammad 
+					
+					</p>
 				</div>
 
-				<div class="flex items-baseline justify-between">
-					<span class="font-mono tracking-[0.25em] uppercase">Typical launch</span>
-					<span class="font-mono text-[0.75rem]">1–2 weeks</span>
-				</div>
-
-				<div class="flex items-baseline justify-between">
-					<span class="font-mono tracking-[0.25em] uppercase">Types</span>
-					<span class="font-mono text-[0.75rem] text-neutral-600 dark:text-neutral-400">
-						Landing pages · Full-sites
+				<div class="flex flex-wrap gap-3">
+					<span
+						class="inline-flex items-center gap-2 rounded-full border border-emerald-500/30
+						       bg-emerald-500/10 px-4 py-2 font-mono text-[0.65rem] tracking-[0.12em]
+						       uppercase text-emerald-600 dark:text-emerald-400"
+					>
+						<span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+						Now booking
 					</span>
-				</div>
-
-				<div class="flex items-baseline justify-between">
-					<span class="font-mono tracking-[0.25em] uppercase">Scope sizes</span>
-					<span class="font-mono text-[0.75rem] text-neutral-600 dark:text-neutral-400">
-						1–10 pages (modular)
-					</span>
-				</div>
-
-				<div class="flex items-baseline justify-between">
-					<span class="font-mono tracking-[0.25em] uppercase">Performance</span>
-					<span class="font-mono text-[0.75rem] text-neutral-600 dark:text-neutral-400">
-						Fast load · SEO-ready
-					</span>
-				</div>
-
-				<div class="flex items-baseline justify-between">
-					<span class="font-mono tracking-[0.25em] uppercase">Rate</span>
-					<span class="font-mono text-[0.75rem] text-neutral-600 dark:text-neutral-400">
-						{formatPrice(550, $currency)} per page
-					</span>
-				</div>
-
-				<div class="flex items-baseline justify-between">
-					<span class="font-mono tracking-[0.25em] uppercase">Availability</span>
-					<span class="font-mono text-[0.75rem]"> Bookings open </span>
 				</div>
 			</div>
 		</div>
 
 		<div
-			class="mt-4 grid gap-8 border-t border-white/10 pt-10 text-xs sm:grid-cols-3 sm:text-[0.75rem]"
+			class="mt-4 grid gap-8 border-t border-black/10 pt-10 text-xs sm:grid-cols-3 sm:text-[0.75rem] dark:border-white/10"
 		>
 			<div class="animate-pop-up space-y-2" style="--delay: 0.3s;">
 				<p
@@ -148,8 +256,8 @@
 					Best for
 				</p>
 				<p class="text-neutral-600 dark:text-neutral-400">
-					New launches, redesigns, and small teams that want a clean, modern site without wrestling
-					with templates.
+					Small businesses, solo founders, and creators who need a clean modern site without
+					wrestling with templates or chasing unreliable freelancers.
 				</p>
 			</div>
 

@@ -2,6 +2,8 @@
 	type Service = {
 		id: string;
 		name: string;
+		packageTier: string; // maps to homepage package
+		price: string;
 		tagline: string;
 		description: string;
 		eta: string;
@@ -10,35 +12,46 @@
 
 	const services: Service[] = [
 		{
-			id: 'landing',
-			name: 'Launch landing',
+			id: 'starter',
+			name: 'Starter',
+			packageTier: 'Starter package',
+			// 📌 PRICING: ₹550 × 1–3 pages. Adjust if needed.
+			price: 'from ₹1,650',
 			tagline: 'Single-page site to ship your idea fast.',
 			description:
 				'Modern, scroll-based landing page with clean layout, mobile-first design, and a clear call to action. Built to look sharp on both laptops and low-end phones.',
 			eta: '3–5 days',
-			cta: 'Perfect for early-stage ideas and campaigns.'
+			cta: 'Perfect for early-stage ideas, local businesses, and campaigns.'
 		},
 		{
-			id: 'portfolio',
-			name: 'Portfolio / personal site',
-			tagline: 'Make your work look as serious as you are.',
+			id: 'business',
+			name: 'Business',
+			packageTier: 'Business package',
+			// 📌 PRICING: ₹550 × 5 pages. Adjust if needed.
+			price: 'from ₹2,750',
+			tagline: 'A proper multi-page site with SEO and analytics.',
 			description:
-				'A minimal, fast portfolio with sections for projects, about, and contact. No bloated templates, just focused pages that highlight real work.',
-			eta: '5–7 days',
-			cta: 'Great for students, developers, designers and job hunters.'
-		},
-		{
-			id: 'multi',
-			name: 'Mini product site',
-			tagline: 'A small but serious web presence.',
-			description:
-				'A structured multi-page site with navigation, pricing, and product storytelling. Built for clarity first, with performance baked in.',
+				'Up to 6 pages with navigation, product storytelling, and structured content. Includes basic SEO setup and analytics so you can actually track what’s working.',
 			eta: '7–12 days',
-			cta: 'Perfect for small businesses and SaaS-style tools.'
+			cta: 'For small businesses, solo operators, and portfolio-plus sites.'
+		},
+		{
+			id: 'custom',
+			name: 'Custom',
+			packageTier: 'Custom package',
+			price: 'let’s talk',
+			tagline: 'Larger scope, full spec, built around your needs.',
+			description:
+				'7–10 pages, product-style sites, or anything that doesn’t fit a template. We align on scope first, then build it right, no cutting corners to hit a fixed price.',
+			eta: '2–4 weeks',
+			cta: 'For teams building something serious.'
 		},
 		{
 			id: 'care',
 			name: 'Care plan',
+			packageTier: 'Add-on',
+			// 📌 PRICING: Set a monthly rate you’re comfortable with. Suggested: ₹500–₹1,500/mo
+			price: 'from ₹500 / mo',
 			tagline: 'Keep your site from going stale.',
 			description:
 				'Lightweight monthly support for small changes, bug fixes, and polish. Ideal once your main build is done and you want it to keep feeling fresh.',
@@ -52,7 +65,7 @@
 	<title>Services · xkinetics.space</title>
 	<meta
 		name="description"
-		content="Modern, fast websites and small products built with care, priced for Indian founders, students, and small teams."
+		content="Modern, fast websites and small products built with care, priced for Indian businesses, students, and small teams."
 	/>
 </svelte:head>
 
@@ -123,9 +136,18 @@
         ${i === 0 ? 'gap-8 md:col-span-2 md:flex-row md:items-center' : ''}`}
 				>
 					<div class={`space-y-3 ${i === 0 ? 'md:max-w-md' : ''}`}>
-						<p class="font-mono text-xs tracking-[0.22em] text-[var(--text-muted)] uppercase">
-							{service.tagline}
-						</p>
+						<div class="flex flex-wrap items-center gap-2">
+							<p class="font-mono text-xs tracking-[0.22em] text-[var(--text-muted)] uppercase">
+								{service.tagline}
+							</p>
+							<span
+								class="rounded-full border border-emerald-500/30 bg-emerald-500/10
+								       px-2 py-0.5 font-mono text-[0.6rem] tracking-[0.12em]
+								       uppercase text-emerald-600 dark:text-emerald-400"
+							>
+								{service.packageTier}
+							</span>
+						</div>
 						<h2 class="text-2xl font-semibold text-[var(--text-strong)] sm:text-3xl">
 							{service.name}
 						</h2>
@@ -138,6 +160,9 @@
 						class={`mt-6 flex flex-col gap-3 text-sm text-[var(--text-soft)]
           ${i === 0 ? 'md:mt-0 md:items-end md:text-right' : ''}`}
 					>
+						<p class="font-mono text-lg font-semibold text-[var(--text-strong)]">
+							{service.price}
+						</p>
 						<p class="text-[0.75rem] text-[var(--text-muted)]">
 							Typical timeline: {service.eta}
 						</p>

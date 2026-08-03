@@ -5,6 +5,23 @@
   <meta charset="utf-8" />
   <link rel="icon" href="%sveltekit.assets%/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('theme');
+        var isDark = stored !== 'light';
+        if (isDark) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.style.setProperty('--bg', '#050505');
+          document.documentElement.style.backgroundColor = '#050505';
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.style.setProperty('--bg', '#eeeee9');
+          document.documentElement.style.backgroundColor = '#eeeee9';
+        }
+      } catch (e) {}
+    })();
+  </script>
   %sveltekit.head%
 </head>
 
