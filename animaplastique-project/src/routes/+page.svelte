@@ -377,7 +377,7 @@
 					<div class="rounded-2xl border border-black/10 bg-[#f5f5f0]/70 p-5 text-xs shadow-sm dark:border-white/10 dark:bg-white/5 space-y-2">
 						<p class="font-mono text-[0.65rem] tracking-[0.25em] text-emerald-600 dark:text-emerald-400 uppercase">Support</p>
 						<p class="font-mono text-neutral-600 dark:text-neutral-400 leading-relaxed">
-							We include [X] days of free bug fixes after launch. For ongoing support, small updates, or changes, you can use our monthly Care Plan.
+							We include 30 days of free bug fixes after launch. For ongoing support, small updates, or changes, you can use our monthly Care Plan.
 						</p>
 					</div>
 

@@ -213,7 +213,7 @@
 					<div class="rounded-3xl border border-[var(--border)] bg-gradient-to-br from-[var(--card-bg)] to-[var(--card-bg-soft)] p-6 text-xs shadow-sm space-y-2">
 						<p class="font-mono text-[0.65rem] tracking-[0.25em] text-emerald-600 dark:text-emerald-400 uppercase">Support</p>
 						<p class="font-mono text-[var(--text-soft)] leading-relaxed">
-							We include [X] days of free bug fixes after launch. For ongoing support, small updates, or changes, you can use our monthly Care Plan.
+							We include 30 days of free bug fixes after launch. For ongoing support, small updates, or changes, you can use our monthly Care Plan.
 						</p>
 					</div>
 
