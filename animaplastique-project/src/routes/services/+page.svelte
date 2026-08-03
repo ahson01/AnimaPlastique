@@ -186,6 +186,55 @@
 				</article>
 			{/each}
 		</section>
+
+		<!-- ─── AFTER LAUNCH & TERMS SECTION ──────────────────────────── -->
+		<div
+			class="animate-pop-up mt-8 border-t border-[var(--border)] pt-10"
+			style="--delay: 0.35s;"
+		>
+			<div class="space-y-6">
+				<p
+					class="bg-gradient-to-r from-emerald-500 to-green-500 bg-clip-text
+					       font-mono text-[0.65rem] tracking-[0.25em] text-transparent uppercase"
+				>
+					After Launch
+				</p>
+				
+				<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+					<!-- Ownership -->
+					<div class="rounded-3xl border border-[var(--border)] bg-gradient-to-br from-[var(--card-bg)] to-[var(--card-bg-soft)] p-6 text-xs shadow-sm space-y-2">
+						<p class="font-mono text-[0.65rem] tracking-[0.25em] text-emerald-600 dark:text-emerald-400 uppercase">Ownership</p>
+						<p class="font-mono text-[var(--text-soft)] leading-relaxed">
+							You own 100% of the code, domain, and content from handover. No lock-in. No recurring fees are needed to keep the site running.
+						</p>
+					</div>
+
+					<!-- Support -->
+					<div class="rounded-3xl border border-[var(--border)] bg-gradient-to-br from-[var(--card-bg)] to-[var(--card-bg-soft)] p-6 text-xs shadow-sm space-y-2">
+						<p class="font-mono text-[0.65rem] tracking-[0.25em] text-emerald-600 dark:text-emerald-400 uppercase">Support</p>
+						<p class="font-mono text-[var(--text-soft)] leading-relaxed">
+							We include [X] days of free bug fixes after launch. For ongoing support, small updates, or changes, you can use our monthly Care Plan.
+						</p>
+					</div>
+
+					<!-- Handover -->
+					<div class="rounded-3xl border border-[var(--border)] bg-gradient-to-br from-[var(--card-bg)] to-[var(--card-bg-soft)] p-6 text-xs shadow-sm space-y-2">
+						<p class="font-mono text-[0.65rem] tracking-[0.25em] text-emerald-600 dark:text-emerald-400 uppercase">Handover</p>
+						<p class="font-mono text-[var(--text-soft)] leading-relaxed">
+							You get full source code, deployment access, and documentation. Everything is set up so the site works without us.
+						</p>
+					</div>
+
+					<!-- Continuity -->
+					<div class="rounded-3xl border border-[var(--border)] bg-gradient-to-br from-[var(--card-bg)] to-[var(--card-bg-soft)] p-6 text-xs shadow-sm space-y-2">
+						<p class="font-mono text-[0.65rem] tracking-[0.25em] text-emerald-600 dark:text-emerald-400 uppercase">Continuity</p>
+						<p class="font-mono text-[var(--text-soft)] leading-relaxed">
+							We document and hand over everything properly. You are not stuck depending on either of us to keep the site running.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </section>
 

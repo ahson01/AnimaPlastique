@@ -350,6 +350,55 @@
 				</ul>
 			</div>
 		</div>
+
+		<!-- ─── AFTER LAUNCH & TERMS SECTION ──────────────────────────── -->
+		<div
+			class="animate-pop-up mt-4 grid gap-8 border-t border-black/10 pt-10 dark:border-white/10"
+			style="--delay: 0.6s;"
+		>
+			<div class="space-y-6">
+				<p
+					class="bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text
+					       font-mono text-[0.65rem] tracking-[0.25em] text-transparent uppercase"
+				>
+					After Launch
+				</p>
+				
+				<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+					<!-- Ownership -->
+					<div class="rounded-2xl border border-black/10 bg-[#f5f5f0]/70 p-5 text-xs shadow-sm dark:border-white/10 dark:bg-white/5 space-y-2">
+						<p class="font-mono text-[0.65rem] tracking-[0.25em] text-emerald-600 dark:text-emerald-400 uppercase">Ownership</p>
+						<p class="font-mono text-neutral-600 dark:text-neutral-400 leading-relaxed">
+							You own 100% of the code, domain, and content from handover. No lock-in. No recurring fees are needed to keep the site running.
+						</p>
+					</div>
+
+					<!-- Support -->
+					<div class="rounded-2xl border border-black/10 bg-[#f5f5f0]/70 p-5 text-xs shadow-sm dark:border-white/10 dark:bg-white/5 space-y-2">
+						<p class="font-mono text-[0.65rem] tracking-[0.25em] text-emerald-600 dark:text-emerald-400 uppercase">Support</p>
+						<p class="font-mono text-neutral-600 dark:text-neutral-400 leading-relaxed">
+							We include [X] days of free bug fixes after launch. For ongoing support, small updates, or changes, you can use our monthly Care Plan.
+						</p>
+					</div>
+
+					<!-- Handover -->
+					<div class="rounded-2xl border border-black/10 bg-[#f5f5f0]/70 p-5 text-xs shadow-sm dark:border-white/10 dark:bg-white/5 space-y-2">
+						<p class="font-mono text-[0.65rem] tracking-[0.25em] text-emerald-600 dark:text-emerald-400 uppercase">Handover</p>
+						<p class="font-mono text-neutral-600 dark:text-neutral-400 leading-relaxed">
+							You get full source code, deployment access, and documentation. Everything is set up so the site works without us.
+						</p>
+					</div>
+
+					<!-- Continuity -->
+					<div class="rounded-2xl border border-black/10 bg-[#f5f5f0]/70 p-5 text-xs shadow-sm dark:border-white/10 dark:bg-white/5 space-y-2">
+						<p class="font-mono text-[0.65rem] tracking-[0.25em] text-emerald-600 dark:text-emerald-400 uppercase">Continuity</p>
+						<p class="font-mono text-neutral-600 dark:text-neutral-400 leading-relaxed">
+							We document and hand over everything properly. You are not stuck depending on either of us to keep the site running.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<div class="absolute bottom-6 left-6 opacity-40 transition-all hover:opacity-100">
