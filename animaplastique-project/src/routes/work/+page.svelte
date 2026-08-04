@@ -113,11 +113,16 @@
 					<div class="space-y-10">
 
 						<!-- Screenshot -->
-						<img
-							src={project.image}
-							alt={project.title}
-							class="w-full rounded-xl border border-black/10 dark:border-white/10 object-cover shadow-2xl"
-						/>
+						<picture>
+							<source srcset={project.image.replace('.png', '.avif')} type="image/avif" />
+							<source srcset={project.image.replace('.png', '.webp')} type="image/webp" />
+							<img
+								src={project.image}
+								alt={project.title}
+								class="w-full rounded-xl border border-black/10 dark:border-white/10 object-cover shadow-2xl"
+								loading="lazy"
+							/>
+						</picture>
 
 						<!-- Problem -->
 						<div class="space-y-3">

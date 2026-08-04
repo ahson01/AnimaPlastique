@@ -86,21 +86,31 @@
 		<div
 			class="animate-pop-up w-1/2 overflow-hidden rounded-3xl border border-[var(--border)] shadow-lg"
 		>
-			<img
-				src="/jeerasmp-banner.png"
-				alt="JeeraSMP banner"
-				class="aspect-[17/10] w-full max-w-md object-cover"
-			/>
+			<picture>
+				<source srcset="/jeerasmp-banner.avif" type="image/avif" />
+				<source srcset="/jeerasmp-banner.webp" type="image/webp" />
+				<img
+					src="/jeerasmp-banner.png"
+					alt="JeeraSMP banner"
+					class="aspect-[17/10] w-full max-w-md object-cover"
+					loading="eager"
+				/>
+			</picture>
 		</div>
 
 		<div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
 			<div class="max-w-2xl space-y-5">
 				<div class="flex items-center gap-4">
-					<img
-						src="/jeerasmp-server-icon.png"
-						alt="JeeraSMP server icon"
-						class="h-16 w-16 rounded-2xl border border-[var(--border-strong)] bg-[var(--card-bg)] shadow-lg"
-					/>
+					<picture>
+						<source srcset="/jeerasmp-server-icon.avif" type="image/avif" />
+						<source srcset="/jeerasmp-server-icon.webp" type="image/webp" />
+						<img
+							src="/jeerasmp-server-icon.png"
+							alt="JeeraSMP server icon"
+							class="h-16 w-16 rounded-2xl border border-[var(--border-strong)] bg-[var(--card-bg)] shadow-lg"
+							loading="eager"
+						/>
+					</picture>
 					<div>
 						<p
 							class="animate-pop-up bg-gradient-to-r from-emerald-400 to-green-500

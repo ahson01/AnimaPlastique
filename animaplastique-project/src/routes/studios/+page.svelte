@@ -101,20 +101,30 @@
 			style="--delay: 0.2s"
 		>
 			<div class="flex items-center justify-center bg-[var(--card-bg)] p-6">
-				<img
-					src="/jeerasmp-banner.png"
-					alt="JeeraSMP banner"
-					class="aspect-[17/10] w-full max-w-[320px] rounded-2xl border border-[var(--border-strong)] shadow-md"
-				/>
+				<picture>
+					<source srcset="/jeerasmp-banner.avif" type="image/avif" />
+					<source srcset="/jeerasmp-banner.webp" type="image/webp" />
+					<img
+						src="/jeerasmp-banner.png"
+						alt="JeeraSMP banner"
+						class="aspect-[17/10] w-full max-w-[320px] rounded-2xl border border-[var(--border-strong)] shadow-md"
+						loading="lazy"
+					/>
+				</picture>
 			</div>
 
 			<div class="flex flex-col gap-5 p-6 sm:p-8">
 				<div class="flex items-center gap-4">
-					<img
-						src="/jeerasmp-server-icon.png"
-						alt="JeeraSMP server icon"
-						class="h-14 w-14 rounded-2xl border border-[var(--border-strong)] bg-[var(--card-bg)] shadow-md"
-					/>
+					<picture>
+						<source srcset="/jeerasmp-server-icon.avif" type="image/avif" />
+						<source srcset="/jeerasmp-server-icon.webp" type="image/webp" />
+						<img
+							src="/jeerasmp-server-icon.png"
+							alt="JeeraSMP server icon"
+							class="h-14 w-14 rounded-2xl border border-[var(--border-strong)] bg-[var(--card-bg)] shadow-md"
+							loading="lazy"
+						/>
+					</picture>
 					<div>
 						<h2 class="font-inter text-2xl font-semibold text-[var(--text-strong)]">
 							JeeraSMP

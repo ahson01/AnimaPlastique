@@ -3,7 +3,10 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="icon" href="%sveltekit.assets%/favicon.svg" />
+  <link rel="icon" href="%sveltekit.assets%/favicon.ico" sizes="any" />
+  <link rel="icon" href="%sveltekit.assets%/favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="icon" href="%sveltekit.assets%/favicon-48.png" type="image/png" sizes="48x48" />
+  <link rel="apple-touch-icon" href="%sveltekit.assets%/favicon-192.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script>
     (function () {
@@ -25,46 +28,34 @@
   %sveltekit.head%
 </head>
 
-<div id="trailer">
-</div>
-
 <body data-sveltekit-preload-data="hover">
+  <div id="trailer"></div>
   <div style="display: contents">%sveltekit.body%</div>
+
+  <script>
+    const trailer = document.getElementById("trailer");
+
+    const animateTrailer = (e, interacting) => {
+      const x = e.clientX - trailer.offsetWidth / 2,
+        y = e.clientY - trailer.offsetHeight / 2;
+
+      const keyframes = {
+        transform: `translate(${x}px, ${y}px) scale(${interacting ? 4 : 1})`
+      }
+
+      trailer.animate(keyframes, {
+        duration: 400,
+        fill: "forwards"
+      });
+    }
+
+    window.onmousemove = e => {
+      const interactable = e.target.closest(".interactable"),
+        interacting = interactable !== null;
+      animateTrailer(e, interacting);
+      trailer.dataset.type = interacting ? interactable.dataset.type : "";
+    }
+  </script>
 </body>
 
 </html>
-
-
-
-
-<style>
-
-
-</style>
-
-<script>
-
-
-  const trailer = document.getElementById("trailer");
-
-  const animateTrailer = (e, interacting) => {
-    const x = e.clientX - trailer.offsetWidth / 2,
-      y = e.clientY - trailer.offsetHeight / 2;
-
-    const keyframes = {
-      transform: `translate(${x}px, ${y}px) scale(${interacting ? 4 : 1})`
-    }
-
-    trailer.animate(keyframes, {
-      duration: 400,
-      fill: "forwards"
-    });
-  }
-
-  window.onmousemove = e => {
-    const interactable = e.target.closest(".interactable"),
-      interacting = interactable !== null;
-    animateTrailer(e, interacting);
-    trailer.dataset.type = interacting ? interactable.dataset.type : "";
-  }
-</script>

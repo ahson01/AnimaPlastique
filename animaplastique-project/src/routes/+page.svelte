@@ -225,11 +225,16 @@
 					<div class="flex transition-transform duration-700 ease-in-out h-full" style="transform: translateX(-{activeIndex * 100}%)">
 						{#each featuredProjects as project}
 							<div class="w-full flex-shrink-0 flex flex-col h-full">
-								<img
-									src={project.image}
-									alt={project.title}
-									class="h-36 w-full object-cover"
-								/>
+								<picture>
+									<source srcset={project.image.replace('.png', '.avif')} type="image/avif" />
+									<source srcset={project.image.replace('.png', '.webp')} type="image/webp" />
+									<img
+										src={project.image}
+										alt={project.title}
+										class="h-36 w-full object-cover"
+										loading="eager"
+									/>
+								</picture>
 
 								<div class="p-4 flex-grow flex flex-col justify-between space-y-1">
 									<div class="space-y-1">
