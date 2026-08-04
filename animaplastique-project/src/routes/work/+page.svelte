@@ -13,8 +13,8 @@
 			year: '2025',
 			status: 'Demo -- live and publicly accessible',
 			problem: 'Local egg businesses in India typically have no web presence. Sales happen through WhatsApp forwards, word of mouth, or physical stalls. There\'s no way for someone who finds them online to understand what\'s available, what makes the eggs different, or how to place an order without calling first.',
-			approach: 'Built as a single scrolling page: hero with a strong product photo, a short "why natural" section, a simple product listing, and a direct order/contact CTA. Kept the site minimal as the audience is largely on mobile data, so load time matters more than animation. Design is warm and honest rather than corporate.',
-			result: 'The demo is live and does what it says: gives a local egg business a real page to point people to. It\'s not a client project yet, it was built to show this exact use case is possible at the Starter tier.'
+			approach: 'Built as a multi-page web app (Home, Shop, About, Contact, Find Us, and Cart) tailored for a local farm in Lucknow. Features a clear product catalog with multiple tiers (Classic, Organic, Half Dozen), a functional shopping cart, flexible subscription plans (Weekly, Bi-weekly, Monthly), and localized customer reviews. Kept the design warm, trustworthy, and lightweight so it loads fast for users on mobile data without sacrificing a full storefront experience.',
+			result: 'The live demo is fully functional and goes beyond a basic landing page: it gives a local farm business a complete, production-ready web presence with cart and subscription workflows. It serves as a proof of concept showing how a local producer can scale beyond simple WhatsApp orders into a direct-to-consumer store.'
 		},
 				{
 			title: 'Grocery Mart',
