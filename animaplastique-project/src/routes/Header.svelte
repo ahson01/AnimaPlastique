@@ -17,6 +17,16 @@
 
 	const communityLinks = [
 		{
+			href: 'https://x.com/xkinetics_space',
+			label: 'X (Formerly Twitter)',
+			external: true
+		},
+				{
+			href: 'https://www.instagram.com/xkinetics.space/',
+			label: 'Instagram',
+			external: true
+		},
+				{
 			href: 'https://discord.gg/9kNaxhtHXM',
 			label: 'Discord',
 			external: true
