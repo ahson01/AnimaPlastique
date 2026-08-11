@@ -1,5 +1,3 @@
-# allow crawling everything by default
 User-agent: *
 Allow: /
-
-Sitemap: https://www.xkinetics.space/sitemap.xml
+Sitemap: https://xkinetics.space/sitemap.xml

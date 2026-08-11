@@ -82,8 +82,11 @@
 </script>
 
 <svelte:head>
-	<title>Color Palette - xkinetics.space</title>
+	<title>Free Online Color Palette Extractor | xkinetics</title>
+	<meta name="description" content="Extract colors from images for free with this online tool." />
 </svelte:head>
+
+
 
 <section
 	class="relative flex min-h-screen w-full justify-center overflow-hidden bg-neutral-50 dark:bg-neutral-950"

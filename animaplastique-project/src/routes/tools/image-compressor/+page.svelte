@@ -108,8 +108,11 @@
 </script>
 
 <svelte:head>
-	<title>Image Compressor - xkinetics.space</title>
+	<title>Free Online Image Compressor | xkinetics</title>
+	<meta name="description" content="Compress images without losing quality, right in your browser." />
 </svelte:head>
+
+
 
 <section
 	class="relative flex min-h-screen w-full justify-center overflow-hidden bg-neutral-50 dark:bg-neutral-950"

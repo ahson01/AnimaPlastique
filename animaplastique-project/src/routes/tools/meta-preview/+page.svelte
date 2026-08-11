@@ -75,7 +75,8 @@
 </script>
 
 <svelte:head>
-	<title>Meta Preview · Pro Studio - xkinetics.space</title>
+	<title>Free Social Meta Tag Preview Tool | xkinetics</title>
+	<meta name="description" content="Preview how your links look on Twitter, Facebook, LinkedIn and Slack." />
 </svelte:head>
 
 <section

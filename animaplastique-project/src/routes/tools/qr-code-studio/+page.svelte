@@ -130,7 +130,8 @@
 </script>
 
 <svelte:head>
-	<title>QR Code Studio · Pro Tools - xkinetics.space</title>
+	<title>Free Custom QR Code Generator | xkinetics</title>
+	<meta name="description" content="Generate beautifully customized QR codes for your brand." />
 </svelte:head>
 
 <section

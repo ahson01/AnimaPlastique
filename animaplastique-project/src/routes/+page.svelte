@@ -43,7 +43,8 @@
 </script>
 
 <svelte:head>
-	<title>xkinetics.space</title>
+	<title>xkinetics | Custom Web Development Agency</title>
+	<meta name="description" content="Fast, custom web development for small businesses, founders, and creators. Handcrafted code shipped in 1–2 weeks with no templates or fluff." />
 </svelte:head>
 
 <section class="relative flex w-full justify-center overflow-hidden">
@@ -315,12 +316,12 @@
 			class="mt-4 grid gap-8 border-t border-black/10 pt-10 text-xs sm:grid-cols-3 sm:text-[0.75rem] dark:border-white/10"
 		>
 			<div class="animate-pop-up space-y-2" style="--delay: 0.3s;">
-				<p
+				<h2
 					class="bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text
 				       font-mono text-[0.65rem] tracking-[0.25em] text-transparent uppercase"
 				>
-					Best for
-				</p>
+					Web Development Services
+				</h2>
 				<p class="text-neutral-600 dark:text-neutral-400">
 					Small businesses, solo founders, and creators who need a clean modern site without
 					wrestling with templates or chasing unreliable freelancers.
@@ -328,12 +329,12 @@
 			</div>
 
 			<div class="animate-pop-up space-y-2" style="--delay: 0.4s;">
-				<p
+				<h2
 					class="bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text
 				       font-mono text-[0.65rem] tracking-[0.25em] text-transparent uppercase"
 				>
-					How it works
-				</p>
+					Web Development Process
+				</h2>
 				<ul class="space-y-1 text-neutral-600 dark:text-neutral-400">
 					<li>→ Short call to align on goals and scope.</li>
 					<li>→ We design and build in focused sprints.</li>
@@ -342,12 +343,12 @@
 			</div>
 
 			<div class="animate-pop-up space-y-2" style="--delay: 0.5s;">
-				<p
+				<h2
 					class="bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text
 				       font-mono text-[0.65rem] tracking-[0.25em] text-transparent uppercase"
 				>
-					What you get
-				</p>
+					Custom Site Features
+				</h2>
 				<ul class="space-y-1 text-neutral-600 dark:text-neutral-400">
 					<li>→ A responsive, production-ready website.</li>
 					<li>→ Basic analytics & SEO setup.</li>

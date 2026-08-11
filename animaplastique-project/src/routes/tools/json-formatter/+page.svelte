@@ -51,7 +51,8 @@
 </script>
 
 <svelte:head>
-	<title>JSON Formatter - xkinetics.space</title>
+	<title>Free Online JSON Formatter | xkinetics</title>
+	<meta name="description" content="Format, validate, and beautify JSON data online." />
 </svelte:head>
 
 <section

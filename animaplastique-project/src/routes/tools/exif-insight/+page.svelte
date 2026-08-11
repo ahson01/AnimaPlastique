@@ -137,8 +137,11 @@
 </script>
 
 <svelte:head>
-	<title>Exif Insight - xkinetics.space</title>
+	<title>Free Online EXIF Data Viewer & Scrubber | xkinetics</title>
+	<meta name="description" content="View or remove EXIF metadata from photos securely online." />
 </svelte:head>
+
+
 
 <section
 	class="relative flex min-h-screen w-full justify-center overflow-hidden bg-neutral-50 dark:bg-neutral-950"

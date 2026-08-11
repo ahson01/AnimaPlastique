@@ -169,8 +169,11 @@
 </script>
 
 <svelte:head>
-  <title>File Converter - WASM Powered</title>
+	<title>Free Online File Converter | xkinetics</title>
+	<meta name="description" content="Convert images and documents instantly in your browser." />
 </svelte:head>
+
+
 
 <style>
   @keyframes pop-up {
