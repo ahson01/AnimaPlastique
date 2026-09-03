@@ -47,6 +47,23 @@
 
 	let theme: 'dark' | 'light' = 'dark';
 	let isMenuOpen = false;
+	let headerHidden = false;
+	let lastScrollY = 0;
+
+	function handleScroll() {
+		const threshold = window.innerHeight * 0.33;
+		const y = window.scrollY;
+
+		if (isMenuOpen) {
+			headerHidden = false;
+		} else if (y > threshold && y > lastScrollY) {
+			headerHidden = true;
+		} else if (y < lastScrollY) {
+			headerHidden = false;
+		}
+
+		lastScrollY = y;
+	}
 
 	function setTheme(value: 'dark' | 'light') {
 		theme = value;
@@ -64,6 +81,7 @@
 
 	function toggleMenu() {
 		isMenuOpen = !isMenuOpen;
+		headerHidden = false;
 	}
 
 	let navEl: HTMLUListElement | null = null;
@@ -156,9 +174,15 @@
 			underlineWidth = 0;
 		}
 	});
+
+	onMount(() => {
+		const onScroll = () => handleScroll();
+		window.addEventListener('scroll', onScroll, { passive: true });
+		return () => window.removeEventListener('scroll', onScroll);
+	});
 </script>
 
-<header class="ap-shell bg-[var(--bg)] text-[var(--text)]">
+<header class="ap-shell bg-[var(--bg)] text-[var(--text)]" class:ap-shell--hidden={headerHidden}>
 	<div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
 		<a href="/" class="flex flex-col gap-0.5 no-underline">
 			<span

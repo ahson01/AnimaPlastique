@@ -124,6 +124,11 @@ body {
     background-color: rgba(255, 255, 255, 0.85);
     border-color: rgba(179, 204, 189, 0.8);
     color: #123526;
+    transition: transform 0.35s ease;
+  }
+
+  .ap-shell--hidden {
+    transform: translateY(-100%);
   }
 
   html.dark .ap-shell {

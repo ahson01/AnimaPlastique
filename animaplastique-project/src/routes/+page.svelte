@@ -46,6 +46,30 @@
 <svelte:head>
 	<title>xkinetics | Custom Web Development Agency</title>
 	<meta name="description" content="Fast, custom web development for small businesses, founders, and creators. Handcrafted code shipped in 1–2 weeks with no templates or fluff." />
+
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"@id": "https://xkinetics.space/#organization",
+			"name": "xkinetics",
+			"alternateName": "xkinetics.space",
+			"url": "https://xkinetics.space",
+			"logo": {
+				"@type": "ImageObject",
+				"url": "https://xkinetics.space/favicon-192.png",
+				"width": 192,
+				"height": 192
+			},
+			"description": "Custom web development agency building fast, handcrafted sites for small businesses, founders, and creators. No templates, no fluff — shipped in 1–2 weeks.",
+			"sameAs": [
+				"https://x.com/xkinetics_space",
+				"https://www.instagram.com/xkinetics.space/",
+				"https://discord.gg/9kNaxhtHXM",
+				"https://github.com/ahson01"
+			]
+		}
+	</script>
 </svelte:head>
 
 <section class="relative isolate flex w-full justify-center overflow-hidden">
