@@ -53,7 +53,7 @@
 		document.documentElement.classList.toggle('dark', value === 'dark');
 		// Keep the CSS variable in sync, but remove the direct backgroundColor
 		// override so the CSS transition can animate freely.
-		document.documentElement.style.setProperty('--bg', value === 'dark' ? '#050505' : '#eeeee9');
+		document.documentElement.style.setProperty('--bg', value === 'dark' ? '#050505' : '#ffffff');
 		document.documentElement.style.removeProperty('background-color');
 		localStorage.setItem('theme', value);
 	}

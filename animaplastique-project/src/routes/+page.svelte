@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
 	import { currency, formatPrice } from '$lib/stores/currency';
+	import GlowBackdrop from '$lib/components/GlowBackdrop.svelte';
+	import { cardGlow } from '$lib/actions/glow';
 
 	const featuredProjects = [
 
@@ -19,9 +21,7 @@
 	];
 
 	let activeIndex = 0;
-	let intervalId: any;
-
-	onMount(() => {
+	let intervalId: any;	onMount(() => {
 		startAutoPlay();
 	});
 
@@ -40,6 +40,7 @@
 			clearInterval(intervalId);
 		}
 	}
+
 </script>
 
 <svelte:head>
@@ -47,30 +48,10 @@
 	<meta name="description" content="Fast, custom web development for small businesses, founders, and creators. Handcrafted code shipped in 1–2 weeks with no templates or fluff." />
 </svelte:head>
 
-<section class="relative flex w-full justify-center overflow-hidden">
-	<div class="pointer-events-none absolute inset-0 -z-10">
-		<div
-			class="absolute -top-32 -left-24 h-72 w-72 rounded-full
-			        opacity-30 blur-3xl
-			        bg-[radial-gradient(closest-side,rgba(16,185,129,0.15),transparent)]
-			        dark:bg-[radial-gradient(closest-side,rgba(255,255,255,0.6),transparent)] dark:opacity-20"
-		></div>
+<section class="relative isolate flex w-full justify-center overflow-hidden">
+	<GlowBackdrop />
 
-		<div
-			class="absolute -right-24 -bottom-24 h-96 w-96 rounded-full
-			        opacity-20 blur-3xl
-			        bg-[radial-gradient(closest-side,rgba(0,0,0,0.08),transparent)]
-			        dark:bg-[radial-gradient(closest-side,rgba(0,0,0,0.3),transparent)] dark:opacity-30"
-		></div>
-
-		<div
-			class="absolute right-0 bottom-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full bg-[radial-gradient(closest-side,rgba(16,185,129,0.4),transparent)]
-		            opacity-40 blur-[120px]
-		            dark:bg-[radial-gradient(closest-side,rgba(16,185,129,0.35),transparent)] dark:opacity-60"
-		></div>
-	</div>
-
-	<div class="mx-auto flex w-full max-w-6xl flex-col gap-12 px-6 pt-18 pb-24 lg:pt-22">
+	<div class="relative mx-auto flex w-full max-w-6xl flex-col gap-12 px-6 pt-18 pb-24 lg:pt-22">
 		<div class="flex flex-col gap-12 lg:flex-row lg:items-center lg:justify-between">
 			<div class="max-w-2xl space-y-7">
 				<p
@@ -102,7 +83,7 @@
 				<div class="flex flex-wrap items-center gap-4">
 					<a
 						href="/contact"
-						class="interactable animate-pop-up inline-flex items-center justify-center rounded-full border border-neutral-900/20 bg-neutral-900
+						class="interactable ap-cta-glow animate-pop-up inline-flex items-center justify-center rounded-full border border-neutral-900/20 bg-neutral-900
 						       px-6 py-2.5
 						       text-[0.7rem] tracking-[0.22em] text-neutral-50 uppercase
 						       shadow-sm transition-all
@@ -117,7 +98,7 @@
 
 					<a
 						href="/work"
-						class="interactable animate-pop-up inline-flex items-center justify-center gap-2 rounded-full border border-neutral-900/20
+						class="interactable ap-cta-ghost animate-pop-up inline-flex items-center justify-center gap-2 rounded-full border border-neutral-900/20
 	       bg-transparent px-4
 	       py-2 text-[0.7rem] tracking-[0.22em]
 	       text-neutral-900!
@@ -135,12 +116,12 @@
 				</div>
 			</div>
 
-			<!-- ─── PRICING PACKAGES CARD ──────────────────────────────── -->
-			<div
-				class="animate-pop-up grid w-full max-w-sm gap-4 rounded-2xl border border-black/10
-				       bg-[#f5f5f0]/70 p-5 text-xs shadow-lg ring-1
+			<!-- ─── PRICING PACKAGES CARD ──────────────────────────────── -->			<div
+				class="animate-pop-up grid w-full max-w-sm gap-4 rounded-2xl border border-black/10 ap-feature-card ap-glow-card
+				       bg-[var(--card-bg)]/70 p-5 text-xs shadow-lg ring-1
 				       ring-black/5 backdrop-blur-md
 				       sm:text-[0.7rem] dark:border-white/10 dark:bg-white/5 dark:ring-white/5"
+				use:cardGlow
 			>
 				<div class="flex items-baseline justify-between border-b border-black/10 pb-3 dark:border-white/10">
 					<span class="font-mono text-[0.7rem] tracking-[0.25em] uppercase">Packages</span>
@@ -216,7 +197,8 @@
 
 				<!-- Autoplay slider container -->
 				<div 
-					class="relative overflow-hidden rounded-xl border border-black/10 bg-[#f5f5f0] dark:border-white/10 dark:bg-neutral-950/30 h-[280px] group"
+					class="ap-glow-card relative overflow-hidden rounded-xl border border-black/10 bg-[var(--card-bg)] dark:border-white/10 dark:bg-neutral-950/30 h-[280px] group"
+					use:cardGlow
 					role="region"
 					aria-label="Featured projects carousel"
 					on:mouseenter={stopAutoPlay}
@@ -265,7 +247,7 @@
 					<div class="absolute bottom-3 right-4 flex gap-1.5 z-10">
 						{#each featuredProjects as _, idx}
 							<button
-								class="h-1.5 rounded-full transition-all duration-300 {idx === activeIndex ? 'w-4 bg-emerald-500' : 'w-1.5 bg-neutral-300 dark:bg-neutral-700 hover:bg-neutral-400'}"
+								class="h-1.5 rounded-full transition-all duration-300 {idx === activeIndex ? 'w-4 bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.7)]' : 'w-1.5 bg-neutral-300 dark:bg-neutral-700 hover:bg-neutral-400'}"
 								on:click={() => activeIndex = idx}
 								aria-label="Go to slide {idx + 1}"
 							></button>
@@ -305,7 +287,7 @@
 						       bg-emerald-500/10 px-4 py-2 font-mono text-[0.65rem] tracking-[0.12em]
 						       uppercase text-emerald-600 dark:text-emerald-400"
 					>
-						<span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+						<span class="ap-live-dot h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
 						Now booking
 					</span>
 				</div>
@@ -372,7 +354,7 @@
 				
 				<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 					<!-- Ownership -->
-					<div class="rounded-2xl border border-black/10 bg-[#f5f5f0]/70 p-5 text-xs shadow-sm dark:border-white/10 dark:bg-white/5 space-y-2">
+					<div class="rounded-2xl border border-black/10 bg-[var(--card-bg)]/70 p-5 text-xs shadow-sm dark:border-white/10 dark:bg-white/5 space-y-2 ap-glow-card" use:cardGlow>
 						<p class="font-mono text-[0.65rem] tracking-[0.25em] text-emerald-600 dark:text-emerald-400 uppercase">Ownership</p>
 						<p class="font-mono text-neutral-600 dark:text-neutral-400 leading-relaxed">
 							You own 100% of the code, domain, and content from handover. No lock-in. No recurring fees are needed to keep the site running.
@@ -380,7 +362,7 @@
 					</div>
 
 					<!-- Support -->
-					<div class="rounded-2xl border border-black/10 bg-[#f5f5f0]/70 p-5 text-xs shadow-sm dark:border-white/10 dark:bg-white/5 space-y-2">
+					<div class="rounded-2xl border border-black/10 bg-[var(--card-bg)]/70 p-5 text-xs shadow-sm dark:border-white/10 dark:bg-white/5 space-y-2 ap-glow-card" use:cardGlow>
 						<p class="font-mono text-[0.65rem] tracking-[0.25em] text-emerald-600 dark:text-emerald-400 uppercase">Support</p>
 						<p class="font-mono text-neutral-600 dark:text-neutral-400 leading-relaxed">
 							We include 30 days of free bug fixes after launch. For ongoing support, small updates, or changes, you can use our monthly Care Plan.
@@ -388,7 +370,7 @@
 					</div>
 
 					<!-- Handover -->
-					<div class="rounded-2xl border border-black/10 bg-[#f5f5f0]/70 p-5 text-xs shadow-sm dark:border-white/10 dark:bg-white/5 space-y-2">
+					<div class="rounded-2xl border border-black/10 bg-[var(--card-bg)]/70 p-5 text-xs shadow-sm dark:border-white/10 dark:bg-white/5 space-y-2 ap-glow-card" use:cardGlow>
 						<p class="font-mono text-[0.65rem] tracking-[0.25em] text-emerald-600 dark:text-emerald-400 uppercase">Handover</p>
 						<p class="font-mono text-neutral-600 dark:text-neutral-400 leading-relaxed">
 							You get full source code, deployment access, and documentation. Everything is set up so the site works without us.
@@ -396,7 +378,7 @@
 					</div>
 
 					<!-- Continuity -->
-					<div class="rounded-2xl border border-black/10 bg-[#f5f5f0]/70 p-5 text-xs shadow-sm dark:border-white/10 dark:bg-white/5 space-y-2">
+					<div class="rounded-2xl border border-black/10 bg-[var(--card-bg)]/70 p-5 text-xs shadow-sm dark:border-white/10 dark:bg-white/5 space-y-2 ap-glow-card" use:cardGlow>
 						<p class="font-mono text-[0.65rem] tracking-[0.25em] text-emerald-600 dark:text-emerald-400 uppercase">Continuity</p>
 						<p class="font-mono text-neutral-600 dark:text-neutral-400 leading-relaxed">
 							We document and hand over everything properly. You are not stuck depending on either of us to keep the site running.

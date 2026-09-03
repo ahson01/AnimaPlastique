@@ -19,6 +19,7 @@
 		Upload,
 		Image as ImageIcon
 	} from 'lucide-svelte';
+	import GlowBackdrop from '$lib/components/GlowBackdrop.svelte';
 
 	let title = 'xkinetics.space - Rapid Web Development';
 	let description =
@@ -80,16 +81,9 @@
 </svelte:head>
 
 <section
-	class="relative flex min-h-screen w-full justify-center overflow-hidden bg-neutral-50 dark:bg-neutral-950"
+	class="relative isolate flex min-h-screen w-full justify-center overflow-hidden bg-[var(--bg)] dark:bg-neutral-950"
 >
-	<div class="pointer-events-none absolute inset-0 -z-10">
-		<div
-			class="absolute -top-32 -left-24 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(255,255,255,0.6),transparent)] opacity-25 blur-3xl dark:opacity-20"
-		></div>
-		<div
-			class="absolute right-0 bottom-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full bg-[radial-gradient(closest-side,rgba(16,185,129,0.4),transparent)] opacity-40 blur-[120px] dark:opacity-60"
-		></div>
-	</div>
+	<GlowBackdrop />
 
 	<div class="mx-auto flex w-full max-w-7xl flex-col gap-10 px-6 pt-18 pb-24 lg:pt-22">
 		<div class="flex flex-col justify-between gap-6 md:flex-row md:items-end">

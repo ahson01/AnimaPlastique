@@ -10,6 +10,9 @@
 		cta: string;
 	};
 
+	import GlowBackdrop from '$lib/components/GlowBackdrop.svelte';
+	import { cardGlow } from '$lib/actions/glow';
+
 	const services: Service[] = [
 		{
 			id: 'starter',
@@ -70,24 +73,9 @@
 </svelte:head>
 
 <section
-	class="relative flex w-full justify-center overflow-hidden bg-[var(--bg)] text-[var(--text)]"
+	class="relative isolate flex w-full justify-center overflow-hidden bg-[var(--bg)] text-[var(--text)]"
 >
-	<div class="pointer-events-none absolute inset-0 -z-10">
-		<div
-			class="absolute -top-32 -left-24 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,var(--glow-soft),transparent)] opacity-50
-			       blur-3xl"
-		></div>
-
-		<div
-			class="absolute -right-24 -bottom-24 h-96 w-96 rounded-full bg-[radial-gradient(closest-side,var(--glow-muted),transparent)] opacity-30
-			       blur-3xl"
-		></div>
-
-		<div
-			class="absolute right-0 bottom-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full bg-[radial-gradient(closest-side,var(--glow-accent),transparent)]
-			       opacity-40 blur-[120px]"
-		></div>
-	</div>
+	<GlowBackdrop />
 
 	<div class="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 pt-18 pb-24 lg:pt-22">
 		<header class="space-y-4 text-center lg:text-left">
@@ -128,8 +116,9 @@
 		>
 			{#each services as service, i}
 				<article
+					use:cardGlow
 					style={`--delay: ${i * 0.08}s`}
-					class={`animate-pop-up group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-[var(--border)]
+					class={`animate-pop-up group relative flex flex-col justify-between overflow-hidden rounded-3xl ap-glow-card border border-[var(--border)]
         bg-gradient-to-br from-[var(--card-bg)] to-[var(--card-bg-soft)]
         p-6 shadow-sm transition-all
         duration-300 hover:-translate-y-1 hover:border-[var(--border-strong)] hover:shadow-lg sm:p-8
@@ -178,11 +167,6 @@
 						</a>
 					</div>
 
-					<div
-						class="pointer-events-none absolute -right-16 -bottom-16 h-40 w-40 rounded-full
-          bg-[radial-gradient(circle_at_center,var(--glow-green),transparent)]
-          opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-					></div>
 				</article>
 			{/each}
 		</section>

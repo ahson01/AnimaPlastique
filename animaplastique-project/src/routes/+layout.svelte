@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import Header from './Header.svelte';
+	import Footer from './Footer.svelte';
 	import '../app.css';
 	import { initializeCurrency } from '$lib/stores/currency';
 
@@ -17,4 +18,6 @@
 	<main>
 		{@render children()}
 	</main>
+
+	<Footer />
 </div>

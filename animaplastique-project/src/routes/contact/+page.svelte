@@ -11,6 +11,8 @@
 	let errorMessage = '';
 
 	import { currency, formatPrice } from '$lib/stores/currency';
+	import GlowBackdrop from '$lib/components/GlowBackdrop.svelte';
+	import { cardGlow } from '$lib/actions/glow';
 
 	let budgetOptions: { value: string; label: string }[];
 	$: budgetOptions = [
@@ -96,24 +98,9 @@
 </svelte:head>
 
 <section
-	class="relative flex w-full justify-center overflow-hidden bg-[var(--bg)] text-[var(--text)]"
+	class="relative isolate flex w-full justify-center overflow-hidden bg-[var(--bg)] text-[var(--text)]"
 >
-	<div class="pointer-events-none absolute inset-0 -z-10">
-		<div
-			class="absolute -top-32 -left-24 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,var(--glow-soft),transparent)] opacity-25
-             blur-3xl"
-		></div>
-
-		<div
-			class="absolute -right-24 -bottom-24 h-96 w-96 rounded-full bg-[radial-gradient(closest-side,var(--glow-muted),transparent)] opacity-30
-             blur-3xl"
-		></div>
-
-		<div
-			class="absolute right-0 bottom-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full bg-[radial-gradient(closest-side,var(--glow-accent),transparent)]
-             opacity-40 blur-[120px]"
-		></div>
-	</div>
+	<GlowBackdrop />
 
 	<div class="mx-auto flex w-full max-w-6xl flex-col gap-12 px-6 pt-18 pb-24 lg:pt-22">
 		<div class="max-w-3xl space-y-6">
@@ -135,7 +122,8 @@
 		<div class="flex flex-col gap-10 lg:flex-row">
 			<div
 				class="animate-pop-up w-full max-w-xl rounded-2xl border border-[var(--border)]
-               bg-[var(--card-bg-soft)] p-6 shadow-lg backdrop-blur"
+               bg-[var(--card-bg-soft)] p-6 shadow-lg backdrop-blur ap-glow-card"
+				use:cardGlow
 			>
 				<form class="space-y-5" on:submit={handleSubmit}>
 					<div class="space-y-1.5">
@@ -279,7 +267,7 @@
 
 					<button
 						type="submit"
-						class="interactable hover:bg-[color-mix(in_oklab,var(--text-strong) 85%,white)] inline-flex items-center justify-center rounded-full border border-[var(--text-strong)] bg-[var(--text-strong)]
+						class="interactable ap-cta-glow hover:bg-[color-mix(in_oklab,var(--text-strong) 85%,white)] inline-flex items-center justify-center rounded-full border border-[var(--text-strong)] bg-[var(--text-strong)]
                    px-4 py-2
                    text-xs font-medium tracking-[0.2em]
                    text-[var(--bg)] uppercase shadow-sm transition

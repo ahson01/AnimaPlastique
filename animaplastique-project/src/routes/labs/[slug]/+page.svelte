@@ -7,6 +7,8 @@
 		html: string;
 	};
 
+	import GlowBackdrop from '$lib/components/GlowBackdrop.svelte';
+
 	const formatDate = (d?: string) => {
 		if (!d) return '';
 		const date = new Date(d);
@@ -29,24 +31,9 @@
 </svelte:head>
 
 <section
-	class="relative flex w-full justify-center overflow-hidden bg-[var(--bg)] text-[var(--text)]"
+	class="relative isolate flex w-full justify-center overflow-hidden bg-[var(--bg)] text-[var(--text)]"
 >
-	<div class="pointer-events-none absolute inset-0 -z-10">
-		<div
-			class="absolute -top-32 -left-24 h-72 w-72 rounded-full blur-3xl opacity-25
-			       bg-[radial-gradient(closest-side,var(--glow-soft),transparent)]"
-		></div>
-
-		<div
-			class="absolute -bottom-24 -right-24 h-96 w-96 rounded-full blur-3xl opacity-30
-			       bg-[radial-gradient(closest-side,var(--glow-muted),transparent)]"
-		></div>
-
-		<div
-			class="absolute bottom-0 right-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full blur-[120px]
-			       opacity-40 bg-[radial-gradient(closest-side,var(--glow-accent),transparent)]"
-		></div>
-	</div>
+	<GlowBackdrop />
 
 	<div class="mx-auto flex w-full max-w-3xl flex-col gap-6 px-6 pt-18 pb-24 lg:pt-22">
 		<a

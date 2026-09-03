@@ -1,5 +1,7 @@
 <script lang="ts">
 	import type { LabSummary } from './+page.server';
+	import GlowBackdrop from '$lib/components/GlowBackdrop.svelte';
+	import { cardGlow } from '$lib/actions/glow';
 
 	export let data: { labs: LabSummary[] };
 
@@ -24,26 +26,8 @@
 	<title>Labs · xkinetics.space</title>
 </svelte:head>
 
-<section class="relative flex w-full justify-center overflow-hidden">
-	<div class="pointer-events-none absolute inset-0 -z-10">
-		<div
-			class="absolute -top-32 -left-24 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(255,255,255,0.6),transparent)] opacity-25
-			       blur-3xl
-			       dark:opacity-20"
-		></div>
-
-		<div
-			class="absolute -right-24 -bottom-24 h-96 w-96 rounded-full bg-[radial-gradient(closest-side,rgba(0,0,0,0.3),transparent)] opacity-20
-			       blur-3xl
-			       dark:opacity-30"
-		></div>
-
-		<div
-			class="absolute right-0 bottom-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full bg-[radial-gradient(closest-side,rgba(16,185,129,0.4),transparent)]
-			       opacity-40 blur-[120px]
-			       dark:bg-[radial-gradient(closest-side,rgba(16,185,129,0.35),transparent)] dark:opacity-60"
-		></div>
-	</div>
+<section class="relative isolate flex w-full justify-center overflow-hidden">
+	<GlowBackdrop />
 
 	<div class="mx-auto flex w-full max-w-6xl flex-col gap-8 px-6 pt-18 pb-24 lg:pt-22">
 		<header class="space-y-4">
@@ -82,9 +66,10 @@
 				{#each labs as lab}
 					<a
 						href={`/labs/${lab.slug}`}
-						class="group flex flex-col justify-between rounded-2xl border border-white/10
+						class="group flex flex-col justify-between rounded-2xl ap-glow-card border border-white/10
 						       bg-neutral-950/70 p-5 text-left shadow-sm transition-all duration-300
 						       hover:-translate-y-1 hover:border-white/30 hover:shadow-2xl"
+						use:cardGlow
 					>
 						<div class="space-y-2">
 							<div class="flex items-center justify-between gap-2">

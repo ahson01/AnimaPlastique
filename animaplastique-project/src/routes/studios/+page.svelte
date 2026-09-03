@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { revealOnScroll } from '$lib/actions/revealOnScroll';
+	import GlowBackdrop from '$lib/components/GlowBackdrop.svelte';
+	import { cardGlow } from '$lib/actions/glow';
 
 	const pillars = [
 		{
@@ -29,24 +31,9 @@
 </svelte:head>
 
 <section
-	class="relative flex w-full justify-center overflow-hidden bg-[var(--bg)] text-[var(--text)]"
+	class="relative isolate flex w-full justify-center overflow-hidden bg-[var(--bg)] text-[var(--text)]"
 >
-	<div class="pointer-events-none absolute inset-0 -z-10">
-		<div
-			class="absolute -top-32 -left-24 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,var(--glow-soft),transparent)] opacity-25
-			       blur-3xl"
-		></div>
-
-		<div
-			class="absolute -right-24 -bottom-24 h-96 w-96 rounded-full bg-[radial-gradient(closest-side,var(--glow-muted),transparent)] opacity-30
-			       blur-3xl"
-		></div>
-
-		<div
-			class="absolute right-0 bottom-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full bg-[radial-gradient(closest-side,var(--glow-accent),transparent)]
-			       opacity-40 blur-[120px]"
-		></div>
-	</div>
+	<GlowBackdrop />
 
 	<div class="mx-auto flex w-full max-w-6xl flex-col gap-12 px-6 pt-18 pb-24 lg:pt-22">
 		<div class="max-w-3xl space-y-6">
@@ -77,8 +64,9 @@
 			{#each pillars as pillar, i}
 				<article
 					use:revealOnScroll
+					use:cardGlow
 					class="reveal-on-scroll group flex flex-col gap-4 rounded-2xl border border-[var(--border)] bg-[var(--card-bg-soft)] p-6 shadow-sm
-					       backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-[var(--border-strong)] hover:shadow-lg"
+					       backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-[var(--border-strong)] hover:shadow-lg ap-glow-card"
 					style={`--delay: ${i * 0.1}s`}
 				>
 					<div
@@ -96,8 +84,9 @@
 
 		<div
 			use:revealOnScroll
+			use:cardGlow
 			class="reveal-on-scroll grid overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--card-bg-soft)] shadow-lg
-			       backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl lg:grid-cols-[340px_1fr]"
+			       backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl lg:grid-cols-[340px_1fr] ap-glow-card"
 			style="--delay: 0.2s"
 		>
 			<div class="flex items-center justify-center bg-[var(--card-bg)] p-6">

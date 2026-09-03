@@ -1,27 +1,15 @@
 <svelte:head>
 	<title>About · xkinetics.space</title>
 </svelte:head>
-<script>  import { revealOnScroll } from '$lib/actions/revealOnScroll';</script>
+<script>
+	import { revealOnScroll } from '$lib/actions/revealOnScroll';
+	import GlowBackdrop from '$lib/components/GlowBackdrop.svelte';
+</script>
 
 <section
-	class="relative flex w-full justify-center overflow-hidden bg-[var(--bg)] text-[var(--text)]"
+	class="relative isolate flex w-full justify-center overflow-hidden bg-[var(--bg)] text-[var(--text)]"
 >
-	<div class="pointer-events-none absolute inset-0 -z-10">
-		<div
-			class="absolute -top-32 -left-24 h-72 w-72 rounded-full blur-3xl opacity-25
-			       bg-[radial-gradient(closest-side,var(--glow-soft),transparent)]"
-		></div>
-
-		<div
-			class="absolute -bottom-24 -right-24 h-96 w-96 rounded-full blur-3xl opacity-30
-			       bg-[radial-gradient(closest-side,var(--glow-muted),transparent)]"
-		></div>
-
-		<div
-			class="absolute bottom-0 right-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full blur-[120px]
-			       opacity-40 bg-[radial-gradient(closest-side,var(--glow-accent),transparent)]"
-		></div>
-	</div>
+	<GlowBackdrop />
 
 	<div class="mx-auto flex w-full max-w-6xl flex-col gap-12 px-6 pt-18 pb-24 lg:pt-22">
 		<div class="grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] lg:items-start">
@@ -62,7 +50,7 @@
 						       border-[var(--border)]
 						       bg-[var(--chip-bg)] text-[var(--text-soft)]"
 					>
-						Async-friendly collaboration
+						Remote-friendly collaboration
 					</span>
 					<span
 						class="inline-flex items-center rounded-full border px-3 py-1
@@ -77,7 +65,7 @@
 				<div class="flex flex-wrap items-center gap-4 pt-4">
 					<a
 						href="/contact"
-						class="interactable inline-flex items-center justify-center rounded-full border px-6 py-2.5 text-[0.7rem]
+						class="interactable ap-cta-glow inline-flex items-center justify-center rounded-full border px-6 py-2.5 text-[0.7rem]
 						       uppercase tracking-[0.22em]
 						       border-[var(--border-strong)] bg-[var(--text-strong)] text-[var(--bg)] shadow-sm
 						       transition-all duration-200
@@ -88,7 +76,7 @@
 
 					<a
 						href="/work"
-						class="interactable inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-[0.7rem]
+						class="interactable ap-cta-ghost inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-[0.7rem]
 						       uppercase tracking-[0.22em]
 						       border border-[var(--border)] bg-transparent
 						       text-[var(--text-strong)]
@@ -101,14 +89,8 @@
 				</div>
 			</div>
 
-			<div
-				class="grid w-full gap-4 rounded-2xl p-5 text-xs sm:text-[0.75rem]
-				       border border-[var(--border)]
-				       bg-[var(--card-bg-soft)] shadow-lg backdrop-blur-md"
-			>
-				<div
-					class="flex items-baseline justify-between border-b pb-3 border-[var(--border-strong)]"
-				>
+			<div class="space-y-5">
+				<div class="flex items-baseline justify-between border-b border-[var(--border-strong)] pb-3">
 					<span class="font-mono text-[0.7rem] uppercase tracking-[0.25em]">
 						Working style
 					</span>
@@ -120,26 +102,26 @@
 				<div class="space-y-3">
 					<div class="flex items-start gap-4 animate-pop-up" style="--delay: 0.1s">
 						<div
-							class="mt-[2px] flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-emerald-400/70 bg-emerald-500/10 text-[0.7rem] font-mono"
+							class="w-7 shrink-0 pt-1 font-mono text-[0.7rem] text-emerald-700 dark:text-emerald-400"
 						>
 							01
 						</div>
-						<div class="space-y-1">
-							<p class="font-mono text-[0.7rem] uppercase tracking-[0.2em]">Scope & priorities</p>
+					<div class="space-y-1.5">
+						<p class="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-[var(--text-muted)]">Scope & priorities</p>
 							<p class="text-[var(--text-soft)]">
-								Short call or async doc to define what absolutely needs to ship and what can wait.
+								Short call or a quick brief to define what absolutely needs to ship and what can wait.
 							</p>
 						</div>
 					</div>
 
 					<div class="flex items-start gap-4 animate-pop-up" style="--delay: 0.2s">
 						<div
-							class="mt-[2px] flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-emerald-400/70 bg-emerald-500/10 text-[0.7rem] font-mono"
+							class="w-7 shrink-0 pt-1 font-mono text-[0.7rem] text-emerald-700 dark:text-emerald-400"
 						>
 							02
 						</div>
 						<div class="space-y-1">
-							<p class="font-mono text-[0.7rem] uppercase tracking-[0.2em]">Design & build loops</p>
+							<p class="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-[var(--text-muted)]">Design & build loops</p>
 							<p class="text-[var(--text-soft)]">
 								We prototype quickly, get real feedback, and refine structure, copy, and visuals in tight
 								iterations.
@@ -149,12 +131,12 @@
 
 					<div class="flex items-start gap-4 animate-pop-up" style="--delay: 0.3s">
 						<div
-							class="mt-[2px] flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-sky-400/70 bg-sky-500/10 text-[0.7rem] font-mono"
+							class="w-7 shrink-0 pt-1 font-mono text-[0.7rem] text-sky-700 dark:text-sky-400"
 						>
 							03
 						</div>
 						<div class="space-y-1">
-							<p class="font-mono text-[0.7rem] uppercase tracking-[0.2em]">Launch & handover</p>
+							<p class="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-[var(--text-muted)]">Launch & handover</p>
 							<p class="text-[var(--text-soft)]">
 								We ship, plug in analytics & SEO basics, and hand over a setup you (or your team) can
 								maintain.
@@ -163,7 +145,7 @@
 					</div>
 				</div>
 
-				<div class="mt-2 grid gap-2 rounded-xl border border-[var(--border-strong)] p-3">
+				<div class="mt-2 border-l-2 border-emerald-500/60 pl-4">
 					<p class="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-[var(--text-muted)]">
 						Best fit
 					</p>
@@ -175,43 +157,7 @@
 			</div>
 		</div>
 
-		<div
-			class="animate-pop-up mt-6 rounded-2xl border border-[var(--border)] bg-[var(--card-bg-soft)] p-5 text-xs shadow-inner backdrop-blur-md"
-		>
-			<div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-				<div class="space-y-1">
-					<p
-						class="font-mono text-[0.65rem] uppercase tracking-[0.25em]
-						   bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text text-transparent"
-					>
-						Tech stack
-					</p>
-					<p class="max-w-md text-[0.75rem] text-[var(--text-soft)]">
-						Modern, boring-on-purpose tools, chosen for speed, maintainability, and the ability to grow
-						with your product without sudden rewrites.
-					</p>
-				</div>
 
-				<div class="flex flex-wrap gap-2 text-[0.65rem] text-[var(--text-muted)]">
-					<span class="font-mono uppercase tracking-[0.2em]">SvelteKit</span>
-					<span>·</span>
-					<span class="font-mono uppercase tracking-[0.2em]">React</span>
-					<span>·</span>
-					<span class="font-mono uppercase tracking-[0.2em]">Tailwind</span>
-					<span>·</span>
-					<span class="font-mono uppercase tracking-[0.2em]">TypeScript</span>
-				</div>
-			</div>
-
-			<div class="mt-5 flex flex-wrap items-center gap-4">
-				<img
-					src="https://skillicons.dev/icons?i=svelte,react,tailwind,ts,nodejs,vite,supabase,postgres"
-					alt="Tech stack icons: Svelte, React, Tailwind, TypeScript, Node.js, Vite, Supabase, Postgres"
-					class="h-10 w-auto drop-shadow-sm"
-					loading="lazy"
-				/>
-			</div>
-		</div>
 
 <div
   class="mt-4 grid gap-8 border-t border-[var(--border-strong)] pt-10 text-xs sm:grid-cols-3 sm:text-[0.75rem]"
@@ -244,10 +190,9 @@
     >
       What we care about
     </p>
-    <ul class="space-y-1 text-[var(--text-soft)]">
-      <li>→ Clear hierarchy and thoughtful typography.</li>
-      <li>→ Snappy performance on real devices, not just lab scores.</li>
-      <li>→ Admin experiences that aren’t a nightmare to use.</li>
+    <ul class="space-y-1 text-[var(--text-soft)]">	      <li>→ Clear hierarchy and thoughtful typography.</li>
+	      <li>→ Snappy performance on real devices, not just lab scores.</li>
+	      <li>→ Admin experiences that aren’t a nightmare to use.</li>
     </ul>
   </div>
 
@@ -262,37 +207,12 @@
     >
       If this sounds right
     </p>
-    <ul class="space-y-1 text-[var(--text-soft)]">
-      <li>→ Send a rough brief (or just a loom).</li>
-      <li>→ We’ll reply with a simple plan & timeline.</li>
-      <li>→ If we’re aligned, we start building within days, not months.</li>
+    <ul class="space-y-1 text-[var(--text-soft)]">	      <li>→ Send a rough brief (or just a loom).</li>
+	      <li>→ We’ll reply with a simple plan & timeline.</li>
+	      <li>→ If we’re aligned, we start building within days, not months.</li>
     </ul>
   </div>
 </div>
-		<div class="mt-6 border-t border-[var(--border-strong)] pt-6">
-			<div
-				class="flex flex-col items-center justify-between gap-3 text-[0.7rem] text-[var(--text-muted)] sm:flex-row"
-			>
-				<p class="font-mono text-[0.6rem] uppercase tracking-[0.22em]">
-					Designed & built from India
-				</p>
-
-				<p class="flex items-center gap-2">
-					<span
-						class="inline-flex h-3 w-5 overflow-hidden rounded-sm ring-1 ring-[color-mix(in_oklab,var(--text-muted) 35%,transparent)]"
-					>
-						<span class="block h-full w-full">
-							<span class="block h-[33.33%] w-full bg-[#FF9933]"></span>
-							<span class="block h-[33.33%] w-full bg-white"></span>
-							<span class="block h-[33.33%] w-full bg-[#128807]"></span>
-						</span>
-					</span>
-					<span
-						>Independent studio based in India, collaborating with teams worldwide · IST (UTC+5:30)</span
-					>
-				</p>
-			</div>
-		</div>
 	</div>
 </section>
 

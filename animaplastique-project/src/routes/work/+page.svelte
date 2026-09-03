@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { revealOnScroll } from '$lib/actions/revealOnScroll';
+	import GlowBackdrop from '$lib/components/GlowBackdrop.svelte';
+	import { cardGlow } from '$lib/actions/glow';
 
 	const projects = [
 
@@ -36,7 +38,10 @@
 	<title>Work · xkinetics.space</title>
 </svelte:head>
 
-<section class="relative flex w-full justify-center overflow-hidden">
+<section
+	class="relative isolate flex w-full justify-center overflow-hidden"
+>
+	<GlowBackdrop />
 	<div class="mx-auto flex w-full max-w-5xl flex-col gap-16 px-6 pt-18 pb-28 lg:pt-22">
 
 		<!-- Page header -->
@@ -112,17 +117,22 @@
 					<!-- Right column: screenshot + case study text -->
 					<div class="space-y-10">
 
-						<!-- Screenshot -->
-						<picture>
-							<source srcset={project.image.replace('.png', '.avif')} type="image/avif" />
-							<source srcset={project.image.replace('.png', '.webp')} type="image/webp" />
-							<img
-								src={project.image}
-								alt={project.title}
-								class="w-full rounded-xl border border-black/10 dark:border-white/10 object-cover shadow-2xl"
-								loading="lazy"
-							/>
-						</picture>
+						<!-- Screenshot card -->
+						<div
+							class="ap-glow-card overflow-hidden rounded-2xl border border-black/10 bg-[var(--card-bg)] p-2 shadow-xl dark:border-white/10 dark:bg-neutral-950/70"
+							use:cardGlow
+						>
+							<picture>
+								<source srcset={project.image.replace('.png', '.avif')} type="image/avif" />
+								<source srcset={project.image.replace('.png', '.webp')} type="image/webp" />
+								<img
+									src={project.image}
+									alt={project.title}
+									class="w-full rounded-xl object-cover"
+									loading="lazy"
+								/>
+							</picture>
+						</div>
 
 						<!-- Problem -->
 						<div class="space-y-3">
@@ -168,8 +178,8 @@
 							href={project.link}
 							target="_blank"
 							rel="noopener noreferrer"
-							class="interactable inline-flex items-center justify-center gap-2 rounded-full
-							       border border-neutral-900/20 bg-neutral-900 px-6 py-2.5
+						class="interactable ap-cta-glow inline-flex items-center justify-center gap-2 rounded-full
+						       border border-neutral-900/20 bg-neutral-900 px-6 py-2.5
 							       font-mono text-[0.7rem] tracking-[0.22em] text-neutral-50 uppercase
 							       shadow-sm transition-all duration-200
 							       hover:-translate-y-0.5 hover:bg-neutral-800 hover:shadow-lg
@@ -203,7 +213,7 @@
 			</div>
 			<a
 				href="/contact"
-				class="interactable inline-flex items-center justify-center rounded-full
+				class="interactable ap-cta-glow inline-flex items-center justify-center rounded-full
 				       border border-neutral-900/20 bg-neutral-900 px-6 py-2.5
 				       font-mono text-[0.7rem] tracking-[0.22em] text-neutral-50 uppercase
 				       shadow-sm transition-all duration-200

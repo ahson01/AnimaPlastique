@@ -4,7 +4,9 @@
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 @import '@fontsource/jetbrains-mono';
+@import '@fontsource/jetbrains-mono/800.css';
 @import '@fontsource/inter';
+@import '@fontsource/inter/800.css';
 
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
@@ -19,16 +21,17 @@ body {
 
 @layer base {
   :root {
-    --bg: #eeeee9;
-    --text: #111827;
-    --text-strong: #020617;
-    --text-soft: #374151;
-    --text-muted: #6b7280;
-    --border: #d6d6cf;
-    --border-strong: #bbbbb4;
-    --card-bg: #f5f5f0;
-    --card-bg-soft: #e8e8e3;
-    --reveal-wipe: #0f172a;
+    /* white light theme with deep forest-green text & emerald accents */
+    --bg: #ffffff;
+    --text: #123526;
+    --text-strong: #07231a;
+    --text-soft: #234733;
+    --text-muted: #3e5a4a;
+    --border: #cddbd2;
+    --border-strong: #9fb9a9;
+    --card-bg: #ffffff;
+    --card-bg-soft: #eef4f0;
+    --reveal-wipe: #07231a;
   }
 
   .dark {
@@ -103,7 +106,7 @@ body {
   }
 
   .rapid-text {
-    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 40%, #0f172a 100%);
+    background: linear-gradient(135deg, #0a2a19 0%, #0f8a52 45%, #0a2a19 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -118,9 +121,9 @@ body {
 
   .ap-shell {
     @apply sticky top-0 z-20 border-b backdrop-blur;
-    background-color: rgba(238, 238, 233, 0.88);
-    border-color: rgba(190, 190, 183, 0.7);
-    color: #111827;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-color: rgba(179, 204, 189, 0.8);
+    color: #123526;
   }
 
   html.dark .ap-shell {
@@ -131,7 +134,7 @@ body {
 
   .ap-nav-link {
     @apply relative pb-1 text-[0.7rem] uppercase tracking-[0.25em];
-    color: #6b7280;
+    color: var(--text-muted);
     text-decoration: none;
   }
 
@@ -147,7 +150,7 @@ body {
   }
 
   .ap-nav-link:hover {
-    color: #111827;
+    color: #07231a;
   }
 
   .ap-nav-link:hover::after {
@@ -155,16 +158,11 @@ body {
   }
 
   .ap-nav-link--active {
-    color: #111827;
+    color: var(--text-strong);
   }
 
   .ap-nav-link--active::after {
-    width: 100%;
-  }
-
-  html.dark .ap-nav-link {
-    color: #9ca3af;
-  }
+    width: 100%;  }
 
   html.dark .ap-nav-link--active {
     color: #f9fafb;
@@ -172,16 +170,16 @@ body {
 
   .ap-toggle {
     @apply relative flex h-7 w-12 items-center rounded-full border text-[0.6rem] uppercase tracking-[0.12em] transition-colors;
-    border-color: #c8c8c1;
-    background-color: #e2e2dc;
-    color: #374151;
+    border-color: #86b89a;
+    background-color: #b7d8c2;
+    color: #35634a;
   }
 
   .ap-toggle-knob {
     @apply inline-flex h-6 w-6 items-center justify-center rounded-full border text-[0.55rem] transition-transform;
-    border-color: #c8c8c1;
-    background-color: #f5f5f0;
-    color: #111827;
+    border-color: #86b89a;
+    background-color: #ffffff;
+    color: #0a2a19;
   }
 
   html.dark .ap-toggle {
@@ -267,5 +265,248 @@ body {
     to {
       opacity: 1;
     }
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Vercel-style glow system (shared across pages)
+   Unlayered on purpose: must beat Tailwind utility layers.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* faint dot grid that fades away from the top (mask-based; works over
+   any background color - the Firefox rectangle was the aura layer, not this) */  .ap-dot-grid {
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.5) 1px, transparent 1.7px);
+  background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(100% 80% at 50% 0%, black 0%, transparent 82%);
+  mask-image: radial-gradient(100% 80% at 50% 0%, black 0%, transparent 82%);
+}
+
+.dark .ap-dot-grid {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.09) 1px, transparent 1.7px);
+}
+
+/* main bloom behind the hero headline */
+.ap-hero-glow {
+  background: radial-gradient(
+    62rem 32rem at 52% 7rem,
+    rgba(16, 185, 129, 0.07),
+    rgba(16, 185, 129, 0.03) 48%,
+    transparent 75%
+  );
+}
+
+.dark .ap-hero-glow {
+  background: radial-gradient(
+    62rem 34rem at 52% 7rem,
+    rgba(16, 185, 129, 0.22),
+    rgba(16, 185, 129, 0.08) 50%,
+    transparent 76%
+  );
+}
+
+/* gentle corner bloom near the bottom of a hero for depth */
+.ap-corner-glow {
+  background: radial-gradient(
+    closest-side,
+    rgba(16, 185, 129, 0.07),
+    rgba(16, 185, 129, 0.03) 55%,
+    transparent 100%
+  );
+}
+
+.dark .ap-corner-glow {
+  background: radial-gradient(
+    closest-side,
+    rgba(16, 185, 129, 0.17),
+    rgba(16, 185, 129, 0.05) 60%,
+    transparent 100%
+  );
+}
+
+/* card border spotlight: lights up near the cursor */
+.ap-glow-card {
+  position: relative;
+}
+
+.ap-glow-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: radial-gradient(
+    340px circle at var(--sx, 50%) var(--sy, 0%),
+    rgba(16, 185, 129, 0.5),
+    rgba(16, 185, 129, 0.15) 45%,
+    transparent 75%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.ap-glow-card:hover::after {
+  opacity: 1;
+}
+
+.dark .ap-glow-card::after {
+  background: radial-gradient(
+    340px circle at var(--sx, 50%) var(--sy, 0%),
+    rgba(110, 231, 183, 0.95),
+    rgba(16, 185, 129, 0.4) 45%,
+    transparent 75%
+  );
+}
+
+/* glowing hairline across the top edge of a feature/pricing card */
+.ap-feature-card {
+  position: relative;
+}
+
+.ap-feature-card::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 76%;
+  height: 2px;
+  border-radius: 9999px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(16, 185, 129, 0.55) 32%,
+    rgba(110, 231, 183, 0.25) 58%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* primary CTA glow */
+.ap-cta-glow {
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.2s ease;
+  box-shadow:
+    0 0 0 1px rgba(16, 185, 129, 0.1),
+    0 4px 18px -10px rgba(16, 185, 129, 0.25),
+    0 0 24px -14px rgba(16, 185, 129, 0.2);
+}
+
+.ap-cta-glow:hover {
+  box-shadow:
+    0 0 0 1px rgba(16, 185, 129, 0.25),
+    0 8px 26px -10px rgba(16, 185, 129, 0.45),
+    0 0 40px -12px rgba(16, 185, 129, 0.35);
+}
+
+.dark .ap-cta-glow {
+  box-shadow:
+    0 0 0 1px rgba(16, 185, 129, 0.25),
+    0 6px 26px -10px rgba(16, 185, 129, 0.5),
+    0 0 42px -14px rgba(16, 185, 129, 0.5);
+}
+
+.dark .ap-cta-glow:hover {
+  box-shadow:
+    0 0 0 1px rgba(110, 231, 183, 0.4),
+    0 12px 40px -8px rgba(16, 185, 129, 0.75),
+    0 0 70px -12px rgba(16, 185, 129, 0.7);
+}
+
+/* deeper emerald accents + darker grays in light mode only */
+:root:not(.dark) {
+  --color-emerald-400: #0ea573;
+  --color-green-500: #179a4f;
+
+  --color-neutral-400: #6b7280;
+  --color-neutral-500: #4b5563;
+  --color-neutral-600: #374151;
+}
+
+/* secondary/ghost CTA */
+.ap-cta-ghost {
+  transition:
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.ap-cta-ghost:hover {
+  box-shadow:
+    0 0 0 1px rgba(16, 185, 129, 0.18),
+    0 0 34px -10px rgba(16, 185, 129, 0.35);
+}
+
+/* headline halo: gentle emerald breathing glow behind gradient headlines */
+h1.rapid-text {
+  animation: ap-head-halo 7s ease-in-out infinite;
+}
+
+.dark h1.rapid-text {
+  animation: ap-head-halo-dark 7s ease-in-out infinite;
+}
+
+@keyframes ap-head-halo {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 rgba(16, 185, 129, 0));
+  }
+  50% {
+    filter: drop-shadow(0 0 22px rgba(16, 185, 129, 0.12));
+  }
+}
+
+@keyframes ap-head-halo-dark {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 rgba(16, 185, 129, 0));
+  }
+  50% {
+    filter: drop-shadow(0 0 36px rgba(16, 185, 129, 0.45));
+  }
+}
+
+/* live dot ping (e.g. “Now booking”) */
+.ap-live-dot {
+  position: relative;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.8);
+}
+
+.ap-live-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  border: 1px solid rgba(16, 185, 129, 0.65);
+  animation: ap-ping 2.2s ease-out infinite;
+}
+
+@keyframes ap-ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  75%,
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  h1.rapid-text {
+    animation: none;
+  }
+
+  .ap-live-dot::after {
+    animation: none;
   }
 }

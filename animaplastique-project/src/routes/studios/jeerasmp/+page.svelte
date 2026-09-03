@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { revealOnScroll } from '$lib/actions/revealOnScroll';
+	import GlowBackdrop from '$lib/components/GlowBackdrop.svelte';
+	import { cardGlow } from '$lib/actions/glow';
 
 	const serverIp = 'collection-hierarchy.gl.joinmc.link';
 
@@ -55,24 +57,9 @@
 </svelte:head>
 
 <section
-	class="relative flex w-full justify-center overflow-hidden bg-[var(--bg)] text-[var(--text)]"
+	class="relative isolate flex w-full justify-center overflow-hidden bg-[var(--bg)] text-[var(--text)]"
 >
-	<div class="pointer-events-none absolute inset-0 -z-10">
-		<div
-			class="absolute -top-32 -left-24 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,var(--glow-soft),transparent)] opacity-25
-			       blur-3xl"
-		></div>
-
-		<div
-			class="absolute -right-24 -bottom-24 h-96 w-96 rounded-full bg-[radial-gradient(closest-side,var(--glow-muted),transparent)] opacity-30
-			       blur-3xl"
-		></div>
-
-		<div
-			class="absolute right-0 bottom-0 h-[40rem] w-[40rem] translate-x-1/3 translate-y-1/3 rounded-full bg-[radial-gradient(closest-side,var(--glow-accent),transparent)]
-			       opacity-40 blur-[120px]"
-		></div>
-	</div>
+	<GlowBackdrop />
 
 	<div class="mx-auto flex w-full max-w-6xl flex-col gap-12 px-6 pt-18 pb-24 lg:pt-22">
 		<a
@@ -84,7 +71,8 @@
 		</a>
 
 		<div
-			class="animate-pop-up w-1/2 overflow-hidden rounded-3xl border border-[var(--border)] shadow-lg"
+			class="animate-pop-up w-1/2 overflow-hidden rounded-3xl border border-[var(--border)] shadow-lg ap-glow-card"
+			use:cardGlow
 		>
 			<picture>
 				<source srcset="/jeerasmp-banner.avif" type="image/avif" />
@@ -142,7 +130,8 @@
 			</div>
 
 			<div
-				class="animate-pop-up w-full max-w-md rounded-2xl border border-[var(--border)] bg-[var(--card-bg-soft)] p-5 text-xs shadow-lg backdrop-blur-md sm:text-[0.75rem]"
+				class="animate-pop-up w-full max-w-md rounded-2xl border border-[var(--border)] bg-[var(--card-bg-soft)] p-5 text-xs shadow-lg backdrop-blur-md sm:text-[0.75rem] ap-glow-card"
+				use:cardGlow
 				style="--delay: 0.1s"
 			>
 				<div
@@ -161,7 +150,7 @@
 					</div>
 					<button
 						on:click={copyIp}
-						class="interactable inline-flex shrink-0 items-center gap-1.5 rounded-full border border-[var(--text-strong)] bg-[var(--text-strong)] px-4 py-1.5
+						class="interactable ap-cta-glow inline-flex shrink-0 items-center gap-1.5 rounded-full border border-[var(--text-strong)] bg-[var(--text-strong)] px-4 py-1.5
 						       text-[0.65rem] tracking-[0.18em] text-[var(--bg)] uppercase transition-all
 						       duration-200 hover:-translate-y-0.5 hover:shadow-md"
 					>
